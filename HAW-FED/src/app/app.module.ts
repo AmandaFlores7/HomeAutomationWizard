@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarPrincipalComponent } from './componentes/navbar-principal/navbar-principal.component';
 import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones.component';
 import { FooterPrincipalComponent } from './componentes/footer-principal/footer-principal.component';
+import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarPrincipalComponent,
     MenuOpcionesComponent,
-    FooterPrincipalComponent
+    FooterPrincipalComponent,
+    CarruselComponent
   ],
   imports: [
     BrowserModule,

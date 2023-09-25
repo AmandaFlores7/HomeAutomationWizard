@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarPrincipalComponent } from './navbar-principal/navbar-principal.component';
 import { MenuOpcionesComponent } from './menu-opciones/menu-opciones.component';
 import { FooterPrincipalComponent } from './footer-principal/footer-principal.component';
+import { CarruselComponent } from './carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
