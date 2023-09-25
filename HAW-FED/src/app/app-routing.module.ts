@@ -7,10 +7,14 @@ const routes: Routes = [
   { path: 'introduccion',
     component: PrimeraParteComponent,
     children: [
-      { path: 'primera-parte', 
+      { path: 'introduccion', 
       component: PrimeraParteComponent
     }]
   },
+  { path: '', 
+    redirectTo: '/introduccion', 
+    pathMatch: 'full' 
+  }
 ];
 
 @NgModule({
