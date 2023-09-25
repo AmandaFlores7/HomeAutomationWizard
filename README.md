@@ -1,1 +1,1 @@
-# HAWHAW
+# Home Automation Wizard
