@@ -7,9 +7,19 @@ import { CarruselComponent } from './carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
+    NavbarPrincipalComponent,
+    MenuOpcionesComponent,
+    FooterPrincipalComponent,
+    CarruselComponent
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    NavbarPrincipalComponent,
+    MenuOpcionesComponent,
+    FooterPrincipalComponent,
+    CarruselComponent
+  ],
 })
 export class ComponentesModule { }

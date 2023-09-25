@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer-principal',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer-principal.component.scss']
 })
 export class FooterPrincipalComponent {
+  @Input() cantidadBotones: number;
 
+  constructor() {
+    this.cantidadBotones = 2;
+  }
 }
