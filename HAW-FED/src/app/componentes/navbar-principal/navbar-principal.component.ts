@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar-principal',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar-principal.component.scss']
 })
 export class NavbarPrincipalComponent {
-  titulo = "Home Automation Wizard";
+  @Input() title: string;
 
+  constructor() {
+    this.title = '';
+  }
 }
