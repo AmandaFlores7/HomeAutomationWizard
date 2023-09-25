@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer-principal',
@@ -7,8 +8,10 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterPrincipalComponent {
   @Input() cantidadBotones: number;
+  @Input() ruta1: string | undefined;
+  @Input() ruta2: string | undefined;
 
-  constructor() {
+  constructor(private router: Router) {
     this.cantidadBotones = 2;
   }
 }
