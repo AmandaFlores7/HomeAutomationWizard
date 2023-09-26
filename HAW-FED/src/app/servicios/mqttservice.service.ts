@@ -7,9 +7,16 @@ import { HttpClient } from '@angular/common/http';
 
 export class MqttserviceService {
 
+  local_ip = "192.168.1.88"
+  localhost = "localhost"
+
   constructor(private _http:HttpClient) { }
 
   getdata(){
-    return this._http.get('http://localhost:8000/homewizard_mqtt')
+    return this._http.get('http://'+this.local_ip+':8000/homewizard_mqtt')
+  }
+
+  testMqttProtocol(){
+    return this._http.get('http://'+this.local_ip+':8000/test-mqtt-protocol')
   }
 }
