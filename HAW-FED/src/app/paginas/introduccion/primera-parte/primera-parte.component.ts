@@ -28,8 +28,9 @@ export class PrimeraParteComponent{
       this.ruta2 = '/introduccion/4';
     }
     else if (this.router && this.router.url === '/introduccion/4') {
-      this.cantidadBotones = 1;
+      this.cantidadBotones = 2;
       this.ruta1 = '/introduccion/3';
+      this.ruta2 = '/aplicacion';
     } 
   }
 }

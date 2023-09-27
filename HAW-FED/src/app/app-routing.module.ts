@@ -6,6 +6,7 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { MenuInfoComponent } from './componentes/menu-info/menu-info.component';
 import { ImagenExplicativaComponent } from './componentes/imagen-explicativa/imagen-explicativa.component';
 import { TesteoComponent } from './componentes/testeo/testeo.component';
+import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/menu-aplicacion.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,12 @@ const routes: Routes = [
   ],
   },
   { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
+  {
+    path: 'aplicacion',
+    component: MenuAplicacionComponent,
+    children: [
+    ],
+  }
 ];
 
 @NgModule({
