@@ -19,4 +19,8 @@ export class MqttserviceService {
   testMqttProtocol(){
     return this._http.get('http://'+this.local_ip+':8000/test-mqtt-protocol')
   }
+
+  controlarLeds(){
+    return this._http.get('http://'+this.local_ip+':8000/encender-led')
+  }
 }
