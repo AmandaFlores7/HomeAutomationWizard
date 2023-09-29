@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { ComponentesModule } from './componentes/componentes.module';
 import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/menu-aplicacion.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +15,7 @@ import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/me
     BrowserModule,
     AppRoutingModule,
     ComponentesModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

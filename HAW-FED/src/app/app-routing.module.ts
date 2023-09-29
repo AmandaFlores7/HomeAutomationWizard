@@ -7,6 +7,7 @@ import { MenuInfoComponent } from './componentes/menu-info/menu-info.component';
 import { ImagenExplicativaComponent } from './componentes/imagen-explicativa/imagen-explicativa.component';
 import { TesteoComponent } from './componentes/testeo/testeo.component';
 import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/menu-aplicacion.component';
+import { ProbarLuzComponent } from './componentes/probar-luz/probar-luz.component';
 import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones.component';
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
       { path: '1', component: CarruselComponent },
       { path: '2', component: MenuInfoComponent },
       { path: '3', component: ImagenExplicativaComponent },
-      { path: '4', component: TesteoComponent },
+      { path: '4', component: ProbarLuzComponent},
   ],
   },
   { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
