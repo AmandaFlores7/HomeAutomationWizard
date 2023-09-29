@@ -7,12 +7,14 @@ import { ComponentesModule } from './componentes/componentes.module';
 import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/menu-aplicacion.component';
 import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/vista-componente.component';
 import { CarruselImagenesComponent } from './componentes/carrusel-imagenes/carrusel-imagenes.component';
+import { PrimeraParteComponent } from './paginas/introduccion/primera-parte/primera-parte.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuAplicacionComponent,
-    VistaComponenteComponent
+    VistaComponenteComponent,
+    PrimeraParteComponent
   ],
   imports: [
     BrowserModule,

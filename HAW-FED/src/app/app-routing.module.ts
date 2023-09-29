@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IntroduccionModule } from './paginas/introduccion/introduccion.module';
 import { PrimeraParteComponent } from './paginas/introduccion/primera-parte/primera-parte.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { MenuInfoComponent } from './componentes/menu-info/menu-info.component';
@@ -12,6 +11,7 @@ import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones
 import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/vista-componente.component';
 
 const routes: Routes = [
+  { path: 'introduccion', redirectTo: 'introduccion/1'}, 
   {
     path: 'introduccion',
     component: PrimeraParteComponent,

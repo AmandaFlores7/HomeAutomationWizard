@@ -1,7 +1,6 @@
 export const rutas ={
     "/aplicacion": {
         "titulo": "Menu Principal",
-        "linkPage": "aplicacion",
         "items": [
             {
                 "titulo": "Sensores",
@@ -23,14 +22,10 @@ export const rutas ={
                 "titulo": "Conoce Nuestro Proyecto",
                 "link": "/aplicacion/"
             }
-        ],
-        "botones": {
-            "cantidad": 0
-        }
+        ]
     },
     "/aplicacion/sensores": {
         "titulo": "Sensores",
-        "linkPage": "aplicacion/sensores",
         "items": [
             {
                 "titulo": "Temperatura",
@@ -50,7 +45,6 @@ export const rutas ={
             }
         ],
         "botones": {
-            "cantidad": 1,
             "ruta1": {
                 "titulo": "Volver",
                 "link": "/aplicacion"
@@ -59,7 +53,6 @@ export const rutas ={
     },
     "/aplicacion/actuadores": {
         "titulo": "Actuadores",
-        "linkPage": "aplicacion/actuadores",
         "items": [
             {
                 "titulo": "Camara Raspberry",
@@ -75,7 +68,6 @@ export const rutas ={
             }
         ],
         "botones": {
-            "cantidad": 1,
             "ruta1": {
                 "titulo": "Volver",
                 "link": "/aplicacion"
@@ -84,7 +76,6 @@ export const rutas ={
     },
     "/aplicacion/wikiiot": {
         "titulo": "Wiki IoT",
-        "linkPage": "aplicacion/wikiiot",
         "items": [
             {
                 "titulo": "¿Qué es IoT?",
@@ -104,7 +95,6 @@ export const rutas ={
             }
         ],
         "botones": {
-            "cantidad": 1,
             "ruta1": {
                 "titulo": "Volver",
                 "link": "/aplicacion"
@@ -113,9 +103,7 @@ export const rutas ={
     },
     "/aplicacion/sensores/temperatura": {
         "titulo": "Sensor de Temperatura",
-        "linkPage": "aplicacion/sensores/temperatura",
         "botones": {
-            "cantidad": 2,
             "ruta1": {
                 "titulo": "Volver",
                 "link": "/aplicacion/sensores"
@@ -142,7 +130,6 @@ export const rutas ={
     },
     "/aplicacion/sensores/humedad": {
         "titulo": "Sensor de Humedad",
-        "linkPage": "aplicacion/sensores/humedad",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -170,7 +157,6 @@ export const rutas ={
     },
     "/aplicacion/sensores/luz": {
         "titulo": "Sensor de Luminocidad",
-        "linkPage": "aplicacion/sensores/luz",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -204,7 +190,6 @@ export const rutas ={
     },
     "/aplicacion/sensores/aire": {
         "titulo": "Sensor de Aire",
-        "linkPage": "aplicacion/sensores/aire",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -233,7 +218,6 @@ export const rutas ={
     },
     "/aplicacion/actuadores/camara_r": {
         "titulo": "Camara Raspberry",
-        "linkPage": "aplicacion/actuadores/camara_r",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -262,7 +246,6 @@ export const rutas ={
     },
     "/aplicacion/actuadores/luces": {
         "titulo": "Luces del Hogar",
-        "linkPage": "aplicacion/actuadores/luces",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -291,7 +274,6 @@ export const rutas ={
     },
     "/aplicacion/actuadores/puerta": {
         "titulo": "Control de Puerta",
-        "linkPage": "aplicacion/actuadores/puerta",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -319,7 +301,6 @@ export const rutas ={
     },
     "/aplicacion/actuadores/luces/probar": {
         "titulo": "Prueba los sensores",
-        "linkPage": "aplicacion/actuadores/luces/probar",
         "botones": {
             "cantidad": 2,
             "ruta1": {
@@ -327,5 +308,53 @@ export const rutas ={
                 "link": "/aplicacion/actuadores/luces"
             }
         },
-    }
+    },
+    "/introduccion/1" : {
+        "titulo": "Home Automation Wizard",
+        "botones": {
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/introduccion/2"
+            }
+        }
+    },
+    "/introduccion/2" : {
+        "titulo": "Home Automation Wizard",
+        "botones": {
+            "ruta1": {
+                "titulo": "Anterior",
+                "link": "/introduccion/1"
+            },
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/introduccion/3"
+            }
+        }
+    },
+    "/introduccion/3" : {
+        "titulo": "Home Automation Wizard",
+        "botones": {
+            "ruta1": {
+                "titulo": "Anterior",
+                "link": "/introduccion/2"
+            },
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/introduccion/4"
+            }
+        }
+    },
+    "/introduccion/4" : {
+        "titulo": "Home Automation Wizard",
+        "botones": {
+            "ruta1": {
+                "titulo": "Anterior",
+                "link": "/introduccion/3"
+            },
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/aplicacion"
+            }
+        }
+    },
 }

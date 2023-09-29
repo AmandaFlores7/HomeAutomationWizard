@@ -8,35 +8,22 @@ import { rutas } from 'src/app/constantes/rutas';
   styleUrls: ['./menu-aplicacion.component.scss']
 })
 export class MenuAplicacionComponent {
-  ruta1: string = '';
-  ruta2: string = '';
   titulo: string = '';
+  botones: any;
 
   constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    let infoPagina = this.buscarTitulo(this.router.url);
-
-    if (this.router && this.buscarTitulo(this.router.url)) {
-      this.titulo = infoPagina.titulo;
-      this.asignarBotones(infoPagina.botones)
+    if (this.router?.url && this.buscarRuta(this.router.url)?.titulo != null) {
+      let infoPagina = this.buscarRuta(this.router.url);
+      this.botones = infoPagina?.botones? infoPagina.botones : null;
+      this.titulo = infoPagina?.titulo? infoPagina.titulo : null;
     }
   }
 
-  buscarTitulo(linkActual: string) {
+  buscarRuta(linkActual: string) {
     let info = JSON.parse(JSON.stringify(rutas))[linkActual];
     if (info) {
       return info;
     }
     return null;
   }
-
-  asignarBotones(infoPagina: any) {
-    if (infoPagina.ruta1) {
-      this.ruta1 = infoPagina.ruta1.link;
-    }
-    if (infoPagina.ruta2) {
-      this.ruta2 = infoPagina.ruta2.link;
-    }
-  }
-  
 }
