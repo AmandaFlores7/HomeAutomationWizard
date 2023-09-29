@@ -46,7 +46,7 @@ export const rutas ={
         ],
         "botones": {
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion"
             }
         }
@@ -69,7 +69,7 @@ export const rutas ={
         ],
         "botones": {
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion"
             }
         }
@@ -96,7 +96,7 @@ export const rutas ={
         ],
         "botones": {
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion"
             }
         }
@@ -105,7 +105,7 @@ export const rutas ={
         "titulo": "Sensor de Temperatura",
         "botones": {
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/sensores"
             },
             "ruta2": {
@@ -133,7 +133,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/sensores"
             },
             "ruta2": {
@@ -160,7 +160,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/sensores"
             },
             "ruta2": {
@@ -193,7 +193,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/sensores"
             },
             "ruta2": {
@@ -221,7 +221,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/actuadores"
             },
             "ruta2": {
@@ -249,7 +249,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/actuadores"
             },
             "ruta2": {
@@ -277,7 +277,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/actuadores"
             },
             "ruta2": {
@@ -304,7 +304,7 @@ export const rutas ={
         "botones": {
             "cantidad": 2,
             "ruta1": {
-                "titulo": "Volver",
+                "titulo": "Retroceder",
                 "link": "/aplicacion/actuadores/luces"
             }
         },
@@ -322,7 +322,7 @@ export const rutas ={
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta1": {
-                "titulo": "Anterior",
+                "titulo": "Retroceder",
                 "link": "/introduccion/1"
             },
             "ruta2": {
@@ -335,7 +335,7 @@ export const rutas ={
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta1": {
-                "titulo": "Anterior",
+                "titulo": "Retroceder",
                 "link": "/introduccion/2"
             },
             "ruta2": {
@@ -348,7 +348,7 @@ export const rutas ={
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta1": {
-                "titulo": "Anterior",
+                "titulo": "Retroceder",
                 "link": "/introduccion/3"
             },
             "ruta2": {

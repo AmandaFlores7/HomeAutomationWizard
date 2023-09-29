@@ -1,10 +1,10 @@
 <footer class="footer">
     <div *ngIf="botones" class="row text-center">
             <div class="col">
-                <button type="button" class="btn btn-light border" [routerLink]='botones.ruta1?.link' [hidden]="(botones.ruta1? false : true)">Retroceder</button>
+                <button type="button" class="btn btn-light border" [routerLink]='botones.ruta1?.link' [hidden]="(botones.ruta1? false : true)">{{botones.ruta1?.titulo}}</button>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary" [routerLink]='botones.ruta2?.link' [hidden]="(botones.ruta2? false : true)">Siguiente</button>
+                <button type="button" class="btn btn-primary" [routerLink]='botones.ruta2?.link' [hidden]="(botones.ruta2? false : true)">{{botones.ruta2?.titulo}}</button>
             </div>
     </div>
 </footer>
