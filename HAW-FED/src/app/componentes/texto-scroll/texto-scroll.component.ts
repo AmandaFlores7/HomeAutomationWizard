@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-texto-scroll',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./texto-scroll.component.scss']
 })
 export class TextoScrollComponent {
-
+  @Input() 
+  texto: any;
 }
