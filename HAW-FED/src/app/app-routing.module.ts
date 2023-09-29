@@ -9,6 +9,7 @@ import { TesteoComponent } from './componentes/testeo/testeo.component';
 import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/menu-aplicacion.component';
 import { ProbarLuzComponent } from './componentes/probar-luz/probar-luz.component';
 import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones.component';
+import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/vista-componente.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,16 @@ const routes: Routes = [
       { path: 'actuadores', component: MenuOpcionesComponent },
       { path: 'wikiiot', component: MenuOpcionesComponent },
       { path: 'test', component: MenuOpcionesComponent },
-      { path: 'acerca', component: MenuOpcionesComponent }
+      { path: 'acerca', component: MenuOpcionesComponent },
+      { path: 'sensores/temperatura', component: VistaComponenteComponent },
+      { path: 'sensores/humedad', component: VistaComponenteComponent },
+      { path: 'sensores/luz', component: VistaComponenteComponent },
+      { path: 'sensores/aire', component: VistaComponenteComponent },
+      { path: 'actuadores/camara_r', component: VistaComponenteComponent },
+      { path: 'actuadores/luces', component: VistaComponenteComponent },
+      { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
+      { path: 'actuadores/puerta', component: VistaComponenteComponent }
+
     ],
   }
 ];

@@ -1,22 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
-  selector: 'app-menu-opciones',
-  templateUrl: './menu-opciones.component.html',
-  styleUrls: ['./menu-opciones.component.scss']
+  selector: 'app-carrusel-imagenes',
+  templateUrl: './carrusel-imagenes.component.html',
+  styleUrls: ['./carrusel-imagenes.component.scss'],
+  providers: [NgbCarouselConfig]
 })
-export class MenuOpcionesComponent {
-  @Input() opciones : any;
-  opcionesMenu: any;
+export class CarruselImagenesComponent {
+  imagenes: any;
+  largo: any;
+  primertaImagen: any;
 
   constructor(private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     let infoPagina = this.buscarTitulo(this.router.url);
-
-    this.opcionesMenu = infoPagina['items'];
-
+    this.imagenes = infoPagina['imagenes'];
   }
 
   buscarTitulo(linkActual: string) {
