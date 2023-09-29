@@ -3,14 +3,15 @@ import { Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
 
 @Component({
-  selector: 'app-menu-aplicacion',
-  templateUrl: './menu-aplicacion.component.html',
-  styleUrls: ['./menu-aplicacion.component.scss']
+  selector: 'app-vista-componente',
+  templateUrl: './vista-componente.component.html',
+  styleUrls: ['./vista-componente.component.scss']
 })
-export class MenuAplicacionComponent {
+export class VistaComponenteComponent {
   ruta1: string = '';
   ruta2: string = '';
   titulo: string = '';
+  opcionesMenu: '';
 
   constructor(private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -20,6 +21,9 @@ export class MenuAplicacionComponent {
       this.titulo = infoPagina.titulo;
       this.asignarBotones(infoPagina.botones)
     }
+
+    this.opcionesMenu = infoPagina['items'];
+
   }
 
   buscarTitulo(linkActual: string) {

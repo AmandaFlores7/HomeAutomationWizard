@@ -1,0 +1,9 @@
+<div class="card-container">
+    <div *ngFor="let luz of luces" class="card">
+        <div class="form-check form-switch form-switch-md">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="luz.activada"
+                (change)="alternarLuz($event, luz)">
+            <label class="form-check-label">{{ luz.nombre }}</label>
+        </div>
+    </div>
+</div>

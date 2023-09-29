@@ -1,0 +1,21 @@
+<div class="text-center">
+    <div id="carrusel" class="carousel slide">
+        <div class="carousel-inner p-4">
+            <div class="carousel-item" *ngFor="let imagen of imagenes; let i = index" [class.active]="i === 0">
+                <img [src]="imagen.ruta" alt="Slide {{ i + 1 }}">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon text-bg-info rounded-pill" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+            <span class="carousel-control-next-icon text-bg-info rounded-pill" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators text-bg-info rounded">
+            <button type="button" data-bs-target="#carrusel" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
+                [attr.aria-label]="'Slide ' + (i + 1)" *ngFor="let imagen of imagenes; let i = index"></button>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,9 @@ import { MenuInfoComponent } from './menu-info/menu-info.component';
 import { RouterModule } from '@angular/router';
 import { ImagenExplicativaComponent } from './imagen-explicativa/imagen-explicativa.component';
 import { TesteoComponent } from './testeo/testeo.component';
+import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
+import { FormsModule } from '@angular/forms';
+import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
 
 @NgModule({
   declarations: [
@@ -17,17 +20,21 @@ import { TesteoComponent } from './testeo/testeo.component';
     CarruselComponent,
     MenuInfoComponent,
     ImagenExplicativaComponent,
-    TesteoComponent
+    TesteoComponent,
+    ProbarLuzComponent,
+    CarruselImagenesComponent    
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     NavbarPrincipalComponent,
     MenuOpcionesComponent,
     FooterPrincipalComponent,
-    CarruselComponent
+    CarruselComponent,
+    CarruselImagenesComponent
   ],
 })
 export class ComponentesModule { }
