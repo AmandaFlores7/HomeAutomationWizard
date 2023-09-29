@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-principal',
@@ -7,8 +8,18 @@ import { Component, Input } from '@angular/core';
 })
 export class NavbarPrincipalComponent {
   @Input() title: string;
+  ruta: any;
 
-  constructor() {
+  constructor(router: Router) {
+    this.ruta = router.url;
     this.title = '';
+  }
+
+  enrutar(str: string) {
+    if (str === 'Home Automation Wizard') {
+      return this.ruta.url;
+    } else {
+      return '/aplicacion';
+    }
   }
 }
