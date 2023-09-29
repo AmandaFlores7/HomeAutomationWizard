@@ -7,6 +7,7 @@ import { MenuInfoComponent } from './componentes/menu-info/menu-info.component';
 import { ImagenExplicativaComponent } from './componentes/imagen-explicativa/imagen-explicativa.component';
 import { TesteoComponent } from './componentes/testeo/testeo.component';
 import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/menu-aplicacion.component';
+import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,12 @@ const routes: Routes = [
     path: 'aplicacion',
     component: MenuAplicacionComponent,
     children: [
+      { path: '', component: MenuOpcionesComponent },
+      { path: 'sensores', component: MenuOpcionesComponent },
+      { path: 'actuadores', component: MenuOpcionesComponent },
+      { path: 'wikiiot', component: MenuOpcionesComponent },
+      { path: 'test', component: MenuOpcionesComponent },
+      { path: 'acerca', component: MenuOpcionesComponent }
     ],
   }
 ];

@@ -1,17 +1,10 @@
 <footer class="footer">
     <div class="row text-center">
-        <ng-container *ngIf="cantidadBotones == 1">
             <div class="col">
-                <button type="button" class="btn btn-primary" routerLink={{ruta2}}>Siguiente</button>
-            </div>
-        </ng-container>
-        <ng-container *ngIf="cantidadBotones == 2">
-            <div class="col">
-                <button type="button" class="btn btn-light border"routerLink={{ruta1}}>Retroceder</button>
+                <button type="button" class="btn btn-light border" routerLink={{ruta1}} [hidden]="verBoton(ruta1)">Retroceder</button>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary" routerLink={{ruta2}}>Siguiente</button>
+                <button type="button" class="btn btn-primary" routerLink={{ruta2}} [hidden]="verBoton(ruta2)">Siguiente</button>
             </div>
-        </ng-container>
     </div>
 </footer>

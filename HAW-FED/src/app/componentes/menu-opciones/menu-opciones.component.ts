@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-opciones',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-opciones.component.scss']
 })
 export class MenuOpcionesComponent {
+  @Input() opciones : any;
 
 }
