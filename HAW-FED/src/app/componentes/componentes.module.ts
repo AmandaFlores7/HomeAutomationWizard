@@ -11,6 +11,7 @@ import { TesteoComponent } from './testeo/testeo.component';
 import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
 import { FormsModule } from '@angular/forms';
 import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
+import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes
     ImagenExplicativaComponent,
     TesteoComponent,
     ProbarLuzComponent,
-    CarruselImagenesComponent    
+    CarruselImagenesComponent,
+    TextoScrollComponent    
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes
     MenuOpcionesComponent,
     FooterPrincipalComponent,
     CarruselComponent,
-    CarruselImagenesComponent
+    CarruselImagenesComponent,
+    TextoScrollComponent
   ],
 })
 export class ComponentesModule { }

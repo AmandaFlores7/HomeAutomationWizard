@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer-principal',
@@ -9,6 +8,4 @@ import { Router } from '@angular/router';
 export class FooterPrincipalComponent {
   @Input()
   botones: any;
-  constructor(private router: Router) {
-  }
 }
