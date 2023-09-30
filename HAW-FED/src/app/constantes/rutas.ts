@@ -387,11 +387,12 @@ export const rutas ={
             "ruta1": {
                 "titulo": "Retroceder",
                 "link": "/introduccion/3"
-            },
-            "ruta2": {
-                "titulo": "Siguiente",
-                "link": "/aplicacion"
             }
+            // },
+            // "ruta2": {
+            //     "titulo": "Siguiente",
+            //     "link": "/aplicacion"
+            // }
         }
     },
 }
