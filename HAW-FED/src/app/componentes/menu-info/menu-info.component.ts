@@ -29,4 +29,9 @@ export class MenuInfoComponent {
     }
     return null;
   }
+  selectedItem = null;
+
+  setSelectedItem(item:any) {
+    this.selectedItem = item;
+  }
 }

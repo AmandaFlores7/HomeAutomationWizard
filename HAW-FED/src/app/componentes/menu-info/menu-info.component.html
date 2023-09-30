@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-info rounded-circle shadow">
+                            <div class="icon icon-shape bg-gradient-info rounded p-1" (click)="setSelectedItem(item)">
                             <i class="fas fa-info-circle"></i>
                         </div>
                     </div>
@@ -28,3 +28,9 @@
         </div>
     </div>
 </div>
+
+<app-modal-texto
+  *ngIf="selectedItem"
+  [data]="selectedItem"
+  (closeModal)="setSelectedItem(null)"
+></app-modal-texto>

@@ -12,6 +12,7 @@ import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
 import { FormsModule } from '@angular/forms';
 import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
 import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
+import { ModalTextoComponent } from './modal-texto/modal-texto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
     TesteoComponent,
     ProbarLuzComponent,
     CarruselImagenesComponent,
-    TextoScrollComponent    
+    TextoScrollComponent,
+    ModalTextoComponent    
   ],
   imports: [
     CommonModule,
