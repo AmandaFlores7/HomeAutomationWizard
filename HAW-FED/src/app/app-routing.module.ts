@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: '1', component: CarruselComponent },
       { path: '2', component: MenuInfoComponent },
       { path: '3', component: ImagenExplicativaComponent },
-      { path: '4', component: ProbarLuzComponent},
+      { path: '4', component: TesteoComponent},
   ],
   },
   { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
