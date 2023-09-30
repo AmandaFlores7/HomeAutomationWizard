@@ -1,4 +1,12 @@
 .modal {
     display:block;
     background-color: rgba(139, 32, 89, 0.241);
-  }
+}
+
+.success {
+    background-color: rgba(0, 255, 0);
+}
+
+.error {
+    background-color: rgba(255, 0, 0);
+}
