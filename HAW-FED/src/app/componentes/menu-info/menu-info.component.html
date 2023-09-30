@@ -1,1 +1,30 @@
-<p>menu-info works!</p>
+<div class="row gy-3 row-cols-1 m-1">
+    <div *ngFor="let item of informacion; let index = index" class="col">
+        <div class="card shadow">
+            <div class="card-body pb-0 pt-0 m-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col me-2">
+                        <div class="text-uppercase text-info fw-bold text-xm mt-1 mb-0 h6">
+                            Paso {{index + 1}}
+                        </div>
+                        <div class="text-dark mb-1">
+                            {{item.titulo}}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-info rounded-circle shadow">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card shadow bg-warning ">
+            <div class="card-body">
+                {{extra}}
+            </div>
+        </div>
+    </div>
+</div>
