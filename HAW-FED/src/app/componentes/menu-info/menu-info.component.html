@@ -1,4 +1,4 @@
-<div class="row gy-2 row-cols-1 m-1">
+<div class="row gy-3 row-cols-1 m-2">
     <div class="col">
         <div class="text-uppercase text-info text-center text-xm mt-1 mb-0 h6">
             Funcionamiento y Pasos dentro de la conexion de MQTT
@@ -6,10 +6,10 @@
     </div>
     <div *ngFor="let item of informacion; let index = index" class="col">
         <div class="card shadow">
-            <div class="card-body pb-0 pt-0 m-0">
+            <div class="card-body pt-0 m-0">
                 <div class="row align-items-center no-gutters">
                     <div class="col me-2">
-                        <div class="text-uppercase text-info fw-bold text-xm mt-1 mb-0 h6">
+                        <div class="text-uppercase text-info fw-bold text-xm mt-1 h6">
                             Paso {{index + 1}}
                         </div>
                         <div class="text-dark mb-1">
@@ -22,9 +22,7 @@
                         </div>
                     </div>
                     <div class="collapse" [id]="'tab_' + index">
-                        <div class="">
-                          {{item.parrafo}}
-                        </div>
+                        {{item.parrafo}}
                       </div>
                 </div>
             </div>
