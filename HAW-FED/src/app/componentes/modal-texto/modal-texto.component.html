@@ -2,7 +2,7 @@
 <div class="modal" tabindex="-1">
     <div class="modal-dialog" style="margin: 30px;">
         <div id="contenidoModal" class="modal-content">
-            <div class="modal-header">
+            <div *ngIf="data.titulo" class="modal-header">
                 <h5 class="modal-title">{{ data.titulo }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="onCloseModal()" [hidden]="mostrarFooter"></button>
@@ -11,8 +11,10 @@
                 <p>{{ data.parrafo }}</p>
             </div>
             <div class="modal-footer" [hidden]="!mostrarFooter">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                routerLink='/aplicacion'>Continuar</button>
+                <button [hidden]="!hayLink" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    [routerLink]='link'>Continuar</button>
+                <button [hidden]="hayLink" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="onCloseModal()">Continuar</button>
+            </div>
         </div>
     </div>
-</div>

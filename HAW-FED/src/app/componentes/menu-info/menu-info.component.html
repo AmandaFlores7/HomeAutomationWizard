@@ -1,4 +1,9 @@
-<div class="row gy-3 row-cols-1 m-1">
+<div class="row gy-2 row-cols-1 m-1">
+    <div class="col">
+        <div class="text-uppercase text-info text-center text-xm mt-1 mb-0 h6">
+            Funcionamiento y Pasos dentro de la conexion de MQTT
+        </div>
+    </div>
     <div *ngFor="let item of informacion; let index = index" class="col">
         <div class="card shadow">
             <div class="card-body pb-0 pt-0 m-0">
@@ -11,19 +16,17 @@
                             {{item.titulo}}
                         </div>
                     </div>
-                    <div class="col-auto">
-                            <div class="icon icon-shape bg-gradient-info rounded p-1" (click)="setSelectedItem(item)">
-                            <i class="fas fa-info-circle"></i>
+                    <div class="col-auto" data-bs-toggle="collapse" [attr.href]="'#tab_' + index" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <div class="icon icon-shape bg-gradient-info rounded p-1">
+                            <i class="fa fa-chevron-down"></i>
                         </div>
                     </div>
+                    <div class="collapse" [id]="'tab_' + index">
+                        <div class="">
+                          {{item.parrafo}}
+                        </div>
+                      </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow bg-warning ">
-            <div class="card-body">
-                {{extra}}
             </div>
         </div>
     </div>

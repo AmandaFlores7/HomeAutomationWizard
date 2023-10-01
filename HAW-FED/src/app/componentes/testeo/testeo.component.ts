@@ -64,6 +64,7 @@ export class TesteoComponent {
               titulo: 'Éxito',
               parrafo:
                 'La conexión con el broker MQTT se ha establecido correctamente.',
+              link: '/aplicacion'
             };
           } else {
             this.displayStyle = 'error';
@@ -72,6 +73,7 @@ export class TesteoComponent {
               titulo: 'Error',
               parrafo:
                 'Hay error de conexión. :(',
+                link: '/aplicacion' //TODO: remove
             };
           }
         } else {
@@ -81,6 +83,7 @@ export class TesteoComponent {
             titulo: 'Error',
               parrafo:
                 'Hay error de conexión. :(',
+                link: '/aplicacion' //TODO: remove
           };
         }
       } else {
