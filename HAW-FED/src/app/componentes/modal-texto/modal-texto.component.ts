@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-texto',
@@ -11,8 +12,10 @@ export class ModalTextoComponent implements OnInit {
   @Output() closeModal = new EventEmitter();
 
   mostrarFooter = false;
+  link = '';
+  hayLink = false;
 
-  constructor() {
+  constructor(router: Router) {
   }
 
   onCloseModal(): void {
@@ -20,6 +23,7 @@ export class ModalTextoComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.data);
     var elemento = document.getElementById('contenidoModal');
     if (elemento) {
       if (this.displayStyle === 'success') {
@@ -32,5 +36,20 @@ export class ModalTextoComponent implements OnInit {
         this.mostrarFooter = true; // TODO: cambiar a false
       }
     }
+    if (this.data?.link) {
+      if (this.data.link != 'none') {
+        this.mostrarFooter = true;
+        this.link = this.data.link;
+        this.hayLink = true;
+      } else {
+        this.mostrarFooter = true;
+        this.hayLink = false;
+      }
+      
+    } else {
+      this.mostrarFooter = true; // TODO: cambiar a false
+    }
   }
+
+
 }

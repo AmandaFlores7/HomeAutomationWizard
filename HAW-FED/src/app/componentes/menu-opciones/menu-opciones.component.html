@@ -1,14 +1,15 @@
 <div class="text-center">
-    <div class="row gy-3 row-cols-1 m-auto">
-        <ng-container *ngFor="let item of opcionesMenu">
-            <div class="col">
-                <div class="card shadow" routerLink={{item.link}}>
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row row-cols-2">
-                                <div class="col-9 col-md-6 text-start">
-                                    <p>{{item.titulo}}</p>
-                                </div>
+    <div class="row gy-3 row-cols-1 m-2">
+        <ng-container *ngFor="let item of opcionesMenu" class="col">
+            <div class="card shadow" routerLink={{item.link}}>
+                <div class="card-body">
+                    <div class="row text-start no-gutters">
+                        <div class="col me-2 text-dark mb-1">
+                            {{item.titulo}}
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-gradient-info rounded p-1">
+                                <i class="fa fa-chevron-right"></i>
                             </div>
                         </div>
                     </div>
