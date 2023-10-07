@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
 import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
 import { ModalTextoComponent } from './modal-texto/modal-texto.component';
+import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ModalTextoComponent } from './modal-texto/modal-texto.component';
     ProbarLuzComponent,
     CarruselImagenesComponent,
     TextoScrollComponent,
-    ModalTextoComponent    
+    ModalTextoComponent,
+    ProbarCamaraComponent    
   ],
   imports: [
     CommonModule,

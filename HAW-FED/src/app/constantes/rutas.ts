@@ -222,11 +222,11 @@ export const rutas ={
             "cantidad": 2,
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/actuadores"
+                "link": "/aplicacion/actuadores/"
             },
             "ruta2": {
                 "titulo": "Ver",
-                "link": "/aplicacion/actuadores/camara_r/ver"
+                "link": "/aplicacion/actuadores/camara_r/probar"
             }
         },
         "imagenes": [
@@ -246,6 +246,16 @@ export const rutas ={
             },
         ]
        
+    },
+    "/aplicacion/actuadores/camara_r/probar":{
+        "titulo":"Probar cámara Raspberry Pi 3",
+        "botones":{
+            "cantidad":1,
+            "ruta1":{
+                "titulo": "Retroceder",
+                "link":"/aplicacion/actuadores/camara_r/"
+            }
+        },
     },
     "/aplicacion/actuadores/luces": {
         "titulo": "Luces del Hogar",

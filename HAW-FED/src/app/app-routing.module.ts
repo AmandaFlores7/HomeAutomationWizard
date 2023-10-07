@@ -9,6 +9,7 @@ import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/me
 import { ProbarLuzComponent } from './componentes/probar-luz/probar-luz.component';
 import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones.component';
 import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/vista-componente.component';
+import { ProbarCamaraComponent } from './componentes/probar-camara/probar-camara.component';
 
 const routes: Routes = [
   { path: 'introduccion', redirectTo: 'introduccion/1'}, 
@@ -40,7 +41,8 @@ const routes: Routes = [
       { path: 'actuadores/camara_r', component: VistaComponenteComponent },
       { path: 'actuadores/luces', component: VistaComponenteComponent },
       { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
-      { path: 'actuadores/puerta', component: VistaComponenteComponent }
+      { path: 'actuadores/puerta', component: VistaComponenteComponent },
+      { path: 'actuadores/camara_r/probar', component:ProbarCamaraComponent}
 
     ],
   }
