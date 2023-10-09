@@ -5,6 +5,7 @@ interface Pregunta {
     respuesta: string;
     alternativas: string[];
     respondida: boolean;
+    seleccion?: string;
 }
 
 const preguntas: Pregunta[] = [
