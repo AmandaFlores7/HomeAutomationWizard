@@ -16,13 +16,63 @@ export const rutas ={
             },
             {
                 "titulo": "Prueba tus Conocimientos",
-                "link": "/aplicacion/"
+                "link": "/quiz"
             },
             {
                 "titulo": "Conoce Nuestro Proyecto",
-                "link": "/aplicacion/"
+                "link": "/aplicacion"
             }
         ]
+    },
+    "/quiz": {
+        "titulo": "Quiz",
+        "items": [
+            {
+                "titulo": "Sensores",
+                "link": "/quiz/sensores"
+            },
+            {
+                "titulo": "Actuadores",
+                "link": "/quiz/actuadores"
+            },
+            {
+                "titulo": "IoT",
+                "link": "/quiz/iot"
+            }
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion"
+            }
+        }
+    },
+    "/quiz/sensores": {
+        "titulo": "Quiz Sensores",
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/quiz"
+            }
+        }
+    },
+    "/quiz/actuadores": {
+        "titulo": "Quiz Actuadores",
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/quiz"
+            }
+        }
+    },
+    "/quiz/iot": {
+        "titulo": "Quiz IoT",
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/quiz"
+            }
+        }
     },
     "/aplicacion/sensores": {
         "titulo": "Sensores",

@@ -9,6 +9,8 @@ import { MenuAplicacionComponent } from './paginas/aplicacion/menu-aplicacion/me
 import { ProbarLuzComponent } from './componentes/probar-luz/probar-luz.component';
 import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones.component';
 import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/vista-componente.component';
+import { MenuQuizComponent } from './paginas/quiz-conocimiento/menu-quiz/menu-quiz.component';
+import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
 
 const routes: Routes = [
   { path: 'introduccion', redirectTo: 'introduccion/1'}, 
@@ -41,8 +43,17 @@ const routes: Routes = [
       { path: 'actuadores/luces', component: VistaComponenteComponent },
       { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
       { path: 'actuadores/puerta', component: VistaComponenteComponent }
-
     ],
+  },
+  { 
+    path: 'quiz',
+    component: MenuQuizComponent,
+    children: [
+      { path: '', component: MenuOpcionesComponent },
+      { path: 'sensores', component: QuizComponent, data: { tipo: 'sensor' } },
+      { path: 'actuadores', component: QuizComponent, data: { tipo: 'actuador' } },
+      { path: 'iot', component: QuizComponent, data: { tipo: 'wikiiot' } }
+    ]
   }
 ];
 
