@@ -1,17 +1,54 @@
 .contenedor {
     margin: 10px;
+    z-index: 0;
 }
 
 .list-group-item {
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 .form-check-label {
     font-size: small;
 }
 
-.button {
+.card-body {
+    min-height:50vh;
+}
+
+.btn {
     min-width: 100px;
+    margin: 5px;
+}
+
+.resultados {
+    border-style: hidden;
+}
+
+.card-footer {
+    padding: 0!important;
+}
+
+.pagination {
+    list-style: none;
+    text-align: center;
+    margin: 2px!important;
+}
+
+.pagination a,
+.pagination li {
+    border-radius: 50%;
+    border-style: hidden;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: transparent;
+}
+
+.pagination .page-link.active {
+    background: #0dcaf0;
+    color: #000000;
+}
+
+.pagination .page-fin {
+    border-radius: 5%;
 }

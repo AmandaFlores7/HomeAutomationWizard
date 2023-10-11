@@ -10,6 +10,7 @@ import { PreguntasServiceService } from 'src/app/servicios/preguntas-service.ser
 export class QuizComponent implements OnInit {
   listaPreguntas: any[] = [];
   preguntas: any[] = [];
+  preguntasCompletadas: boolean = false;
 
   preguntaActual: any;
   respuestaSeleccionada: string | undefined;
@@ -19,30 +20,55 @@ export class QuizComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private pregunta_s: PreguntasServiceService) { }
 
-  ngOnInit(): void {
-    this.cargarJson();
-    let tipoPregunta;
-    this.route.data.subscribe(data => {
-      tipoPregunta = data['tipo'];
-      console.log(tipoPregunta);
-    });
-    if (tipoPregunta) {
-      this.obtenerPreguntas(tipoPregunta);
-    }
+  async ngOnInit(): Promise<void> {
+    try {
+      let doc = await this.pregunta_s.getPreguntas();
+      this.preguntas = doc;
+      let tipoPregunta;
+      this.route.data.subscribe(data => {
+        tipoPregunta = data['tipo'];
+        console.log(tipoPregunta);
+      });
+      if (tipoPregunta) {
+        this.obtenerPreguntas(tipoPregunta);
+      }
 
-    this.mostrarSiguientePregunta();
+      this.mostrarPrimeraPregunta();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   cargarJson() {
     let doc = this.pregunta_s.getPreguntas();
-    // crear una copia
-    this.preguntas = JSON.parse(JSON.stringify(doc));
+    doc.then((data: any) => {
+      this.preguntas = data;
+      console.log(this.preguntas);
+    });
+  }
+
+  volverIntentar() {
+    this.preguntasCompletadas = false;
+    this.preguntaActual = undefined;
+    this.puntaje = 0;
+    this.preguntasAcertadas = [];
+    this.preguntasFalladas = [];
+    this.listaPreguntas.forEach(pregunta => {
+      pregunta.respondida = false;
+      pregunta.seleccion = undefined;
+    });
+    this.desordenarPreguntas(this.listaPreguntas);
+    this.desordenarAlternativas(this.listaPreguntas);
+    this.mostrarPrimeraPregunta();
   }
 
 
   porcenajePreguntasRespondidas() {
-    const preguntasRespondidas = this.listaPreguntas.filter(pregunta => pregunta.respondida);
-    return (preguntasRespondidas.length / this.listaPreguntas.length) * 100;
+    const preguntasRespondidas = this.listaPreguntas.filter(pregunta => pregunta.seleccion);
+    if (this.listaPreguntas.length === 0) {
+      return 100;
+    }
+    return Math.trunc((preguntasRespondidas.length / this.listaPreguntas.length) * 100);
   }
 
   haySeleccion(id: number) {
@@ -57,47 +83,67 @@ export class QuizComponent implements OnInit {
     return seleccion;
   }
 
-  mostrarSiguientePregunta() {
-    const preguntasNoRespondidas = this.listaPreguntas.filter(pregunta => !pregunta.seleccion);
-    if (preguntasNoRespondidas.length > 0) {
-      const indicePregunta = Math.floor(Math.random() * preguntasNoRespondidas.length);
-      this.preguntaActual = preguntasNoRespondidas[indicePregunta];
-    } else {
-      // Todas las preguntas han sido respondidas
-      this.calcularPuntaje();
-    }
+  mostrarPrimeraPregunta() {
+    this.preguntaActual = this.listaPreguntas[0];
+  }
+
+  cambiarPregunta(id: number) {
+    this.listaPreguntas.forEach(pregunta => {
+      if (pregunta.id === id) {
+        this.preguntaActual = pregunta;
+      }
+    });
   }
 
   seleccionarRespuesta(str: string, id: number): void {
+    let preguntasTerminadas = true;
     this.respuestaSeleccionada = str;
     this.listaPreguntas.forEach(pregunta => {
       if (pregunta.id === id) {
         pregunta.seleccion = str;
       }
-    });
-  }
-
-  verificarRespuesta() {
-    if (this.respuestaSeleccionada !== undefined) {
-      this.preguntaActual.respondida = true;
-      if (this.respuestaSeleccionada === this.preguntaActual.respuesta) {
-        this.puntaje++;
-        this.preguntasAcertadas.push(this.preguntaActual);
-      } else {
-        this.preguntasFalladas.push(this.preguntaActual);
+      if (pregunta.seleccion === undefined) {
+        preguntasTerminadas = false;
       }
-      this.respuestaSeleccionada = undefined;
-      this.mostrarSiguientePregunta();
+    });
+    if (preguntasTerminadas) {
+      this.preguntasCompletadas = true;
     }
   }
 
+  verificarRespuesta() {
+    for (let i = 0; i < this.listaPreguntas.length; i++) {
+      if (this.listaPreguntas[i].seleccion !== this.listaPreguntas[i].respuesta) {
+        this.preguntasFalladas.push(this.listaPreguntas[i]);
+      } else if (this.listaPreguntas[i].seleccion === this.listaPreguntas[i].respuesta) {
+        this.preguntasAcertadas.push(this.listaPreguntas[i]);
+        this.puntaje++;
+      }
+    }
+    this.respuestaSeleccionada = undefined;
+    this.preguntaActual = undefined;
+    // if (this.respuestaSeleccionada !== undefined) {
+    //   this.preguntaActual.respondida = true;
+    //   if (this.respuestaSeleccionada === this.preguntaActual.respuesta) {
+    //     this.puntaje++;
+    //     this.preguntasAcertadas.push(this.preguntaActual);
+    //   } else {
+    //     this.preguntasFalladas.push(this.preguntaActual);
+    //   }
+    //   this.respuestaSeleccionada = undefined;
+    //   this.mostrarSiguientePregunta();
+    // }
+    // console.log(this.puntaje);
+    // console.log(this.preguntasAcertadas);
+    // console.log(this.preguntasFalladas);
+  }
+
   calcularPuntaje() {
+    this.preguntaActual = undefined;
     // Aquí puedes hacer lo que quieras con el puntaje, por ejemplo, mostrar un mensaje en el componente
     console.log('Puntaje final:', this.puntaje);
     console.log('Preguntas acertadas:', this.preguntasAcertadas);
     console.log('Preguntas falladas:', this.preguntasFalladas);
-    this.preguntaActual = undefined;
-    this.listaPreguntas = [];
   }
 
   obtenerPreguntas(tipoPregunta: string) {
@@ -148,5 +194,16 @@ export class QuizComponent implements OnInit {
       }
     });
     return preguntas;
+  }
+
+  terminarQuiz() {
+    // actualizar json con las preguntas respondidas correctamente
+    this.preguntas.forEach(pregunta => {
+      this.preguntasAcertadas.forEach(preguntaAcertada => {
+        if (pregunta.id === preguntaAcertada.id) {
+          this.pregunta_s.updatePreguntaRespodida(pregunta);
+        }
+      });
+    });
   }
 }

@@ -25,38 +25,80 @@
 	</ul>
 </div> -->
 
-<div class="card contenedor">
-	<div class="card-header">
-		Quiz
-		<div class="progress" role="progressbar" aria-valuemin="10" aria-valuemax="100">
-			<div class="progress-bar" style="width: {{porcenajePreguntasRespondidas()+10}}%;" aria-label="20px">{{porcenajePreguntasRespondidas()}} %</div>
-		</div>
-	</div>
+<div class="card contenedor border-info">
 	<div *ngIf="preguntaActual">
+		<div class="card-header">
+			Quiz
+			<div class="progress" role="progressbar" aria-valuemin="10" aria-valuemax="100">
+				<div class="progress-bar" aria-valuenow="50%" aria-valuemin="0" aria-valuemax="100"
+					style="width: {{porcenajePreguntasRespondidas()}}%;" aria-label="10px">{{porcenajePreguntasRespondidas()}} %</div>
+			</div>
+		</div>
+	
 		<div class="card-body">
 			<h5 class="card-title">{{preguntaActual.pregunta}}</h5>
 			<div class="form-chek">
 				<div class="d-flex pb-1" *ngFor="let alternativa of preguntaActual.alternativas; let i = index">
-					<input class="form-check-input" type="radio" name="flexRadioDefault" [id]="i" (click)="seleccionarRespuesta(alternativa, preguntaActual.id)">
-					<label class="form-check-label" [for]="i">
+					<input class="form-check-input" [checked]="(preguntaActual.seleccion ?? false) === alternativa" type="radio" name="flexRadioDefault" [id]="i" (click)="seleccionarRespuesta(alternativa, preguntaActual.id);">
+					<label class="form-check-label" [for]="i" >
 						&nbsp; {{alternativa}}
 					</label>
 				</div>
 			</div>
 		</div>
+		<div class="card-footer text-center">
+			<nav class="d-flex justify-content-center align-items-center">
+				<ul class="pagination">
+					<li class="page-item" *ngFor="let pregunta of listaPreguntas; let i = index">
+						<a class="page-link" [ngClass]="{ active: preguntaActual.id === pregunta.id }" (click)="cambiarPregunta(pregunta.id)">{{i + 1}}</a>
+					</li>
+					<li class="page-item page-fin">
+						<a class="page-link" [ngClass]="{ disabled: preguntasCompletadas === false}" (click)="verificarRespuesta()">Verificar</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- <div class="row text-center">
+				<div class="col"> -->
+					<!-- <button id="atras" type="button" class="btn border">Anterior</button> -->
+				<!-- </div>
+				<div class="col">
+					<button [disabled]="haySeleccion(preguntaActual.id)" id="adelante" type="button" class="btn border" (click)=" verificarRespuesta()">Siguiente</button>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<div *ngIf="!preguntaActual">
+		<div class="card-header">
+			Resultados Quiz
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">¡Preguntas terminadas!</h5>
+			<p class="card-text">Tu puntaje es: {{puntaje}}</p>
+			<div class="card resultados">
+				<div class="card-header">
+				  	Preguntas:
+				</div>
+				<ul class="list-inline">
+					<li class="list-inline-item m-1 bg-opacity-10" *ngFor="let pregunta of listaPreguntas"
+					[ngClass]="{
+						'bg-success': pregunta.seleccion === pregunta.respuesta,
+						'bg-danger': pregunta.seleccion !== pregunta.respuesta
+					  }">
+						{{ pregunta.pregunta }}
+					</li>
+				</ul>
+			</div>
+		</div>
 		<div class="card-footer">
 			<div class="row text-center">
 				<div class="col">
-					<!-- <button id="atras" type="button" class="btn border">Anterior</button> -->
+					<button id="atras" type="button" class="btn border" (click)="volverIntentar()">Volver a Intentar</button>
 				</div>
 				<div class="col">
-					<button [disabled]="haySeleccion(preguntaActual.id)" id="adelante" type="button" class="btn border" (click)="mostrarSiguientePregunta()">Siguiente</button>
+					<button id="adelante" type="button" class="btn border">Terminar</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div *ngIf="!preguntaActual">
-		hola
-	</div>
-		
+
 </div>

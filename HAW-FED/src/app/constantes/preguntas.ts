@@ -8,7 +8,7 @@ interface Pregunta {
     seleccion?: string;
 }
 
-const preguntas: Pregunta[] = [
+let preguntas: Pregunta[] = [
     {
         id: 1,
         tipo: "sensor",
@@ -171,10 +171,10 @@ const preguntas: Pregunta[] = [
         pregunta: "Cuál de los siguientes componentes no corresponde a un sensor: ",
         respuesta: "Microcontrolador.",
         alternativas: [
-            "Sensor de humedad",
-            "Fotoresistencia",
-            "Microcontrolador",
-            "Sensor de temperatura"
+            "Sensor de humedad.",
+            "Fotoresistencia.",
+            "Microcontrolador.",
+            "Sensor de temperatura."
         ],
         respondida: false
     },
@@ -184,10 +184,10 @@ const preguntas: Pregunta[] = [
         pregunta: "Cuál de los siguientes componentes no corresponde a un actuador: ",
         respuesta: "Microcontrolador.",
         alternativas: [
-            "Led",
-            "Buzzer",
-            "Microcontrolador",
-            "Motor"
+            "Led.",
+            "Buzzer.",
+            "Microcontrolador.",
+            "Motor."
         ],
         respondida: false
     },
