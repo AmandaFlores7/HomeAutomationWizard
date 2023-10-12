@@ -20,6 +20,14 @@ export class QuizComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private pregunta_s: PreguntasServiceService) { }
 
+  cambiarPregunta(id: number) {
+    this.listaPreguntas.forEach(pregunta => {
+      if (pregunta.id === id) {
+        this.preguntaActual = pregunta;
+      }
+    });
+  }
+
   async ngOnInit(): Promise<void> {
     try {
       let doc = await this.pregunta_s.getPreguntas();
@@ -87,13 +95,7 @@ export class QuizComponent implements OnInit {
     this.preguntaActual = this.listaPreguntas[0];
   }
 
-  cambiarPregunta(id: number) {
-    this.listaPreguntas.forEach(pregunta => {
-      if (pregunta.id === id) {
-        this.preguntaActual = pregunta;
-      }
-    });
-  }
+  
 
   seleccionarRespuesta(str: string, id: number): void {
     let preguntasTerminadas = true;
