@@ -1,6 +1,7 @@
 .contenedor {
     margin: 10px;
     z-index: 0;
+    height: 100%;
 }
 
 .list-group-item {
@@ -13,7 +14,6 @@
 }
 
 .card-body {
-    min-height:50vh;
 }
 
 .btn {
@@ -51,4 +51,20 @@
 
 .pagination .page-fin {
     border-radius: 5%;
+}
+
+.scrollBox {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
