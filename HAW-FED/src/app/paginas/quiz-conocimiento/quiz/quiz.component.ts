@@ -32,9 +32,9 @@ export class QuizComponent implements OnInit {
   }
 
   cambiarListaDinamica(index: number) {
-    if (this.totalPreguntas <= 5) {
+    if (this.totalPreguntas <= 6) {
       this.listaPreguntasDinamica = this.listaPreguntas;
-    } else if (this.totalPreguntas > 5) {
+    } else if (this.totalPreguntas > 6) {
       if (index <= 3){
         this.listaPreguntasDinamica = this.listaPreguntas.slice(0, 4);
         this.listaPreguntasDinamica.push('...');
@@ -46,7 +46,7 @@ export class QuizComponent implements OnInit {
         this.listaPreguntasDinamica.push('...');
         this.listaPreguntasDinamica.push(this.listaPreguntas[this.totalPreguntas-1]);
       } else if (index >= this.totalPreguntas-2) {
-        this.listaPreguntasDinamica = this.listaPreguntas.slice(this.totalPreguntas-3, this.totalPreguntas);
+        this.listaPreguntasDinamica = this.listaPreguntas.slice(this.totalPreguntas-4, this.totalPreguntas);
         this.listaPreguntasDinamica.unshift('...');
         this.listaPreguntasDinamica.unshift(this.listaPreguntas[0]);
       }
