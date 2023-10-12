@@ -48,10 +48,18 @@
 				</div>
 			</div>
 			<div class="card-footer text-center">
-				<nav class="d-flex justify-content-center align-items-center">
+				<nav class="d-flex align-items-center justify-content-center">
 					<ul class="pagination">
-						<li class="page-item" *ngFor="let pregunta of listaPreguntas; let i = index">
-							<a class="page-link" [ngClass]="{ active: preguntaActual.id === pregunta.id }" (click)="cambiarPregunta(pregunta.id)">{{i + 1}}</a>
+						<li class="page-item" *ngFor="let pregunta of listaPreguntasDinamica">
+							<a *ngIf="pregunta !== '...' && pregunta.seleccion == undefined" class="page-link" 
+								[ngClass]="{ active: preguntaActual.id === pregunta.id}" (click)="cambiarPregunta(pregunta.id)">
+								{{obtenerIndex(pregunta)}}
+							</a>
+							<a *ngIf="pregunta !== '...' && pregunta.seleccion !== undefined" class="page-link page-item-respondida" 
+								[ngClass]="{ active: preguntaActual.id === pregunta.id}" (click)="cambiarPregunta(pregunta.id)">
+								{{obtenerIndex(pregunta)}}
+							</a>
+							<a *ngIf="pregunta === '...'" class="page-link" >...</a>
 						</li>
 						<li class="page-item page-fin">
 							<a class="page-link" [ngClass]="{ disabled: preguntasCompletadas === false}" (click)="verificarRespuesta()">Verificar</a>
@@ -70,11 +78,11 @@
 		</div>
 	</ng-container>
 	<ng-container *ngIf="!preguntaActual">
-		<div class="card">
+		<div class="card" style="height: 100%;">
 			<div class="card-header">
 				Resultados Quiz
 			</div>
-			<div class="card-body">
+			<div class="card-body scrollBox" style="height: 50vh;">
 				<h5 class="card-title">¡Preguntas terminadas!</h5>
 				<p class="card-text">Tu puntaje es: {{puntaje}}</p>
 				<div class="card resultados">

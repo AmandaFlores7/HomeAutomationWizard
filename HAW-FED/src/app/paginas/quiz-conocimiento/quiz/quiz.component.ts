@@ -9,8 +9,10 @@ import { PreguntasServiceService } from 'src/app/servicios/preguntas-service.ser
 })
 export class QuizComponent implements OnInit {
   listaPreguntas: any[] = [];
+  listaPreguntasDinamica: any[] = [];
   preguntas: any[] = [];
   preguntasCompletadas: boolean = false;
+  totalPreguntas = 0;
 
   preguntaActual: any;
   respuestaSeleccionada: string | undefined;
@@ -26,6 +28,29 @@ export class QuizComponent implements OnInit {
         this.preguntaActual = pregunta;
       }
     });
+    this.cambiarListaDinamica(this.obtenerIndex(this.preguntaActual));
+  }
+
+  cambiarListaDinamica(index: number) {
+    if (this.totalPreguntas <= 5) {
+      this.listaPreguntasDinamica = this.listaPreguntas;
+    } else if (this.totalPreguntas > 5) {
+      if (index <= 3){
+        this.listaPreguntasDinamica = this.listaPreguntas.slice(0, 4);
+        this.listaPreguntasDinamica.push('...');
+        this.listaPreguntasDinamica.push(this.listaPreguntas[this.totalPreguntas-1]);
+      } else if (index > 3 && index < this.totalPreguntas-2) {
+        this.listaPreguntasDinamica = this.listaPreguntas.slice(index-2, index+1);
+        this.listaPreguntasDinamica.unshift('...');
+        this.listaPreguntasDinamica.unshift(this.listaPreguntas[0]);
+        this.listaPreguntasDinamica.push('...');
+        this.listaPreguntasDinamica.push(this.listaPreguntas[this.totalPreguntas-1]);
+      } else if (index >= this.totalPreguntas-2) {
+        this.listaPreguntasDinamica = this.listaPreguntas.slice(this.totalPreguntas-3, this.totalPreguntas);
+        this.listaPreguntasDinamica.unshift('...');
+        this.listaPreguntasDinamica.unshift(this.listaPreguntas[0]);
+      }
+    }
   }
 
   async ngOnInit(): Promise<void> {
@@ -42,6 +67,7 @@ export class QuizComponent implements OnInit {
       }
 
       this.mostrarPrimeraPregunta();
+      this.cambiarListaDinamica(0)
     } catch (error) {
       console.log(error);
     }
@@ -93,6 +119,7 @@ export class QuizComponent implements OnInit {
 
   mostrarPrimeraPregunta() {
     this.preguntaActual = this.listaPreguntas[0];
+    this.cambiarListaDinamica(1);
   }
 
   
@@ -171,7 +198,12 @@ export class QuizComponent implements OnInit {
       setPreguntas = this.desordenarAlternativas(setPreguntas);
       // asignar preguntas
       this.listaPreguntas = setPreguntas;
+      this.totalPreguntas = this.listaPreguntas.length;
     }
+  }
+
+  obtenerIndex(pregunta: any) {
+    return this.listaPreguntas.findIndex((preguntaLista: { id: number; }) => preguntaLista.id === pregunta.id)+1;
   }
 
   desordenarPreguntas(preguntas: any[]) {
