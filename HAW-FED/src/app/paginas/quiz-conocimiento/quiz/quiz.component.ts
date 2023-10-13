@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PreguntasServiceService } from 'src/app/servicios/preguntas-service.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class QuizComponent implements OnInit {
   preguntasAcertadas: any[] = [];
   preguntasFalladas: any[] = [];
 
-  constructor(private route: ActivatedRoute, private pregunta_s: PreguntasServiceService) { }
+  constructor(private route: ActivatedRoute, private pregunta_s: PreguntasServiceService, private router: Router) { }
 
   cambiarPregunta(id: number) {
     this.listaPreguntas.forEach(pregunta => {
@@ -55,7 +55,7 @@ export class QuizComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      let doc = await this.pregunta_s.getPreguntas();
+      let doc = await this.pregunta_s.obtenerPreguntas();
       this.preguntas = doc;
       let tipoPregunta;
       this.route.data.subscribe(data => {
@@ -70,13 +70,6 @@ export class QuizComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  cargarJson() {
-    let doc = this.pregunta_s.getPreguntas();
-    doc.then((data: any) => {
-      this.preguntas = data;
-    });
   }
 
   volverIntentar() {
@@ -215,10 +208,20 @@ export class QuizComponent implements OnInit {
     this.preguntas.forEach(pregunta => {
       this.preguntasAcertadas.forEach(preguntaAcertada => {
         if (pregunta.id === preguntaAcertada.id) {
-          this.pregunta_s.updatePreguntaRespodida(pregunta);
+          this.pregunta_s.actualizarPregunta('respondida', pregunta.id);
         }
       });
     });
+    console.log(localStorage.getItem('preguntas'));
+    this.regresarPaginaAnterior();
+  }
+
+  regresarPaginaAnterior() {
+    const rutaActual = this.router.url;
+    const partesRuta = rutaActual.split('/');
+    partesRuta.pop();
+    const nuevaRuta = partesRuta.join('/');
+    this.router.navigate([nuevaRuta]);
   }
 }
 

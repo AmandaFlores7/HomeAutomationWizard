@@ -13,12 +13,26 @@ export class PreguntasServiceService {
 
   constructor(private http: HttpClient) { }
 
-  async getPreguntas(): Promise<Pregunta[]> {
-    return this.http.get<any>(this._pregunta).toPromise();
+  cargarPreguntas(): void {
+    let preguntas = this.http.get<any>(this._pregunta).toPromise();
+    preguntas.then((data) => {
+      localStorage.setItem('preguntas', JSON.stringify(data));
+    });
   }
 
-  updatePreguntaRespodida(prgnta:any) {
-    delete prgnta.seleccion;
-    return this.http.put(this._pregunta, prgnta);
+  obtenerPreguntas(): any {
+    return JSON.parse(localStorage.getItem('preguntas') || 'null');
+  }
+
+  actualizarPregunta(tipo: string, id: number): void {
+    if (tipo === 'respondida') {
+      let preguntas = JSON.parse(localStorage.getItem('preguntas') || 'null');
+      preguntas.forEach((pregunta: Pregunta) => {
+        if (pregunta.id === id) {
+          pregunta.respondida = true;
+        }
+      });
+      localStorage.setItem('preguntas', JSON.stringify(preguntas));
+    }
   }
 }
