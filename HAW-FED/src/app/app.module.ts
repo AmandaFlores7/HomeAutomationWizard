@@ -9,6 +9,9 @@ import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/
 import { PrimeraParteComponent } from './paginas/introduccion/primera-parte/primera-parte.component';
 import { MenuQuizComponent } from './paginas/quiz-conocimiento/menu-quiz/menu-quiz.component';
 import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
+import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
+import { RutValidadorDirective } from './directivas/rut-validador.directive';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,13 +21,16 @@ import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
     VistaComponenteComponent,
     PrimeraParteComponent,
     MenuQuizComponent,
-    QuizComponent
+    QuizComponent,
+    LoginComponent,
+    RutValidadorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ComponentesModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

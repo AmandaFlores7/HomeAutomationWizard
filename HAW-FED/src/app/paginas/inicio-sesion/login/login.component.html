@@ -1,0 +1,18 @@
+<div class="m-5">
+    <h2>Iniciar Sesión</h2>
+    <form (submit)="iniciarSesion()">
+        <div class="mb-3">
+            <label for="imputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="imputEmail" [(ngModel)]="usuario.correo" name="correo">
+            <div class="text-muted fw-light">
+                (Opcional)
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="imputRut" class="form-label">Rut</label>
+            <input type="text" class="form-control" id="imputRut" 
+            [(ngModel)]="usuario.rut" required appRutValidador name="rut">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
