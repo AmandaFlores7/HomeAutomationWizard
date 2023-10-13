@@ -19,7 +19,6 @@ export class PreguntasServiceService {
 
   updatePreguntaRespodida(prgnta:any) {
     delete prgnta.seleccion;
-    console.log(prgnta);
     return this.http.put(this._pregunta, prgnta);
   }
 }

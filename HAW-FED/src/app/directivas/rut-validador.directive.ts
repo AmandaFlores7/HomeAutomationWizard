@@ -9,7 +9,6 @@ export class RutValidadorDirective {
 
   @HostListener('input', ['$event']) onInputChange(event: Event) {
     const inputElement = this.el.nativeElement;
-    console.log('inputElement.value: ', inputElement.value);
     let rut = inputElement.value.replace(/[.-]/g, ''); // Elimina puntos y guiones del RUT
     if (rut.length > 1) {
       rut = rut.slice(0, -1) + '-' + rut.slice(-1); // Agrega guion antes del dígito verificador

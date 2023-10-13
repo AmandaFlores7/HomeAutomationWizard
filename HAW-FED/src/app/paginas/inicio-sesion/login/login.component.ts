@@ -15,10 +15,8 @@ export class LoginComponent {
     const elemento = document.getElementById('imputRut');
 
     if (elemento?.classList.contains('is-valid')) {
-      console.log('Iniciando sesión...');
       this.auth_s.signIn(this.usuario);
     } else {
-      console.log('RUT inválido');
       this.renderer.addClass(elemento, 'is-invalid');
     }
     

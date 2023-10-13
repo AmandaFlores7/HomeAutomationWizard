@@ -60,7 +60,6 @@ export class QuizComponent implements OnInit {
       let tipoPregunta;
       this.route.data.subscribe(data => {
         tipoPregunta = data['tipo'];
-        console.log(tipoPregunta);
       });
       if (tipoPregunta) {
         this.obtenerPreguntas(tipoPregunta);
@@ -77,7 +76,6 @@ export class QuizComponent implements OnInit {
     let doc = this.pregunta_s.getPreguntas();
     doc.then((data: any) => {
       this.preguntas = data;
-      console.log(this.preguntas);
     });
   }
 
@@ -151,28 +149,10 @@ export class QuizComponent implements OnInit {
     }
     this.respuestaSeleccionada = undefined;
     this.preguntaActual = undefined;
-    // if (this.respuestaSeleccionada !== undefined) {
-    //   this.preguntaActual.respondida = true;
-    //   if (this.respuestaSeleccionada === this.preguntaActual.respuesta) {
-    //     this.puntaje++;
-    //     this.preguntasAcertadas.push(this.preguntaActual);
-    //   } else {
-    //     this.preguntasFalladas.push(this.preguntaActual);
-    //   }
-    //   this.respuestaSeleccionada = undefined;
-    //   this.mostrarSiguientePregunta();
-    // }
-    // console.log(this.puntaje);
-    // console.log(this.preguntasAcertadas);
-    // console.log(this.preguntasFalladas);
   }
 
   calcularPuntaje() {
     this.preguntaActual = undefined;
-    // Aquí puedes hacer lo que quieras con el puntaje, por ejemplo, mostrar un mensaje en el componente
-    console.log('Puntaje final:', this.puntaje);
-    console.log('Preguntas acertadas:', this.preguntasAcertadas);
-    console.log('Preguntas falladas:', this.preguntasFalladas);
   }
 
   obtenerPreguntas(tipoPregunta: string) {
