@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'introduccion',
     component: PrimeraParteComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '1', component: CarruselComponent },
       { path: '2', component: MenuInfoComponent },
