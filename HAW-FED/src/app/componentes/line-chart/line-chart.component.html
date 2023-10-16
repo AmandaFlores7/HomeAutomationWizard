@@ -1,3 +1,9 @@
-<div class="chart-container">
-    <canvas  id="MyChart" >{{ chart }}</canvas>
+<div class="m-3">
+    <div class="chart-container">
+        <canvas id="MyChart">{{ chart }}</canvas>
+    </div>
+
+    <h4 *ngIf="values[values.length -1]">
+        Ultimo valor entregado: {{values[values.length - 1]}}
+    </h4>
 </div>

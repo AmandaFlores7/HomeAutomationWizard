@@ -24,48 +24,79 @@ export class LineChartComponent {
   public sensorType: string = '';
   public websocketURL: string = '';
   public chartTitle: string = '';
+  public myWebSocket:any;
+  
 
   constructor(private router: Router) {
-    
-  }
-
-  ngOnInit(): void {
     if (this.router?.url && this.buscarRuta(this.router.url)?.titulo != null) {
       let infoPagina = this.buscarRuta(this.router.url);
       if (infoPagina?.datosSensor) {
         this.sensorType = infoPagina.datosSensor.tipoSensor ? infoPagina.datosSensor.tipoSensor : null;
         this.websocketURL = infoPagina.datosSensor.websocketURL ? infoPagina.datosSensor.websocketURL : null;
         this.chartTitle = infoPagina.datosSensor.tituloGrafico ? infoPagina.datosSensor.tituloGrafico : null;
-        this.initializeChart(); // Inicializa el gráfico
-        let myWebSocket = webSocket(this.websocketURL)
-
-        if (!window.WebSocket) {
-          console.log('WebSocket not supported.')
-        } else {
-
-          myWebSocket.subscribe({
-            error: (err) => { console.log(err) },
-            next: (val) => {
-              const r = val as result;
-              this.measure_times.push(r.measure_time);
-              this.values.push(r.value);
-              this.updateChart();
-            },
-          });
-        }
+        this.myWebSocket = webSocket(this.websocketURL)
       }
-
     }
   }
 
-  initializeChart() {
-    this.chart = new Chart(this.chartTitle, {
+  ngOnInit(): void {
+    this.initializeChart(); // Inicializa el gráfico
+
+    if (!window.WebSocket) {
+      console.log('WebSocket not supported.')
+    } else {
+
+      this.myWebSocket.subscribe({
+        error: (err:any) => { console.log(err) },
+        next: (val:any) => {
+          const r = val as result;
+          this.measure_times.push(r.measure_time);
+          this.values.push(r.value);
+          this.updateChart();
+        },
+      });
+    }
+
+
+    //   this.initializeChart(); // Inicializa el gráfico
+    //   let myWebSocket = webSocket("ws://192.168.1.92:8000/sensor-luz")
+
+    //   if (!window.WebSocket) {
+    //     console.log('WebSocket not supported.')
+    //   } else {
+
+    //     myWebSocket.subscribe({
+    //       error: (err) => { console.log(err) },
+    //       next: (val) => {
+    //         const r = val as result;
+    //         this.measure_times.push(r.measure_time);
+    //         this.values.push(r.value);
+    //       },
+    //     });
+    //     this.updateChart();
+    //   }
+
+    // }
+  }
+  ngOnDestroy() {
+    this.myWebSocket.complete()
+    // console.log('Componente destruido');
+    // this.measure_times = [];
+    // this.values= [];
+    // this.sensorType= '';
+    // this.websocketURL = '';
+    // this.chartTitle = '';
+    // this.myWebSocket = null;
+  }
+
+  private initializeChart() {
+    this.chart = new Chart("MyChart", {
       type: 'line',
       data: {
         labels: this.measure_times,
         datasets: [
           {
-            label: 'Sensor de ' + this.sensorType,
+            label: this.sensorType,
             data: this.values,
             borderColor: 'blue',
             fill: false,
@@ -78,7 +109,7 @@ export class LineChartComponent {
     });
   }
 
-  updateChart() {
+  private updateChart() {
     // Actualiza el gráfico con los nuevos datos
     this.chart.data.labels = this.measure_times;
     this.chart.data.datasets[0].data = this.values;

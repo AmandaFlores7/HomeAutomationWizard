@@ -178,6 +178,21 @@ export const rutas ={
         ]
         
     },
+    "/aplicacion/sensores/temperatura/ver":{
+        "titulo": "Gráfico de temperatura",
+        "botones": {
+            "cantidad": 1,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/sensores"
+            }
+        },
+        "datosSensor":{
+            "tipoSensor":'Sensor de temperatura',
+            "tituloGrafico": 'Temperatura en C°',
+            "websocketURL": 'ws://192.168.1.92:8000/temperatura'
+        }
+    },
     "/aplicacion/sensores/humedad": {
         "titulo": "Sensor de Humedad",
         "botones": {
@@ -204,6 +219,21 @@ export const rutas ={
                 "parrafo": "6El sensor de luminocidad es un dispositivo que permite medir la cantidad de luz que hay en un ambiente. Este sensor es muy utilizado en la domótica, ya que permite controlar la iluminación de un ambiente de manera automática. El sensor de luminocidad que utilizamos en nuestro proyecto es el BH1750, el cual es un sensor digital que permite medir la cantidad de luz en un ambiente. Este sensor se comunica con el microcontrolador mediante el protocolo I2C."
             },
         ]
+    },
+    "/aplicacion/sensores/humedad/ver":{
+        "titulo": "Gráfico de humedad",
+        "botones": {
+            "cantidad": 1,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/sensores"
+            }
+        },
+        "datosSensor":{
+            "tipoSensor":'Sensor de humedad',
+            "tituloGrafico": 'humedad en C°',
+            "websocketURL": 'ws://192.168.1.92:8000/humedad'
+        }
     },
     "/aplicacion/sensores/luz": {
         "titulo": "Sensor de Luminocidad",
@@ -248,7 +278,7 @@ export const rutas ={
             }
         },
         "datosSensor":{
-            "tipoSensor":'nivel de luminosidad',
+            "tipoSensor":'Sensor de Luz',
             "tituloGrafico": 'Nivel de luz obtenida',
             "websocketURL": 'ws://192.168.1.92:8000/sensor-luz'
         }
@@ -280,6 +310,21 @@ export const rutas ={
             },
         ]
         
+    },
+    "/aplicacion/sensores/aire/ver":{
+        "titulo": "Gráfico de aire",
+        "botones": {
+            "cantidad": 1,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/sensores"
+            }
+        },
+        "datosSensor":{
+            "tipoSensor":'Sensor de aire',
+            "tituloGrafico": 'aire en C°',
+            "websocketURL": 'ws://192.168.1.92:8000/calidad-aire"'
+        }
     },
     "/aplicacion/actuadores/camara_r": {
         "titulo": "Camara Raspberry",
