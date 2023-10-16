@@ -8,38 +8,32 @@ import { LucesServiceService } from 'src/app/servicios/luces-service.service';
   styleUrls: ['./probar-luz.component.scss']
 })
 export class ProbarLuzComponent {
-  switchState:boolean = false;
+  switchState: boolean = false;
   luces: Luz[] = [];
-  
-  constructor(private _mqttService: MqttserviceService, private _lucesService: LucesServiceService){
+
+  constructor(private _mqttService: MqttserviceService, private _lucesService: LucesServiceService) {
 
   }
 
-  ngOnInit():void{
-    this._lucesService.cargarLuces().subscribe( (data:Luz[]) =>{
+  ngOnInit(): void {
+    this._lucesService.cargarLuces().subscribe((data: Luz[]) => {
       this.luces = data
     })
   }
 
-  alternarLuz(event: any, luz: Luz){
-    
-    if(this.switchState){
-      this.switchState = false;
-      this._mqttService.controlarLeds().subscribe(async res => {
-        setTimeout(() => {
-          
-        }, 1500);
-      });
+  alternarLuz(event: any, luz: Luz) {
+
+    if (!luz.activada) {
       
-    }else{
-      this.switchState = true;
-      this._mqttService.controlarLeds().subscribe(async res => {
-        setTimeout(() => {
-          
-        }, 1500);
+      this._mqttService.controlarLeds(luz.id, "OFF").subscribe(async res => {
+        
+      });
+    } else {
+      
+      this._mqttService.controlarLeds(luz.id, "ON").subscribe(async res => {
+      
       });
     }
-    
-    
+
   }
 }

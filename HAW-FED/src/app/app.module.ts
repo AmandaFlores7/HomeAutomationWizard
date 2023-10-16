@@ -10,7 +10,6 @@ import { PrimeraParteComponent } from './paginas/introduccion/primera-parte/prim
 import { MenuQuizComponent } from './paginas/quiz-conocimiento/menu-quiz/menu-quiz.component';
 import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

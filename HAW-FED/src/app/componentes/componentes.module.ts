@@ -14,6 +14,7 @@ import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes
 import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
 import { ModalTextoComponent } from './modal-texto/modal-texto.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
     CarruselImagenesComponent,
     TextoScrollComponent,
     ModalTextoComponent,
-    ProbarCamaraComponent    
+    ProbarCamaraComponent,
+    LineChartComponent    
   ],
   imports: [
     CommonModule,
