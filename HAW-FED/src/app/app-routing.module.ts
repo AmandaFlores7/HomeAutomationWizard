@@ -12,6 +12,7 @@ import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/
 import { MenuQuizComponent } from './paginas/quiz-conocimiento/menu-quiz/menu-quiz.component';
 import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
 import { ProbarCamaraComponent } from './componentes/probar-camara/probar-camara.component';
+import { LineChartComponent } from './componentes/line-chart/line-chart.component';
 
 const routes: Routes = [
   { path: 'introduccion', redirectTo: 'introduccion/1'}, 
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'sensores/humedad', component: VistaComponenteComponent },
       { path: 'sensores/luz', component: VistaComponenteComponent },
       { path: 'sensores/aire', component: VistaComponenteComponent },
+      { path: 'sensores/luz/ver', component:LineChartComponent},
       { path: 'actuadores/camara_r', component: VistaComponenteComponent },
       { path: 'actuadores/luces', component: VistaComponenteComponent },
       { path: 'actuadores/luces/probar', component: ProbarLuzComponent },

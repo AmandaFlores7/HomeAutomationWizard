@@ -238,6 +238,21 @@ export const rutas ={
             },
         ]
     },
+    "/aplicacion/sensores/luz/ver":{
+        "titulo": "Gráfico de nivel de luz",
+        "botones": {
+            "cantidad": 1,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/sensores"
+            }
+        },
+        "datosSensor":{
+            "tipoSensor":'nivel de luminosidad',
+            "tituloGrafico": 'Nivel de luz obtenida',
+            "websocketURL": 'ws://192.168.1.92:8000/sensor-luz'
+        }
+    },
     "/aplicacion/sensores/aire": {
         "titulo": "Sensor de Aire",
         "botones": {

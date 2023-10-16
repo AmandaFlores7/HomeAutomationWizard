@@ -5,7 +5,7 @@ import { Luz } from 'src/app/models/luces.interfaces';
   providedIn: 'root'
 })
 export class LucesServiceService {
-  local_ip = "192.168.1.88"
+  local_ip = "192.168.1.92"
   localhost = "localhost"
 
    constructor(private http: HttpClient) {}
@@ -19,7 +19,6 @@ export class LucesServiceService {
     return this.http.get<Luz[]>('/assets/luces.json');
   }
   
-
   actualizarLuz(id: string, luz: any) {
     return this.http.put<any>(`${this.local_ip}/luces/${id}`, luz);
   }
