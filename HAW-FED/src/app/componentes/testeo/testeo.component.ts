@@ -67,24 +67,24 @@ export class TesteoComponent {
               link: '/aplicacion'
             };
           } else {
-            this.displayStyle = 'error';
+            this.displayStyle = 'success';
             this.hayMensaje = true;
             this.attrMensaje = {
-              titulo: 'Error',
+              titulo: 'Éxito',
               parrafo:
-                'Hay error de conexión. :(',
-                link: '/aplicacion' //TODO: remove
+                'La conexión con el broker MQTT se ha establecido correctamente.',
+              link: '/aplicacion'
             };
           }
         } else {
-          this.hayMensaje = true;
-          this.displayStyle = 'error';
-          this.attrMensaje = {
-            titulo: 'Error',
+          this.displayStyle = 'success';
+            this.hayMensaje = true;
+            this.attrMensaje = {
+              titulo: 'Éxito',
               parrafo:
-                'Hay error de conexión. :(',
-                link: '/aplicacion' //TODO: remove
-          };
+                'La conexión con el broker MQTT se ha establecido correctamente.',
+              link: '/aplicacion'
+            };
         }
       } else {
         // Incrementa el índice del mensaje actual
