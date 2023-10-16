@@ -10,7 +10,7 @@
         "Un sensor es un dispositivo que no detecta un cambio en su entorno y responde a él.",
         "Un sensor es un dispositivo que no detecta un cambio en su entorno y no responde a él."
       ],
-      "respondida": true
+      "respondida": false
     },
     {
       "id": 2,
@@ -23,7 +23,7 @@
         "El sensor se conecta al sistema IoT a través de un microchip.",
         "El sensor se conecta al sistema IoT a través de un microcircuito."
       ],
-      "respondida": true
+      "respondida": false
     },
     {
       "id": 3,
@@ -36,7 +36,7 @@
         "Un microcontrolador es un circuito integrado programable, capaz de ejecutar las órdenes grabadas en su memoria RAM.",
         "Un microcontrolador es un circuito integrado programable, capaz de ejecutar las órdenes grabadas en su memoria ROM."
       ],
-      "respondida": true
+      "respondida": false
     },
     {
       "id": 4,

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class MqttserviceService {
 
-  local_ip = "192.168.1.92"
+  local_ip = "192.168.2.2"
   localhost = "localhost"
 
   constructor(private _http: HttpClient) { }
