@@ -12,13 +12,19 @@ import { VistaComponenteComponent } from './paginas/aplicacion/vista-componente/
 import { MenuQuizComponent } from './paginas/quiz-conocimiento/menu-quiz/menu-quiz.component';
 import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
 import { ProbarCamaraComponent } from './componentes/probar-camara/probar-camara.component';
+import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
+import { AuthGuard } from './servicios/auth.guard';
 import { LineChartComponent } from './componentes/line-chart/line-chart.component';
 
 const routes: Routes = [
+  {
+    path: 'login', component: LoginComponent
+  },
   { path: 'introduccion', redirectTo: 'introduccion/1'}, 
   {
     path: 'introduccion',
     component: PrimeraParteComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '1', component: CarruselComponent },
       { path: '2', component: MenuInfoComponent },
@@ -30,6 +36,7 @@ const routes: Routes = [
   {
     path: 'aplicacion',
     component: MenuAplicacionComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: MenuOpcionesComponent },
       { path: 'sensores', component: MenuOpcionesComponent },
@@ -56,6 +63,7 @@ const routes: Routes = [
   { 
     path: 'quiz',
     component: MenuQuizComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: MenuOpcionesComponent },
       { path: 'sensores', component: QuizComponent, data: { tipo: 'sensor' } },

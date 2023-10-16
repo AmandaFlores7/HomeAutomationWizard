@@ -23,7 +23,6 @@ export class ModalTextoComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.data);
     var elemento = document.getElementById('contenidoModal');
     if (elemento) {
       if (this.displayStyle === 'success') {
