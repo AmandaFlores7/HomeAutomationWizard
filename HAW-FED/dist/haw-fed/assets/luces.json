@@ -1,5 +1,2 @@
-[{"id":1,"nombre":"Luz 1","activada":true},
-{"id":2,"nombre":"Luz 2","activada":false},
-{"id":3,"nombre":"Luz 3","activada":false},
-{"id":4,"nombre":"Luz 4","activada":false},
-{"id":5,"nombre":"Luz 5","activada":false}]
+[{"id":17,"nombre":"Luz Azul","activada":false},
+{"id":16,"nombre":"Luz Roja","activada":false}]
