@@ -12,6 +12,7 @@ import { QuizComponent } from './paginas/quiz-conocimiento/quiz/quiz.component';
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { RutValidadorDirective } from './directivas/rut-validador.directive';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
