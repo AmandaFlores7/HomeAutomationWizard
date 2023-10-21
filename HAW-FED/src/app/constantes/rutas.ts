@@ -190,7 +190,7 @@ export const rutas ={
         "datosSensor":{
             "tipoSensor":'Sensor de temperatura',
             "tituloGrafico": 'Temperatura en C°',
-            "websocketURL": 'ws://192.168.2.2:8000/temperatura'
+            "websocketURL": 'ws://192.168.2.1:8000/temperatura'
         }
     },
     "/aplicacion/sensores/humedad": {
@@ -232,7 +232,7 @@ export const rutas ={
         "datosSensor":{
             "tipoSensor":'Sensor de humedad',
             "tituloGrafico": 'humedad en C°',
-            "websocketURL": 'ws://192.168.2.2:8000/humedad'
+            "websocketURL": 'ws://192.168.2.1:8000/humedad'
         }
     },
     "/aplicacion/sensores/luz": {
@@ -274,7 +274,7 @@ export const rutas ={
         "datosSensor":{
             "tipoSensor":'Sensor de Luz',
             "tituloGrafico": 'Nivel de luz obtenida',
-            "websocketURL": 'ws://192.168.2.2:8000/sensor-luz'
+            "websocketURL": 'ws://192.168.2.1:8000/sensor-luz'
         }
     },
     "/aplicacion/sensores/aire": {
@@ -317,7 +317,7 @@ export const rutas ={
         "datosSensor":{
             "tipoSensor":'Sensor de aire',
             "tituloGrafico": 'aire en C°',
-            "websocketURL": 'ws://192.168.2.2:8000/calidad-aire"'
+            "websocketURL": 'ws://192.168.2.1:8000/calidad-aire"'
         }
     },
     "/aplicacion/actuadores/camara_r": {

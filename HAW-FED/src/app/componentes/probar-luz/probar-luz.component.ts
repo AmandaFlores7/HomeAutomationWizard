@@ -22,14 +22,16 @@ export class ProbarLuzComponent {
   }
 
   alternarLuz(event: any, luz: Luz) {
+    console.log("Alternando luz")
+    console.log(luz)
 
     if (!luz.activada) {
-      
+      console.log("Apagando luz")
       this._mqttService.controlarLeds(luz.id, "OFF").subscribe(async res => {
         
       });
     } else {
-      
+      console.log("Encendiendo luz")
       this._mqttService.controlarLeds(luz.id, "ON").subscribe(async res => {
       
       });

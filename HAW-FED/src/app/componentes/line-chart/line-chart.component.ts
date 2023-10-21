@@ -59,7 +59,7 @@ export class LineChartComponent {
 
 
     //   this.initializeChart(); // Inicializa el gráfico
-    //   let myWebSocket = webSocket("ws://192.168.2.2:8000/sensor-luz")
+    //   let myWebSocket = webSocket("ws://192.168.2.1:8000/sensor-luz")
 
     //   if (!window.WebSocket) {
     //     console.log('WebSocket not supported.')
