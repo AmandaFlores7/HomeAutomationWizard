@@ -22,4 +22,10 @@ export class MqttserviceService {
   controlarLeds(luz_id:any,estado:any) {
     return this._http.get('http://' + this.local_ip + ':8000/controlar_leds/set_status='+estado+'&led_id='+luz_id)
   }
+
+  estdosLeds() {
+    console.log("Estados leds");
+    return this._http.get('http://' + this.local_ip + ':8000/estado-leds')
+  }
+
 }

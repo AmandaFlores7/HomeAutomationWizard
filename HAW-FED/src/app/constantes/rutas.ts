@@ -413,13 +413,23 @@ export const rutas ={
             },
         ]
     },
+    "/aplicacion/actuadores/puerta/probar": {
+        "titulo": "Controlar puerta",
+        "botones": {
+            "cantidad": 2,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/actuadores"
+            }
+        },
+    },
     "/aplicacion/actuadores/luces/probar": {
         "titulo": "Prueba los sensores",
         "botones": {
             "cantidad": 2,
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/actuadores/luces"
+                "link": "/aplicacion/actuadores"
             }
         },
     },
