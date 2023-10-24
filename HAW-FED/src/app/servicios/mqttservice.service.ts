@@ -28,4 +28,7 @@ export class MqttserviceService {
     return this._http.get('http://' + this.local_ip + ':8000/estado-leds')
   }
 
+  obtenerDatosSensor(tipoSensor: string) {
+    return this._http.get('http://' + this.local_ip + ':8000/datos/tipo-sensor='+tipoSensor);
+  }
 }
