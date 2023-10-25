@@ -102,7 +102,7 @@ export class LineChartComponent {
         ],
       },
       options: {
-        aspectRatio: 1.5,
+        aspectRatio: 1,
         plugins: {
           legend: {
             position: 'bottom',
@@ -110,7 +110,7 @@ export class LineChartComponent {
             labels: {
               usePointStyle: true,
               font: {
-                size: 14
+                size: 16
               }
             }
           },

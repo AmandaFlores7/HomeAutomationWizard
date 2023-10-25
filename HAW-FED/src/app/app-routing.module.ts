@@ -32,7 +32,7 @@ const routes: Routes = [
       { path: '4', component: TesteoComponent},
   ],
   },
-  { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
+  { path: '', redirectTo: '/aplicacion', pathMatch: 'full' },
   {
     path: 'aplicacion',
     component: MenuAplicacionComponent,
