@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import Chart from 'chart.js/auto';
+import { delay, retryWhen } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
 import { rutas } from 'src/app/constantes/rutas';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
@@ -56,20 +57,19 @@ export class LineChartComponent {
   }
 
   ngOnInit(): void {
-    //this.initializeChart(); // Inicializa el gráfico
-
     if (!window.WebSocket) {
       console.log('WebSocket not supported.')
     } else {
-
-      this.myWebSocket.subscribe({
+      this.myWebSocket.pipe(
+        retryWhen(errors => errors.pipe(delay(3000)))
+      ).subscribe({
         error: (err:any) => { console.log(err) },
         next: (val:any) => {
           const r = val as result;
           this.measure_times.push(r.measure_time);
           this.values.push(r.value);
           this.valorActual = r.value;
-          if (this.measure_times.length > 10) {
+          if (this.measure_times.length > 20) {
             this.measure_times.shift();
             this.values.shift();
           }
@@ -77,10 +77,9 @@ export class LineChartComponent {
         },
       });
     }
-
   }
   ngOnDestroy() {
-    this.myWebSocket.complete()
+    this.myWebSocket.unsubscribe();
     this.chart.destroy();
   }
 
