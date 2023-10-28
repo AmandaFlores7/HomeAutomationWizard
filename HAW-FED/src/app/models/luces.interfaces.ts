@@ -1,5 +1,5 @@
 export interface Luz {
-    id: number;
+    id: string;
     nombre: string;
     activada: boolean;
 }

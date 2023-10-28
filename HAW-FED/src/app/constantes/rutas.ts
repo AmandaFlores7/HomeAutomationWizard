@@ -349,7 +349,7 @@ export const rutas ={
        
     },
     "/aplicacion/actuadores/camara_r/probar":{
-        "titulo":"Probar cámara Raspberry Pi 3",
+        "titulo":"Ver Cámara Raspberry Pi 3",
         "botones":{
             "cantidad":1,
             "ruta1":{
