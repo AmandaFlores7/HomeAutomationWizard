@@ -15,12 +15,13 @@ import { ProbarCamaraComponent } from './componentes/probar-camara/probar-camara
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { AuthGuard } from './servicios/auth.guard';
 import { LineChartComponent } from './componentes/line-chart/line-chart.component';
+import { ObjetivosAprendizajeComponent } from './componentes/objetivos-aprendizaje/objetivos-aprendizaje.component';
 
 const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
-  { path: 'introduccion', redirectTo: 'introduccion/1'}, 
+  { path: 'introduccion', redirectTo: 'introduccion/1' },
   {
     path: 'introduccion',
     component: PrimeraParteComponent,
@@ -29,8 +30,8 @@ const routes: Routes = [
       { path: '1', component: CarruselComponent },
       { path: '2', component: MenuInfoComponent },
       { path: '3', component: ImagenExplicativaComponent },
-      { path: '4', component: TesteoComponent},
-  ],
+      { path: '4', component: TesteoComponent },
+    ],
   },
   { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
   {
@@ -42,6 +43,13 @@ const routes: Routes = [
       { path: 'sensores', component: MenuOpcionesComponent },
       { path: 'actuadores', component: MenuOpcionesComponent },
       { path: 'wikiiot', component: MenuOpcionesComponent },
+      { path: 'wikiiot/leccion1', component: ObjetivosAprendizajeComponent },
+      { path: 'wikiiot/leccion2', component: ObjetivosAprendizajeComponent },
+      { path: 'wikiiot/leccion3', component: ObjetivosAprendizajeComponent },
+      { path: 'wikiiot/leccion4', component: ObjetivosAprendizajeComponent },
+      { path: 'wikiiot/leccion5', component: ObjetivosAprendizajeComponent },
+      { path: 'wikiiot/leccion6', component: ObjetivosAprendizajeComponent },
+      { path: 'wikiiot/leccion7', component: ObjetivosAprendizajeComponent },
       { path: 'test', component: MenuOpcionesComponent },
       { path: 'acerca', component: MenuOpcionesComponent },
       { path: 'sensores/temperatura', component: VistaComponenteComponent },
@@ -49,18 +57,18 @@ const routes: Routes = [
       { path: 'sensores/humedad', component: VistaComponenteComponent },
       { path: 'sensores/humedad/ver', component: LineChartComponent },
       { path: 'sensores/luz', component: VistaComponenteComponent },
-      { path: 'sensores/luz/ver', component:LineChartComponent},
+      { path: 'sensores/luz/ver', component: LineChartComponent },
       { path: 'sensores/aire', component: VistaComponenteComponent },
       { path: 'sensores/aire/ver', component: LineChartComponent },
       { path: 'actuadores/camara_r', component: VistaComponenteComponent },
       { path: 'actuadores/luces', component: VistaComponenteComponent },
       { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
       { path: 'actuadores/puerta', component: VistaComponenteComponent },
-      { path: 'actuadores/camara_r/probar', component:ProbarCamaraComponent}
+      { path: 'actuadores/camara_r/probar', component: ProbarCamaraComponent }
 
     ],
   },
-  { 
+  {
     path: 'quiz',
     component: MenuQuizComponent,
     canActivate: [AuthGuard],
@@ -77,4 +85,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

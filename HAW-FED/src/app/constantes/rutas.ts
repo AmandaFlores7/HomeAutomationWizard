@@ -128,26 +128,179 @@ export const rutas ={
         "titulo": "Wiki IoT",
         "items": [
             {
-                "titulo": "¿Qué es IoT?",
-                "link": "/aplicacion/wikiiot/queesiot"
+                "titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
+                "link": "/aplicacion/wikiiot/leccion1"
             },
             {
-                "titulo": "¿Cómo funciona?",
-                "link": "/aplicacion/wikiiot/comofunciona"
+                "titulo": "Lección 2: Sensores y Actuadores",
+                "link": "/aplicacion/wikiiot/leccion2"
             },
             {
-                "titulo": "¿Qué es un sensor?",
-                "link": "/aplicacion/wikiiot/queesunsensor"
+                "titulo": "Lección 3: Protocolos de Comunicación en IoT",
+                "link": "/aplicacion/wikiiot/leccion3"
             },
             {
-                "titulo": "¿Qué es un actuador?",
-                "link": "/aplicacion/wikiiot/queesunactuador"
+                "titulo": "Lección 4: Maqueta de Casa Inteligente en Detalle",
+                "link": "/aplicacion/wikiiot/leccion4"
+            },
+            {
+                "titulo":" Lección 5: Control de Dispositivos en la Maqueta",
+                "link":"/aplicacion/wikiiot/leccion5"
+            },
+            {
+                "titulo":"Lección 6: Seguridad y Privacidad en IoT",
+                "link":"/aplicacion/wikiiot/leccion6"
+            },
+            {
+                "titulo":"Lección 7: Proyectos Prácticos y Magia de la Automatización",
+                "link":"/aplicacion/wikiiot/leccion7"
             }
         ],
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
                 "link": "/aplicacion"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion1":{
+        "titulo": "Lección 1",
+        "titulo2": "Introducción al IoT y a Home Automation Wizard",
+        "objetivos":[
+            {
+                "texto":"Comprender qué es el Internet de las Cosas (IoT) y cómo está revolucionando la automatización del hogar y otros campos."
+            },
+            {
+                "texto":"Conocer cómo Home Automation Wizard permite a los usuarios controlar y monitorear una maqueta de casa inteligente a través de la aplicación."
+            },
+            {
+                "texto":"Aprender los conceptos básicos para convertirse en un 'mago' de la automatización del hogar."
+            }
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion2":{
+        "titulo": "Lección 2",
+        "titulo2": "Sensores y Actuadores",
+        "objetivos":[
+            {
+                "texto":"Comprender la importancia de los sensores y actuadores en el contexto del IoT y la automatización del hogar."
+            },
+            {
+                "texto":"Identificar y describir los tipos comunes de sensores utilizados en el IoT."
+            },
+            {
+                "texto":"Aprender cómo los sensores recopilan datos y cómo los actuadores toman acciones basadas en estos datos."
+            }
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion3":{
+        "titulo": "Lección 3",
+        "titulo2": "Protocolos de Comunicación en IoT",
+        "objetivos":[
+            {
+                "texto":"Comprender la importancia de los protocolos de comunicación en el IoT."
+            },
+            {
+                "texto":"Identificar y describir protocolos de comunicación comunes utilizados en IoT, con un enfoque en MQTT."
+            },
+            {
+                "texto":"Aprender cómo estos protocolos permiten la comunicación efectiva entre dispositivos en la maqueta y la aplicación."
+            }
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion4":{
+        "titulo": "Lección 4",
+        "titulo2": "Maqueta de Casa Inteligente en Detalle",
+        "objetivos":[
+            {
+                "texto":"Explorar y comprender los dispositivos específicos presentes en la maqueta de casa inteligente de Home Automation Wizard."
+            },
+            {
+                "texto":"Familiarizarse con la función de cada dispositivo y cómo se integran en el entorno de automatización del hogar."
+            },
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion5":{
+        "titulo": "Lección 5",
+        "titulo2": "Control de Dispositivos en la Maqueta",
+        "objetivos":[
+            {
+                "texto":"Aprender a interactuar con la maqueta de casa inteligente de Home Automation Wizard."
+            },
+            {
+                "texto":"Comprender cómo controlar dispositivos específicos, como luces, temperatura y cerraduras, utilizando la aplicación."
+            },
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion6":{
+        "titulo": "Lección 6",
+        "titulo2": "Seguridad y Privacidad en IoT",
+        "objetivos":[
+            {
+                "texto":"Comprender los desafíos de seguridad y privacidad en el Internet de las Cosas (IoT)."
+            },
+            {
+                "texto":"Aprender cómo Home Automation Wizard aborda estos desafíos y promueve la seguridad en la maqueta de casa inteligente."
+            },
+            {
+                "texto":"Conocer y aplicar buenas prácticas para proteger la maqueta de casa y los dispositivos IoT."
+            }
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
+            }
+        }
+    },
+    "/aplicacion/wikiiot/leccion7":{
+        "titulo": "Lección 7",
+        "titulo2": "Proyectos Prácticos y Magia de la Automatización",
+        "objetivos":[
+            {
+                "texto":"Aplicar los conocimientos adquiridos a través de proyectos prácticos en la maqueta de casa inteligente."
+            },
+            {
+                "texto":"Fomentar la creatividad y la experimentación de los usuarios al crear sistemas de automatización y seguridad."
+            },
+            {
+                "texto":"Fomentar la sensación de ser 'magos' de la automatización del hogar."
+            }
+        ],
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/wikiiot/"
             }
         }
     },

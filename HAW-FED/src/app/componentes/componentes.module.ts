@@ -15,6 +15,7 @@ import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
 import { ModalTextoComponent } from './modal-texto/modal-texto.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { ObjetivosAprendizajeComponent } from './objetivos-aprendizaje/objetivos-aprendizaje.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     TextoScrollComponent,
     ModalTextoComponent,
     ProbarCamaraComponent,
-    LineChartComponent    
+    LineChartComponent,
+    ObjetivosAprendizajeComponent
   ],
   imports: [
     CommonModule,
