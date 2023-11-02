@@ -1,0 +1,9 @@
+<div class="card-container">
+    <div *ngFor="let puerta of puertas" class="card">
+        <div class="form-check form-switch form-switch-md">
+            <input [id]="puerta.id" class="form-check-input" type="checkbox" [(ngModel)]="puerta.abierta"
+                (change)="controlarPuerta($event, puerta)">
+            <label class="form-check-label">{{ puerta.nombre }}</label>
+        </div>
+    </div>
+</div>

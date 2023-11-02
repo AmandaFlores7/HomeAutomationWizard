@@ -15,6 +15,7 @@ import { ProbarCamaraComponent } from './componentes/probar-camara/probar-camara
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { AuthGuard } from './servicios/auth.guard';
 import { LineChartComponent } from './componentes/line-chart/line-chart.component';
+import { ControlPuertaComponent } from './componentes/control-puerta/control-puerta.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
       { path: '4', component: TesteoComponent},
   ],
   },
-  { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
+  { path: '', redirectTo: '/aplicacion', pathMatch: 'full' },
   {
     path: 'aplicacion',
     component: MenuAplicacionComponent,
@@ -56,6 +57,7 @@ const routes: Routes = [
       { path: 'actuadores/luces', component: VistaComponenteComponent },
       { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
       { path: 'actuadores/puerta', component: VistaComponenteComponent },
+      { path: 'actuadores/puerta/probar', component: ControlPuertaComponent },
       { path: 'actuadores/camara_r/probar', component:ProbarCamaraComponent}
 
     ],

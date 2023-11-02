@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import Chart from 'chart.js/auto';
+import { delay, retryWhen } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
 import { rutas } from 'src/app/constantes/rutas';
+import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
 
 interface result {
   topic: string,
@@ -21,72 +23,64 @@ export class LineChartComponent {
   public values: string[] = [];
   public chart: any;
 
-  public sensorType: string = '';
-  public websocketURL: string = '';
-  public chartTitle: string = '';
-  public myWebSocket:any;
-  
+  public webSocketIP = 'ws://192.168.2.1:8000/';
 
-  constructor(private router: Router) {
+  public valorActual: string = '';
+
+  public sensorType: string = '';
+  public chartTitle: string = '';
+  public myWebSocket:any;  
+
+  constructor(private router: Router, private s_mqtt: MqttserviceService) {
     if (this.router?.url && this.buscarRuta(this.router.url)?.titulo != null) {
       let infoPagina = this.buscarRuta(this.router.url);
       if (infoPagina?.datosSensor) {
         this.sensorType = infoPagina.datosSensor.tipoSensor ? infoPagina.datosSensor.tipoSensor : null;
-        this.websocketURL = infoPagina.datosSensor.websocketURL ? infoPagina.datosSensor.websocketURL : null;
+        this.webSocketIP = this.webSocketIP+this.sensorType;
         this.chartTitle = infoPagina.datosSensor.tituloGrafico ? infoPagina.datosSensor.tituloGrafico : null;
-        this.myWebSocket = webSocket(this.websocketURL)
+        this.myWebSocket = webSocket(this.webSocketIP);
+
+        this.s_mqtt.obtenerDatosSensor(this.sensorType).subscribe((data: any) => {
+          this.initializeChart();
+          console.log(data.last_hour_data);
+          for (let i = 0; i < data.last_hour_data.length; i++) {
+            this.measure_times.push(data.last_hour_data[i]['time(timestamp)']);
+            this.values.push(data.last_hour_data[i]['value']);
+            if (i == data.last_hour_data.length - 1) {
+              this.valorActual = data.last_hour_data[i]['value'];
+            }
+          }
+          this.updateChart();
+        });
       }
     }
   }
 
   ngOnInit(): void {
-    this.initializeChart(); // Inicializa el gráfico
-
     if (!window.WebSocket) {
       console.log('WebSocket not supported.')
     } else {
-
-      this.myWebSocket.subscribe({
+      this.myWebSocket.pipe(
+        retryWhen(errors => errors.pipe(delay(3000)))
+      ).subscribe({
         error: (err:any) => { console.log(err) },
         next: (val:any) => {
           const r = val as result;
           this.measure_times.push(r.measure_time);
           this.values.push(r.value);
+          this.valorActual = r.value;
+          if (this.measure_times.length > 20) {
+            this.measure_times.shift();
+            this.values.shift();
+          }
           this.updateChart();
         },
       });
     }
-
-
-    //   this.initializeChart(); // Inicializa el gráfico
-    //   let myWebSocket = webSocket("ws://192.168.2.1:8000/sensor-luz")
-
-    //   if (!window.WebSocket) {
-    //     console.log('WebSocket not supported.')
-    //   } else {
-
-    //     myWebSocket.subscribe({
-    //       error: (err) => { console.log(err) },
-    //       next: (val) => {
-    //         const r = val as result;
-    //         this.measure_times.push(r.measure_time);
-    //         this.values.push(r.value);
-    //       },
-    //     });
-    //     this.updateChart();
-    //   }
-
-    // }
   }
   ngOnDestroy() {
-    this.myWebSocket.complete()
-    // console.log('Componente destruido');
-    // this.measure_times = [];
-    // this.values= [];
-    // this.sensorType= '';
-    // this.websocketURL = '';
-    // this.chartTitle = '';
-    // this.myWebSocket = null;
+    this.myWebSocket.unsubscribe();
+    this.chart.destroy();
   }
 
   private initializeChart() {
@@ -96,16 +90,39 @@ export class LineChartComponent {
         labels: this.measure_times,
         datasets: [
           {
-            label: this.sensorType,
+            label: "",
             data: this.values,
             borderColor: 'blue',
+            borderWidth: 2,
             fill: false,
+            tension: 0.4,
+            pointStyle: false
           },
         ],
       },
       options: {
-        aspectRatio: 2.5,
-      },
+        aspectRatio: 1,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            align: 'start',
+            labels: {
+              usePointStyle: true,
+              font: {
+                size: 16
+              }
+            }
+          },
+          title: {
+            display: true,
+            text: this.chartTitle,
+            align: 'start',
+            font: {
+              size: 20
+            }
+          }
+        }
+      }
     });
   }
 
@@ -113,6 +130,7 @@ export class LineChartComponent {
     // Actualiza el gráfico con los nuevos datos
     this.chart.data.labels = this.measure_times;
     this.chart.data.datasets[0].data = this.values;
+    this.chart.data.datasets[0].label = "Valor Actual: "+this.valorActual;
     this.chart.update();
   }
 

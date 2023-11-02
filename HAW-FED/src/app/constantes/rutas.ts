@@ -188,7 +188,7 @@ export const rutas ={
             }
         },
         "datosSensor":{
-            "tipoSensor":'Sensor de temperatura',
+            "tipoSensor":'temperature',
             "tituloGrafico": 'Temperatura en C°',
             "websocketURL": 'ws://192.168.2.1:8000/temperatura'
         }
@@ -230,7 +230,7 @@ export const rutas ={
             }
         },
         "datosSensor":{
-            "tipoSensor":'Sensor de humedad',
+            "tipoSensor":'humidity',
             "tituloGrafico": 'humedad en C°',
             "websocketURL": 'ws://192.168.2.1:8000/humedad'
         }
@@ -272,7 +272,7 @@ export const rutas ={
             }
         },
         "datosSensor":{
-            "tipoSensor":'Sensor de Luz',
+            "tipoSensor":'light',
             "tituloGrafico": 'Nivel de luz obtenida',
             "websocketURL": 'ws://192.168.2.1:8000/sensor-luz'
         }
@@ -315,7 +315,7 @@ export const rutas ={
             }
         },
         "datosSensor":{
-            "tipoSensor":'Sensor de aire',
+            "tipoSensor":'air_quality',
             "tituloGrafico": 'aire en C°',
             "websocketURL": 'ws://192.168.2.1:8000/calidad-aire"'
         }
@@ -349,7 +349,7 @@ export const rutas ={
        
     },
     "/aplicacion/actuadores/camara_r/probar":{
-        "titulo":"Probar cámara Raspberry Pi 3",
+        "titulo":"Ver Cámara Raspberry Pi 3",
         "botones":{
             "cantidad":1,
             "ruta1":{
@@ -413,13 +413,23 @@ export const rutas ={
             },
         ]
     },
+    "/aplicacion/actuadores/puerta/probar": {
+        "titulo": "Controlar puerta",
+        "botones": {
+            "cantidad": 2,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/actuadores"
+            }
+        },
+    },
     "/aplicacion/actuadores/luces/probar": {
         "titulo": "Prueba los sensores",
         "botones": {
             "cantidad": 2,
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/actuadores/luces"
+                "link": "/aplicacion/actuadores"
             }
         },
     },

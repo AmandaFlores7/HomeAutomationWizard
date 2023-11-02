@@ -18,9 +18,4 @@ export class LucesServiceService {
   cargarLuces(){
     return this.http.get<Luz[]>('/assets/luces.json');
   }
-  
-  actualizarLuz(id: string, luz: any) {
-    return this.http.put<any>(`${this.local_ip}/luces/${id}`, luz);
-  }
-
 }
