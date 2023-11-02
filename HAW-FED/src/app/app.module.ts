@@ -13,7 +13,6 @@ import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { RutValidadorDirective } from './directivas/rut-validador.directive';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
 @NgModule({
   declarations: [
     AppComponent,

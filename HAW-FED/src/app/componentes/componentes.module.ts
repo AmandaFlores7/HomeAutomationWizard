@@ -16,6 +16,7 @@ import { ModalTextoComponent } from './modal-texto/modal-texto.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { ControlPuertaComponent } from './control-puerta/control-puerta.component';
+import { ObjetivosAprendizajeComponent } from './objetivos-aprendizaje/objetivos-aprendizaje.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ControlPuertaComponent } from './control-puerta/control-puerta.componen
     ModalTextoComponent,
     ProbarCamaraComponent,
     LineChartComponent,
-    ControlPuertaComponent    
+    ControlPuertaComponent,
+    ObjetivosAprendizajeComponent
   ],
   imports: [
     CommonModule,
