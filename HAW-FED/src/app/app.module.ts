@@ -23,7 +23,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MenuQuizComponent,
     QuizComponent,
     LoginComponent,
-    RutValidadorDirective
+    RutValidadorDirective,
   ],
   imports: [
     BrowserModule,

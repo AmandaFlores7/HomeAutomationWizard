@@ -15,6 +15,7 @@ import { ProbarCamaraComponent } from './componentes/probar-camara/probar-camara
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { AuthGuard } from './servicios/auth.guard';
 import { LineChartComponent } from './componentes/line-chart/line-chart.component';
+import { SplashHawComponent } from './componentes/splash-haw/splash-haw.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
       { path: '4', component: TesteoComponent},
   ],
   },
-  { path: '', redirectTo: '/introduccion/1', pathMatch: 'full' },
+  { path: '', redirectTo: '/splash', pathMatch: 'full' },
+  { path: 'splash', component: SplashHawComponent },
   {
     path: 'aplicacion',
     component: MenuAplicacionComponent,
@@ -57,7 +59,7 @@ const routes: Routes = [
       { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
       { path: 'actuadores/puerta', component: VistaComponenteComponent },
       { path: 'actuadores/camara_r/probar', component:ProbarCamaraComponent}
-
+      
     ],
   },
   { 
