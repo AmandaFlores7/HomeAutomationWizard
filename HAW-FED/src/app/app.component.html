@@ -1,8 +1,8 @@
-<!-- <div class="app">
-  <app-navbar-principal title="HOLA"></app-navbar-principal>
-  <app-carrusel></app-carrusel>
-  <app-menu-opciones></app-menu-opciones>
-  <app-footer-principal></app-footer-principal>
-  
-</div> -->
-<router-outlet style="height: 100vh;"></router-outlet>
+<div class="contenedor">
+    <app-navbar-principal class="navbarPrincipal"></app-navbar-principal>
+    <div class="cuerpito">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer-principal class="pie"></app-footer-principal>
+</div>
+    

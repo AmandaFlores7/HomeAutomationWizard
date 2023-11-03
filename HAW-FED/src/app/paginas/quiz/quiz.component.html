@@ -1,30 +1,3 @@
-<!-- <div *ngIf="preguntaActual">
-	<h2>{{ preguntaActual.pregunta }}</h2>
-	<ul>
-		<li *ngFor="let alternativa of preguntaActual.alternativas; let i = index">
-			<button (click)="seleccionarRespuesta(alternativa, preguntaActual.id)" [ngClass]="{ selected: alternativa === respuestaSeleccionada }">
-				{{ alternativa }}
-			</button>
-		</li>
-	</ul>
-	<button (click)="verificarRespuesta()">Verificar</button>
-</div>
-
-<div *ngIf="!preguntaActual">
-	<h2>¡Preguntas terminadas!</h2>
-	<p>Tu puntaje es: {{ puntaje }}</p>
-	<h3>Preguntas acertadas:</h3>
-	<ul>
-		<li *ngFor="let pregunta of preguntasAcertadas">
-			{{ pregunta.enunciado }}
-		</li>
-	</ul>
-	<h3>Preguntas falladas:</h3>
-	<ul>
-		<li *ngFor="let pregunta of preguntasFalladas">{{ pregunta.enunciado }}</li>
-	</ul>
-</div> -->
-
 <div class="contenedor border-info">
 	<ng-container *ngIf="preguntaActual">
 		<div class="card" style="height: 100%;">
@@ -66,14 +39,6 @@
 						</li>
 					</ul>
 				</nav>
-				<!-- <div class="row text-center">
-					<div class="col"> -->
-						<!-- <button id="atras" type="button" class="btn border">Anterior</button> -->
-					<!-- </div>
-					<div class="col">
-						<button [disabled]="haySeleccion(preguntaActual.id)" id="adelante" type="button" class="btn border" (click)=" verificarRespuesta()">Siguiente</button>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</ng-container>

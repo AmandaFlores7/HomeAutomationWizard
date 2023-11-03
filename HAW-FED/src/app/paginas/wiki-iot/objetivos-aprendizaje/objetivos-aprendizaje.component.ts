@@ -13,7 +13,6 @@ export class ObjetivosAprendizajeComponent {
   infoPagina:any;
 
   constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.infoPagina = this.buscarTitulo(this.router.url);
     this.titulo2 = this.infoPagina['titulo2'];
     this.objetivos = this.infoPagina['objetivos'];       

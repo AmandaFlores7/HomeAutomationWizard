@@ -11,7 +11,6 @@ import { PuertasService } from 'src/app/servicios/puertas.service';
 })
 export class ControlPuertaComponent {
   private puertasSuscripcion: Subscription = new Subscription;
-  private estadoPuertasSubscription: Subscription = new Subscription;
   
   switchState: boolean = false;
   puertas: Puerta[] = [];
@@ -24,31 +23,12 @@ export class ControlPuertaComponent {
     this.puertasSuscripcion = this._puertasService.cargarPuertas().subscribe((data: Puerta[]) => {
       this.puertas = data
     })
-
-    // // Realiza la solicitud cada 5 segundos (5000 milisegundos)
-    // this.estadoPuertasSubscription = interval(1000)
-    //   .pipe(
-    //     switchMap(() => this.obtenerEstadoLeds()) // Cambia a la nueva solicitud después del intervalo
-    //   )
-    //   .subscribe((data: any) => {
-    //     for (let i = 0; i < this.puertas.length; i++) {
-    //       if (data.leds_status[this.puertas[i].id] === 'ON') {
-    //         this.puertas[i].abierta = true;
-    //       } else {
-    //         this.puertas[i].abierta = false;
-    //       }
-    //     }
-    //   });
   }
 
   ngOnDestroy() {
-    // Desuscribirse de todas las suscripciones para evitar pérdidas de memoria
     if (this.puertasSuscripcion) {
       this.puertasSuscripcion.unsubscribe();
     }
-    // if (this.estadoPuertasSubscription) {
-    //   this.estadoPuertasSubscription.unsubscribe();
-    // }
   }
 
   obtenerEstadoLeds() {

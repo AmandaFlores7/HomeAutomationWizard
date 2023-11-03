@@ -9,8 +9,4 @@ import { Router } from '@angular/router';
 export class CarruselImagenesComponent {
   @Input()
   imagenes: any;
-
-  constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-  }
 }

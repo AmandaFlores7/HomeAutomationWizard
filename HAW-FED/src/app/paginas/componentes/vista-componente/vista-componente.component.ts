@@ -11,10 +11,12 @@ export class VistaComponenteComponent {
   imagenes: any;
   texto: string = '';
 
+  ruta: any;
+
   constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    if (this.router?.url && this.buscarRuta(this.router.url)?.titulo != null) {
-      let infoPagina = this.buscarRuta(this.router.url);
+    this.ruta = window.location.pathname;
+    if (this.router?.url && this.buscarRuta(this.ruta)?.titulo != null) {
+      let infoPagina = this.buscarRuta(this.ruta);
       this.imagenes = infoPagina['imagenes'];
       this.texto = infoPagina['texto'];
     }

@@ -9,11 +9,6 @@ export class LucesServiceService {
   localhost = "localhost"
 
    constructor(private http: HttpClient) {}
-
-  // Métodos para interactuar con la base de datos MongoDB
-  // obtenerLuces() {
-  //   return this.http.get<any[]>(`${this.local_ip}/luces`);
-  // }
   
   cargarLuces(){
     return this.http.get<Luz[]>('/assets/luces.json');

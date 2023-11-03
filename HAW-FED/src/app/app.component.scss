@@ -1,0 +1,25 @@
+.contenedor {
+    min-height: 100vh;
+}
+
+.navbarPrincipal {
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.cuerpito {
+    overflow-y: auto;
+    padding-bottom: 70px; /* Añade espacio para el pie */
+    padding-top: 60px; /* Añade espacio para el navbar */
+}
+
+.pie {
+    background-color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

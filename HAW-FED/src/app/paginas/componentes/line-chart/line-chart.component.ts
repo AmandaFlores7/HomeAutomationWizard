@@ -79,8 +79,13 @@ export class LineChartComponent {
     }
   }
   ngOnDestroy() {
-    this.myWebSocket.unsubscribe();
-    this.chart.destroy();
+    if (this.myWebSocket) {
+      this.myWebSocket.unsubscribe();
+    }
+    if (this.chart) {
+      this.chart.destroy();
+    }
+    
   }
 
   private initializeChart() {

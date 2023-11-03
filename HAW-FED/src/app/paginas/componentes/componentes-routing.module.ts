@@ -1,0 +1,32 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { VistaComponenteComponent } from './vista-componente/vista-componente.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
+import { ControlPuertaComponent } from './control-puerta/control-puerta.component';
+import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
+import { MenuOpcionesComponent } from 'src/app/componentes/menu-opciones/menu-opciones.component';
+
+const routes: Routes = [
+  { path: 'sensores', component: MenuOpcionesComponent },
+  { path: 'actuadores', component: MenuOpcionesComponent },
+  { path: 'sensores/temperatura', component: VistaComponenteComponent },
+  { path: 'sensores/temperatura/ver', component: LineChartComponent },
+  { path: 'sensores/humedad', component: VistaComponenteComponent },
+  { path: 'sensores/humedad/ver', component: LineChartComponent },
+  { path: 'sensores/luz', component: VistaComponenteComponent },
+  { path: 'sensores/luz/ver', component: LineChartComponent },
+  { path: 'sensores/aire', component: VistaComponenteComponent },
+  { path: 'sensores/aire/ver', component: LineChartComponent },
+  { path: 'actuadores/camara_r', component: VistaComponenteComponent },
+  { path: 'actuadores/luces', component: VistaComponenteComponent },
+  { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
+  { path: 'actuadores/puerta', component: VistaComponenteComponent },
+  { path: 'actuadores/puerta/probar', component: ControlPuertaComponent },
+  { path: 'actuadores/camara_r/probar', component:ProbarCamaraComponent}];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ComponentesRoutingModule { }

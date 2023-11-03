@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
 
@@ -7,13 +7,12 @@ import { rutas } from 'src/app/constantes/rutas';
   templateUrl: './menu-info.component.html',
   styleUrls: ['./menu-info.component.scss']
 })
-export class MenuInfoComponent implements OnInit {
+export class MenuInfoComponent {
   @Input() opciones : any;
   informacion: any;
   extra: any;
 
   constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     if (this.router?.url && this.buscarRuta(this.router.url)?.titulo != null) {
       let infoPagina = this.buscarRuta(this.router.url);
       this.informacion = infoPagina.informacion;

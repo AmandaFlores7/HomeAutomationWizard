@@ -6,10 +6,7 @@ import { Puerta } from '../models/puerta';
   providedIn: 'root'
 })
 export class PuertasService {
-  local_ip = "192.168.2.1"
-  localhost = "localhost"
-
-   constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
   
   cargarPuertas(){
     return this.http.get<Puerta[]>('/assets/puertas.json');

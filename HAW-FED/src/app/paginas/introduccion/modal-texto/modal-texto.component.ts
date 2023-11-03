@@ -15,9 +15,6 @@ export class ModalTextoComponent implements OnInit {
   link = '';
   hayLink = false;
 
-  constructor(router: Router) {
-  }
-
   onCloseModal(): void {
     this.closeModal.emit();
   }
