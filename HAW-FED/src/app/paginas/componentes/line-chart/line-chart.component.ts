@@ -42,7 +42,6 @@ export class LineChartComponent {
 
         this.s_mqtt.obtenerDatosSensor(this.sensorType).subscribe((data: any) => {
           this.initializeChart();
-          console.log(data.last_hour_data);
           for (let i = 0; i < data.last_hour_data.length; i++) {
             this.measure_times.push(data.last_hour_data[i]['time(timestamp)']);
             this.values.push(data.last_hour_data[i]['value']);

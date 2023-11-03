@@ -26,7 +26,6 @@ export class FooterPrincipalComponent {
 
   cargarBotones() {
     this.ruta = window.location.pathname;
-    console.log(this.ruta);
     if (this.router?.url && this.buscarRuta(this.ruta)?.titulo != null) {
       let infoPagina = this.buscarRuta(this.ruta);
       this.botones = infoPagina?.botones? infoPagina.botones : null;

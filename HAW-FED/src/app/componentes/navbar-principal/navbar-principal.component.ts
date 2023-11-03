@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
+import { DataDevService } from 'src/app/servicios/data-dev.service';
 
 @Component({
   selector: 'app-navbar-principal',
@@ -14,7 +15,7 @@ export class NavbarPrincipalComponent {
 
   showDevOptions = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dataDev: DataDevService) {
     this.cambiarTitulo();
   }
 
@@ -36,6 +37,7 @@ export class NavbarPrincipalComponent {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.cambiarTitulo();
+        this.dataDev.setDevModeBool(this.isDevMode);
       }
     });
   }
@@ -58,5 +60,6 @@ export class NavbarPrincipalComponent {
 
   alternarDevMode() {
     this.isDevMode = !this.isDevMode;
+    this.dataDev.setDevModeBool(this.isDevMode);
   }
 }

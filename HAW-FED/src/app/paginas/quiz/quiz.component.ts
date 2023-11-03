@@ -212,7 +212,6 @@ export class QuizComponent implements OnInit {
         }
       });
     });
-    console.log(localStorage.getItem('preguntas'));
     this.regresarPaginaAnterior();
   }
 

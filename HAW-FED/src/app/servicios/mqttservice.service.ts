@@ -28,7 +28,6 @@ export class MqttserviceService {
   }
 
   estdosLeds() {
-    console.log("Estados leds");
     return this._http.get('http://' + this.local_ip + ':8000/estado-leds')
   }
 
