@@ -1,4 +1,4 @@
-export const rutas ={
+export const rutas = {
     "/aplicacion": {
         "titulo": "Menu Principal",
         "items": [
@@ -144,16 +144,16 @@ export const rutas ={
                 "link": "/aplicacion/wikiiot/leccion4"
             },
             {
-                "titulo":" Lección 5: Control de Dispositivos en la Maqueta",
-                "link":"/aplicacion/wikiiot/leccion5"
+                "titulo": " Lección 5: Control de Dispositivos en la Maqueta",
+                "link": "/aplicacion/wikiiot/leccion5"
             },
             {
-                "titulo":"Lección 6: Seguridad y Privacidad en IoT",
-                "link":"/aplicacion/wikiiot/leccion6"
+                "titulo": "Lección 6: Seguridad y Privacidad en IoT",
+                "link": "/aplicacion/wikiiot/leccion6"
             },
             {
-                "titulo":"Lección 7: Proyectos Prácticos y Magia de la Automatización",
-                "link":"/aplicacion/wikiiot/leccion7"
+                "titulo": "Lección 7: Proyectos Prácticos y Magia de la Automatización",
+                "link": "/aplicacion/wikiiot/leccion7"
             }
         ],
         "botones": {
@@ -163,39 +163,99 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion1":{
+    "/aplicacion/wikiiot/leccion1": {
         "titulo": "Lección 1",
         "titulo2": "Introducción al IoT y a Home Automation Wizard",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Comprender qué es el Internet de las Cosas (IoT) y cómo está revolucionando la automatización del hogar y otros campos."
+                "texto": "Comprender qué es el Internet de las Cosas (IoT) y cómo está revolucionando la automatización del hogar y otros campos."
             },
             {
-                "texto":"Conocer cómo Home Automation Wizard permite a los usuarios controlar y monitorear una maqueta de casa inteligente a través de la aplicación."
+                "texto": "Conocer cómo Home Automation Wizard permite a los usuarios controlar y monitorear una maqueta de casa inteligente a través de la aplicación."
             },
             {
-                "texto":"Aprender los conceptos básicos para convertirse en un 'mago' de la automatización del hogar."
+                "texto": "Aprender los conceptos básicos para convertirse en un 'mago' de la automatización del hogar."
             }
         ],
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
                 "link": "/aplicacion/wikiiot/"
+            },
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/aplicacion/wikiiot/leccion1/contenido/1"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion2":{
+    "/aplicacion/wikiiot/leccion1/contenido/1": {
+        "titulo": "¿Qué es IoT?",
+        "botones": {
+            "cantidad": 2,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/actuadores/"
+            },
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/aplicacion/wikiiot/leccion1/contenido/2"
+            }
+        },
+        "imagenes": [
+            {
+                "ruta": "../../../../assets/img/raspicam.jpg",
+            },
+            {
+                "ruta": "../../../../assets/img/raspicam.jpg",
+            }
+        ],
+        "texto": [
+            {
+                "parrafo": "El Internet de las Cosas, o IoT, se refiere a la red de dispositivos físicos conectados a Internet que recopilan y comparten datos para automatizar tareas y tomar decisiones informadas. IoT es una tecnología que ha revolucionado la forma en que interactuamos con el mundo digital y físico. Su importancia en la vida cotidiana es cada vez más evidente, ya que permite la interconexión de dispositivos y sistemas para mejorar la eficiencia, la comodidad y la toma de decisiones."
+            },
+        ]
+
+    },
+    "/aplicacion/wikiiot/leccion1/contenido/2": {
+        "titulo": "Ejemplos",
+        "botones": {
+            "cantidad": 2,
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/aplicacion/actuadores/"
+            },
+            "ruta2": {
+                "titulo": "Siguiente",
+                "link": "/aplicacion/wikiiot/leccion1/contenido/2"
+            }
+        },
+        "imagenes": [
+            {
+                "ruta": "../../../../assets/img/raspicam.jpg",
+            },
+            {
+                "ruta": "../../../../assets/img/raspicam.jpg",
+            }
+        ],
+        "texto": [
+            {
+                "parrafo": "El Internet de las Cosas, o IoT, se refiere a la red de dispositivos físicos conectados a Internet que recopilan y comparten datos para automatizar tareas y tomar decisiones informadas. IoT es una tecnología que ha revolucionado la forma en que interactuamos con el mundo digital y físico. Su importancia en la vida cotidiana es cada vez más evidente, ya que permite la interconexión de dispositivos y sistemas para mejorar la eficiencia, la comodidad y la toma de decisiones."
+            },
+        ]
+
+    },
+    "/aplicacion/wikiiot/leccion2": {
         "titulo": "Lección 2",
         "titulo2": "Sensores y Actuadores",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Comprender la importancia de los sensores y actuadores en el contexto del IoT y la automatización del hogar."
+                "texto": "Comprender la importancia de los sensores y actuadores en el contexto del IoT y la automatización del hogar."
             },
             {
-                "texto":"Identificar y describir los tipos comunes de sensores utilizados en el IoT."
+                "texto": "Identificar y describir los tipos comunes de sensores utilizados en el IoT."
             },
             {
-                "texto":"Aprender cómo los sensores recopilan datos y cómo los actuadores toman acciones basadas en estos datos."
+                "texto": "Aprender cómo los sensores recopilan datos y cómo los actuadores toman acciones basadas en estos datos."
             }
         ],
         "botones": {
@@ -205,18 +265,18 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion3":{
+    "/aplicacion/wikiiot/leccion3": {
         "titulo": "Lección 3",
         "titulo2": "Protocolos de Comunicación en IoT",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Comprender la importancia de los protocolos de comunicación en el IoT."
+                "texto": "Comprender la importancia de los protocolos de comunicación en el IoT."
             },
             {
-                "texto":"Identificar y describir protocolos de comunicación comunes utilizados en IoT, con un enfoque en MQTT."
+                "texto": "Identificar y describir protocolos de comunicación comunes utilizados en IoT, con un enfoque en MQTT."
             },
             {
-                "texto":"Aprender cómo estos protocolos permiten la comunicación efectiva entre dispositivos en la maqueta y la aplicación."
+                "texto": "Aprender cómo estos protocolos permiten la comunicación efectiva entre dispositivos en la maqueta y la aplicación."
             }
         ],
         "botones": {
@@ -226,15 +286,15 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion4":{
+    "/aplicacion/wikiiot/leccion4": {
         "titulo": "Lección 4",
         "titulo2": "Maqueta de Casa Inteligente en Detalle",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Explorar y comprender los dispositivos específicos presentes en la maqueta de casa inteligente de Home Automation Wizard."
+                "texto": "Explorar y comprender los dispositivos específicos presentes en la maqueta de casa inteligente de Home Automation Wizard."
             },
             {
-                "texto":"Familiarizarse con la función de cada dispositivo y cómo se integran en el entorno de automatización del hogar."
+                "texto": "Familiarizarse con la función de cada dispositivo y cómo se integran en el entorno de automatización del hogar."
             },
         ],
         "botones": {
@@ -244,15 +304,15 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion5":{
+    "/aplicacion/wikiiot/leccion5": {
         "titulo": "Lección 5",
         "titulo2": "Control de Dispositivos en la Maqueta",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Aprender a interactuar con la maqueta de casa inteligente de Home Automation Wizard."
+                "texto": "Aprender a interactuar con la maqueta de casa inteligente de Home Automation Wizard."
             },
             {
-                "texto":"Comprender cómo controlar dispositivos específicos, como luces, temperatura y cerraduras, utilizando la aplicación."
+                "texto": "Comprender cómo controlar dispositivos específicos, como luces, temperatura y cerraduras, utilizando la aplicación."
             },
         ],
         "botones": {
@@ -262,18 +322,18 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion6":{
+    "/aplicacion/wikiiot/leccion6": {
         "titulo": "Lección 6",
         "titulo2": "Seguridad y Privacidad en IoT",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Comprender los desafíos de seguridad y privacidad en el Internet de las Cosas (IoT)."
+                "texto": "Comprender los desafíos de seguridad y privacidad en el Internet de las Cosas (IoT)."
             },
             {
-                "texto":"Aprender cómo Home Automation Wizard aborda estos desafíos y promueve la seguridad en la maqueta de casa inteligente."
+                "texto": "Aprender cómo Home Automation Wizard aborda estos desafíos y promueve la seguridad en la maqueta de casa inteligente."
             },
             {
-                "texto":"Conocer y aplicar buenas prácticas para proteger la maqueta de casa y los dispositivos IoT."
+                "texto": "Conocer y aplicar buenas prácticas para proteger la maqueta de casa y los dispositivos IoT."
             }
         ],
         "botones": {
@@ -283,18 +343,18 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion7":{
+    "/aplicacion/wikiiot/leccion7": {
         "titulo": "Lección 7",
         "titulo2": "Proyectos Prácticos y Magia de la Automatización",
-        "objetivos":[
+        "objetivos": [
             {
-                "texto":"Aplicar los conocimientos adquiridos a través de proyectos prácticos en la maqueta de casa inteligente."
+                "texto": "Aplicar los conocimientos adquiridos a través de proyectos prácticos en la maqueta de casa inteligente."
             },
             {
-                "texto":"Fomentar la creatividad y la experimentación de los usuarios al crear sistemas de automatización y seguridad."
+                "texto": "Fomentar la creatividad y la experimentación de los usuarios al crear sistemas de automatización y seguridad."
             },
             {
-                "texto":"Fomentar la sensación de ser 'magos' de la automatización del hogar."
+                "texto": "Fomentar la sensación de ser 'magos' de la automatización del hogar."
             }
         ],
         "botones": {
@@ -329,9 +389,9 @@ export const rutas ={
                 "parrafo": "En este caso se utiliza el sensor DHT 11 que es ampliamente utilizado para medir la temperatura ambiente. Este sensor digital de bajo costo es conocido por su precisión y facilidad de uso. A través de su componente de termistor, el DHT11 detecta la temperatura del entorno en el que se encuentra y la convierte en una señal digital que puede ser leída por microcontroladores, como Arduino, Raspberry Pi y otros dispositivos electrónicos."
             },
         ]
-        
+
     },
-    "/aplicacion/sensores/temperatura/ver":{
+    "/aplicacion/sensores/temperatura/ver": {
         "titulo": "Gráfico de temperatura",
         "botones": {
             "cantidad": 1,
@@ -340,8 +400,8 @@ export const rutas ={
                 "link": "/aplicacion/sensores"
             }
         },
-        "datosSensor":{
-            "tipoSensor":'Sensor de temperatura',
+        "datosSensor": {
+            "tipoSensor": 'Sensor de temperatura',
             "tituloGrafico": 'Temperatura en C°',
             "websocketURL": 'ws://192.168.2.1:8000/temperatura'
         }
@@ -373,7 +433,7 @@ export const rutas ={
             },
         ]
     },
-    "/aplicacion/sensores/humedad/ver":{
+    "/aplicacion/sensores/humedad/ver": {
         "titulo": "Gráfico de humedad",
         "botones": {
             "cantidad": 1,
@@ -382,8 +442,8 @@ export const rutas ={
                 "link": "/aplicacion/sensores"
             }
         },
-        "datosSensor":{
-            "tipoSensor":'Sensor de humedad',
+        "datosSensor": {
+            "tipoSensor": 'Sensor de humedad',
             "tituloGrafico": 'humedad en C°',
             "websocketURL": 'ws://192.168.2.1:8000/humedad'
         }
@@ -415,7 +475,7 @@ export const rutas ={
             },
         ]
     },
-    "/aplicacion/sensores/luz/ver":{
+    "/aplicacion/sensores/luz/ver": {
         "titulo": "Gráfico de nivel de luz",
         "botones": {
             "cantidad": 1,
@@ -424,8 +484,8 @@ export const rutas ={
                 "link": "/aplicacion/sensores"
             }
         },
-        "datosSensor":{
-            "tipoSensor":'Sensor de Luz',
+        "datosSensor": {
+            "tipoSensor": 'Sensor de Luz',
             "tituloGrafico": 'Nivel de luz obtenida',
             "websocketURL": 'ws://192.168.2.1:8000/sensor-luz'
         }
@@ -456,9 +516,9 @@ export const rutas ={
                 "parrafo": "El sensor MQ-135 es un sensor de gas que se utiliza para detectar y medir la concentración de varios gases en el aire, como monóxido de carbono (CO), dióxido de carbono (CO2), amoníaco (NH3), metano (CH4) y otros gases peligrosos. Es ampliamente utilizado en aplicaciones de seguridad y calidad del aire, así como en proyectos de monitoreo ambiental. El sensor MQ-135 opera en función de la resistencia eléctrica que cambia en respuesta a la presencia y concentración de gases específicos. La lectura de resistencia se convierte en una señal eléctrica que puede ser interpretada para determinar la concentración de gases peligrosos en el aire. Este sensor es útil en sistemas de detección de gases tóxicos, control de calidad del aire en interiores, y proyectos de seguridad y automatización. Su versatilidad y capacidad para detectar múltiples gases lo hacen valioso en una variedad de aplicaciones relacionadas con la seguridad y el monitoreo ambiental."
             },
         ]
-        
+
     },
-    "/aplicacion/sensores/aire/ver":{
+    "/aplicacion/sensores/aire/ver": {
         "titulo": "Gráfico de aire",
         "botones": {
             "cantidad": 1,
@@ -467,8 +527,8 @@ export const rutas ={
                 "link": "/aplicacion/sensores"
             }
         },
-        "datosSensor":{
-            "tipoSensor":'Sensor de aire',
+        "datosSensor": {
+            "tipoSensor": 'Sensor de aire',
             "tituloGrafico": 'aire en C°',
             "websocketURL": 'ws://192.168.2.1:8000/calidad-aire"'
         }
@@ -499,15 +559,15 @@ export const rutas ={
                 "parrafo": "La Raspicam se refiere a una cámara diseñada específicamente para su uso con las placas Raspberry Pi, como la Raspberry Pi 3. Es un módulo de cámara de alta calidad que se conecta directamente a los puertos de la Raspberry Pi y permite a los usuarios capturar imágenes y videos de alta resolución de manera sencilla y eficiente. En este proyecto, la Raspicam actúa como una cámara IP, permitiendo la transmisión y visualización de imágenes o videos en tiempo real a través de una red, lo que facilita el monitoreo remoto y la grabación de contenido desde la Raspberry Pi."
             },
         ]
-       
+
     },
-    "/aplicacion/actuadores/camara_r/probar":{
-        "titulo":"Probar cámara Raspberry Pi 3",
-        "botones":{
-            "cantidad":1,
-            "ruta1":{
+    "/aplicacion/actuadores/camara_r/probar": {
+        "titulo": "Probar cámara Raspberry Pi 3",
+        "botones": {
+            "cantidad": 1,
+            "ruta1": {
                 "titulo": "Retroceder",
-                "link":"/aplicacion/actuadores/camara_r/"
+                "link": "/aplicacion/actuadores/camara_r/"
             }
         },
     },
@@ -537,7 +597,7 @@ export const rutas ={
                 "parrafo": "En el contexto de IoT (Internet de las cosas), los LEDs se utilizan para indicar el estado de dispositivos o sensores, así como para proporcionar retroalimentación visual en aplicaciones de control de luces. Los LEDs pueden ser controlados de forma remota a través de una red, lo que permite encender, apagar o ajustar su brillo de manera programada o en respuesta a eventos específicos. Esto facilita el monitoreo y el control de la iluminación en aplicaciones de automatización del hogar, gestión de edificios, agricultura inteligente y otros escenarios de IoT."
             },
         ]
-        
+
     },
     "/aplicacion/actuadores/puerta": {
         "titulo": "Control de Puerta",
@@ -576,7 +636,7 @@ export const rutas ={
             }
         },
     },
-    "/introduccion/1" : {
+    "/introduccion/1": {
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta2": {
@@ -585,7 +645,7 @@ export const rutas ={
             }
         }
     },
-    "/introduccion/2" : {
+    "/introduccion/2": {
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta1": {
@@ -619,11 +679,11 @@ export const rutas ={
                 "parrafo": "Cuando un cliente ya no necesita comunicarse, se desconecta del servidor."
             }
         ],
-        "extra" : {
+        "extra": {
             "parrafo": "Estos pasos permiten que los dispositivos se comuniquen y se mantengan actualizados sobre la información que les interesa."
         }
     },
-    "/introduccion/3" : {
+    "/introduccion/3": {
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta1": {
@@ -642,7 +702,7 @@ export const rutas ={
             "parrafo": "En esta animación, se puede visualizar el funcionamiento básico del protocolo. Fuente: Amazon Web Services."
         }
     },
-    "/introduccion/4" : {
+    "/introduccion/4": {
         "titulo": "Home Automation Wizard",
         "botones": {
             "ruta1": {
