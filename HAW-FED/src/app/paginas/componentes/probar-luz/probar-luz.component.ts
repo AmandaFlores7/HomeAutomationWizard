@@ -53,7 +53,7 @@ export class ProbarLuzComponent {
   }
 
   crearPeticion() {
-    let peticion = "publicar en broker topico Leds con mensaje {\"id\": " + this.luzSeleccionada + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
+    let peticion = "publicar en 'broker' topico 'Leds' con mensaje {\"id\": " + this.luzSeleccionada + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
     if (this.luzSeleccionada && this.accionSeleccionada) {
       this.textoPeticion = peticion;
     }

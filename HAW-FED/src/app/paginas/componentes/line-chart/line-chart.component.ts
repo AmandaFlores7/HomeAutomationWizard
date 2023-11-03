@@ -4,6 +4,7 @@ import Chart from 'chart.js/auto';
 import { delay, retryWhen } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
 import { rutas } from 'src/app/constantes/rutas';
+import { DataDevService } from 'src/app/servicios/data-dev.service';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
 
 interface result {
@@ -31,7 +32,14 @@ export class LineChartComponent {
   public chartTitle: string = '';
   public myWebSocket:any;  
 
-  constructor(private router: Router, private s_mqtt: MqttserviceService) {
+  dataDevBol = false;
+
+  textoPeticion = '';
+
+  constructor(private router: Router, private s_mqtt: MqttserviceService, private dataDev: DataDevService) {
+    this.dataDev.devModeBool$.subscribe(value => {
+      this.dataDevBol = value;
+    });
     if (this.router?.url && this.buscarRuta(this.router.url)?.titulo != null) {
       let infoPagina = this.buscarRuta(this.router.url);
       if (infoPagina?.datosSensor) {
@@ -53,6 +61,12 @@ export class LineChartComponent {
         });
       }
     }
+    this.crearPeticion();
+  }
+
+  crearPeticion() {
+    let peticion = "suscribirse a 'broker' al topico '"+this.sensorType+"'";
+    this.textoPeticion = peticion;
   }
 
   ngOnInit(): void {

@@ -1,4 +1,7 @@
 <div class="m-3">
+    <div *ngIf="dataDevBol" class="card bg-info-subtle p-2" style="text-align: start;">
+        <textarea class="bg-light-subtle" rows="2" [placeholder]="textoPeticion" aria-label="Mensaje" disabled></textarea>
+    </div>
     <div class="chart-container">
         <canvas id="MyChart">{{ chart }}</canvas>
     </div>
