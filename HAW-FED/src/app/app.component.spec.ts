@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'HAW-FED'`, () => {
+  it(`should have as title 'haw-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('HAW-FED');
+    expect(app.title).toEqual('haw-frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('HAW-FED app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('haw-frontend app is running!');
   });
 });

@@ -12,7 +12,7 @@ export const rutas ={
             },
             {
                 "titulo": "Wiki IoT",
-                "link": "/aplicacion/wikiiot"
+                "link": "/wikiiot"
             },
             {
                 "titulo": "Prueba tus Conocimientos",
@@ -124,36 +124,36 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot": {
+    "/wikiiot": {
         "titulo": "Wiki IoT",
         "items": [
             {
                 "titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
-                "link": "/aplicacion/wikiiot/leccion1"
+                "link": "/wikiiot/leccion1"
             },
             {
                 "titulo": "Lección 2: Sensores y Actuadores",
-                "link": "/aplicacion/wikiiot/leccion2"
+                "link": "/wikiiot/leccion2"
             },
             {
                 "titulo": "Lección 3: Protocolos de Comunicación en IoT",
-                "link": "/aplicacion/wikiiot/leccion3"
+                "link": "/wikiiot/leccion3"
             },
             {
                 "titulo": "Lección 4: Maqueta de Casa Inteligente en Detalle",
-                "link": "/aplicacion/wikiiot/leccion4"
+                "link": "/wikiiot/leccion4"
             },
             {
                 "titulo":" Lección 5: Control de Dispositivos en la Maqueta",
-                "link":"/aplicacion/wikiiot/leccion5"
+                "link":"/wikiiot/leccion5"
             },
             {
                 "titulo":"Lección 6: Seguridad y Privacidad en IoT",
-                "link":"/aplicacion/wikiiot/leccion6"
+                "link":"/wikiiot/leccion6"
             },
             {
                 "titulo":"Lección 7: Proyectos Prácticos y Magia de la Automatización",
-                "link":"/aplicacion/wikiiot/leccion7"
+                "link":"/wikiiot/leccion7"
             }
         ],
         "botones": {
@@ -163,7 +163,7 @@ export const rutas ={
             }
         }
     },
-    "/aplicacion/wikiiot/leccion1":{
+    "/wikiiot/leccion1":{
         "titulo": "Lección 1",
         "titulo2": "Introducción al IoT y a Home Automation Wizard",
         "objetivos":[
@@ -180,11 +180,11 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion2":{
+    "/wikiiot/leccion2":{
         "titulo": "Lección 2",
         "titulo2": "Sensores y Actuadores",
         "objetivos":[
@@ -201,11 +201,11 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion3":{
+    "/wikiiot/leccion3":{
         "titulo": "Lección 3",
         "titulo2": "Protocolos de Comunicación en IoT",
         "objetivos":[
@@ -222,11 +222,11 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion4":{
+    "/wikiiot/leccion4":{
         "titulo": "Lección 4",
         "titulo2": "Maqueta de Casa Inteligente en Detalle",
         "objetivos":[
@@ -240,11 +240,11 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion5":{
+    "/wikiiot/leccion5":{
         "titulo": "Lección 5",
         "titulo2": "Control de Dispositivos en la Maqueta",
         "objetivos":[
@@ -258,11 +258,11 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion6":{
+    "/wikiiot/leccion6":{
         "titulo": "Lección 6",
         "titulo2": "Seguridad y Privacidad en IoT",
         "objetivos":[
@@ -279,11 +279,11 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },
-    "/aplicacion/wikiiot/leccion7":{
+    "/wikiiot/leccion7":{
         "titulo": "Lección 7",
         "titulo2": "Proyectos Prácticos y Magia de la Automatización",
         "objetivos":[
@@ -300,7 +300,7 @@ export const rutas ={
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
-                "link": "/aplicacion/wikiiot/"
+                "link": "/wikiiot/"
             }
         }
     },

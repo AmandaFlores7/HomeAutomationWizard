@@ -12,7 +12,6 @@ export class MenuOpcionesComponent {
   opcionesMenu: any;
 
   constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     let infoPagina = this.buscarTitulo(this.router.url);
     this.opcionesMenu = infoPagina['items'];
   }

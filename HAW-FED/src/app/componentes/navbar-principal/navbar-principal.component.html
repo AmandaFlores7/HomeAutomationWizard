@@ -1,8 +1,18 @@
 <nav class="navbarPrincipal navbar navbar-default navbar-static-top bg-info text-dark">
   <div class="container-fluid">
-    <a class="navbar-brand font-monospace">
+    <a class="navbar-brand font-monospace fs-6">
         <i class="fas fa-hat-wizard bg-info bg-gradient p-2 rounded" [routerLink]='enrutar(title)'></i>
         {{title}}
     </a>
+    <div *ngIf="showDevOptions" class="col" style="text-align: right; font-size: smaller;">
+      <div class="row">
+        <a>Dev Mode</a>
+      </div>
+      <div class="row">
+        <div class="form-switch form-switch-md">
+          <input id="devModeSwitch" class="form-check-input" type="checkbox" [checked]="isDevMode" (change)="alternarDevMode()">
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
