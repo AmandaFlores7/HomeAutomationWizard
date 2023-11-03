@@ -5,8 +5,7 @@ import { Luz } from 'src/app/models/luces.interfaces';
   providedIn: 'root'
 })
 export class LucesServiceService {
-  local_ip2 = "192.168.2.1"
-  
+  local_ip = "192.168.2.1"
   localhost = "localhost"
 
    constructor(private http: HttpClient) {}

@@ -23,8 +23,7 @@ export class LineChartComponent {
   public values: string[] = [];
   public chart: any;
 
-  public webSocketIP = 'ws://127.0.0.1:8000/';
-  public webSocketIP2 = 'ws://192.168.2.1:8000';
+  public webSocketIP = 'ws://192.168.2.1:8000/';
 
   public valorActual: string = '';
 
