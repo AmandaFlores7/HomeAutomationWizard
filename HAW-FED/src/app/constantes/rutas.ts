@@ -194,13 +194,13 @@ export const rutas = {
             "cantidad": 2,
             "ruta1": {
                 "titulo": "Retroceder",
-            },
                 "link": "/aplicacion/actuadores/"
+            },
             "ruta2": {
                 "titulo": "Siguiente",
                 "link": "/wikiiot/leccion1/contenido/2"
-        },
             }
+        },
         "imagenes": [
             {
                 "ruta": "../../../../assets/img/raspicam.jpg",
@@ -211,8 +211,8 @@ export const rutas = {
         ],
         "texto": [
             {
-            },
                 "parrafo": "El Internet de las Cosas, o IoT, se refiere a la red de dispositivos físicos conectados a Internet que recopilan y comparten datos para automatizar tareas y tomar decisiones informadas. IoT es una tecnología que ha revolucionado la forma en que interactuamos con el mundo digital y físico. Su importancia en la vida cotidiana es cada vez más evidente, ya que permite la interconexión de dispositivos y sistemas para mejorar la eficiencia, la comodidad y la toma de decisiones."
+            },
         ]
     },
 
@@ -221,21 +221,21 @@ export const rutas = {
         "titulo": "Ejemplos",
             "cantidad": 2,
             "ruta1": {
-                "link": "/aplicacion/actuadores/"
                 "titulo": "Retroceder",
-            "ruta2": {
+                "link": "/aplicacion/actuadores/"
             },
+            "ruta2": {
                 "titulo": "Siguiente",
                 "link": "/wikiiot/leccion1/contenido/2"
             }
         },
         "imagenes": [
-                "ruta": "../../../../assets/img/raspicam.jpg",
             {
+                "ruta": "../../../../assets/img/raspicam.jpg",
             },
             {
-            }
                 "ruta": "../../../../assets/img/raspicam.jpg",
+            }
         ],
         "texto": [
             {
