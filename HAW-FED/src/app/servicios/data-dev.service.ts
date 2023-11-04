@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataDevService {
   private devModeBoolSubject = new Subject<boolean>();
@@ -12,5 +12,5 @@ export class DataDevService {
     this.devModeBoolSubject.next(value);
   }
 
-  constructor() { }
+  constructor() {}
 }

@@ -7,11 +7,12 @@ import { AuthGuard } from './servicios/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'login', component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
-  { 
-    path: 'introduccion', 
-    redirectTo: 'introduccion/1' 
+  {
+    path: 'introduccion',
+    redirectTo: 'introduccion/1',
   },
   {
     path: 'introduccion',
@@ -21,10 +22,10 @@ const routes: Routes = [
         (m) => m.IntroduccionModule
       ),
   },
-  { 
-    path: '', 
-    redirectTo: 'aplicacion', 
-    pathMatch: 'full' 
+  {
+    path: '',
+    redirectTo: 'aplicacion',
+    pathMatch: 'full',
   },
   {
     path: 'aplicacion',
@@ -39,35 +40,43 @@ const routes: Routes = [
         (m) => m.ComponentesModule
       ),
   },
-  { 
-    path: 'quiz', 
+  {
+    path: 'quiz',
     canActivate: [AuthGuard],
-    component: MenuOpcionesComponent 
+    component: MenuOpcionesComponent,
   },
   {
     path: 'quiz',
     canActivate: [AuthGuard],
     children: [
-      { path: 'sensores', component: QuizComponent, data: { tipo: 'sensor' } },
+      {
+        path: 'sensores',
+        component: QuizComponent,
+        data: { tipo: 'sensor' },
+      },
       {
         path: 'actuadores',
         component: QuizComponent,
         data: { tipo: 'actuador' },
       },
-      { path: 'iot', component: QuizComponent, data: { tipo: 'wikiiot' } },
+      {
+        path: 'iot',
+        component: QuizComponent,
+        data: { tipo: 'wikiiot' },
+      },
     ],
   },
-  { 
-    path: 'wikiiot', 
+  {
+    path: 'wikiiot',
     canActivate: [AuthGuard],
-    component: MenuOpcionesComponent 
+    component: MenuOpcionesComponent,
   },
   {
     path: 'wikiiot',
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./paginas/wiki-iot/wiki-iot.module').then((m) => m.WikiIotModule),
-  }
+  },
 ];
 
 @NgModule({

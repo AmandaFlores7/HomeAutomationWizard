@@ -1,27 +1,27 @@
 [
-    {
-        "id": "led1",
-        "nombre": "Luz Roja",
-        "activada": false
-    },
-    {
-        "id": "led2",
-        "nombre": "Luz Azul",
-        "activada": false
-    },
-    {
-        "id": "led3",
-        "nombre": "Luz Blanca",
-        "activada": false
-    },
-    {
-        "id": "led4",
-        "nombre": "Luz Amarilla",
-        "activada": false
-    },
-    {
-        "id": "led5",
-        "nombre": "Luz Verde",
-        "activada": false
-    }
+  {
+    "id": "led1",
+    "nombre": "Luz Roja",
+    "activada": false
+  },
+  {
+    "id": "led2",
+    "nombre": "Luz Azul",
+    "activada": false
+  },
+  {
+    "id": "led3",
+    "nombre": "Luz Blanca",
+    "activada": false
+  },
+  {
+    "id": "led4",
+    "nombre": "Luz Amarilla",
+    "activada": false
+  },
+  {
+    "id": "led5",
+    "nombre": "Luz Verde",
+    "activada": false
+  }
 ]

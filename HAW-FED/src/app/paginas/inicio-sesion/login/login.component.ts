@@ -19,7 +19,7 @@ export class LoginComponent {
     } else {
       this.renderer.addClass(elemento, 'is-invalid');
     }
-    
+
   }
 
 }

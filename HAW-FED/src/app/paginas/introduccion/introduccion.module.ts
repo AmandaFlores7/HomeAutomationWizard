@@ -8,18 +8,14 @@ import { TesteoComponent } from './testeo/testeo.component';
 import { ImagenExplicativaComponent } from './imagen-explicativa/imagen-explicativa.component';
 import { ModalTextoComponent } from './modal-texto/modal-texto.component';
 
-
 @NgModule({
   declarations: [
     CarruselComponent,
     MenuInfoComponent,
     ModalTextoComponent,
     TesteoComponent,
-    ImagenExplicativaComponent
+    ImagenExplicativaComponent,
   ],
-  imports: [
-    CommonModule,
-    IntroduccionRoutingModule
-  ]
+  imports: [CommonModule, IntroduccionRoutingModule],
 })
 export class IntroduccionModule { }

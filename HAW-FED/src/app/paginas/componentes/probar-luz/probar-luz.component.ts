@@ -19,7 +19,7 @@ export class ProbarLuzComponent {
   luzSeleccionada: string = ''; // Variable para la primera selección
   accionSeleccionada: string = ''; // Variable para la segunda selección
   textoPeticion: string = ''; // Variable para mostrar el texto de la petición
-  
+
   switchState: boolean = false;
   luces: Luz[] = [];
 
@@ -86,14 +86,13 @@ export class ProbarLuzComponent {
     if (!luz.activada) {
       console.log("Apagando luz")
       this._mqttService.controlarLeds(luz.id, "OFF").subscribe(async res => {
-        
+
       });
     } else {
       console.log("Encendiendo luz")
       this._mqttService.controlarLeds(luz.id, "ON").subscribe(async res => {
-      
+
       });
     }
-
   }
 }

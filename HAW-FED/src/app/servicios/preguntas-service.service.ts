@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Pregunta } from '../models/pregunta';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PreguntasServiceService {
-
   private _pregunta = 'assets/preguntas.json';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   cargarPreguntas(): void {
     let preguntas = this.http.get<any>(this._pregunta).toPromise();

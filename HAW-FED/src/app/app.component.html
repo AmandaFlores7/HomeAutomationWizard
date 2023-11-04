@@ -1,8 +1,8 @@
 <div class="contenedor">
-    <app-navbar-principal class="navbarPrincipal"></app-navbar-principal>
+    <app-navbar-principal [title]="titulo" class="navbarPrincipal"></app-navbar-principal>
     <div class="cuerpito">
         <router-outlet></router-outlet>
     </div>
-    <app-footer-principal class="pie"></app-footer-principal>
+    <app-footer-principal [botonDerecho]="botonDerecho" [botonIzquierdo]="botonIzquierdo" class="pie"></app-footer-principal>
 </div>
     

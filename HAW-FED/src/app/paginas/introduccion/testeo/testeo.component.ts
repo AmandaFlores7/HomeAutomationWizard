@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
-declare let window: any;
 
 @Component({
   selector: 'app-testeo',
@@ -27,7 +26,7 @@ export class TesteoComponent {
   attrMensaje: any;
   route: any;
 
-  constructor(private _mqttService: MqttserviceService, route: Router) {}
+  constructor(private _mqttService: MqttserviceService, route: Router) { }
 
   ngOnInit() {
     this.initLoading();
@@ -78,13 +77,13 @@ export class TesteoComponent {
           }
         } else {
           this.displayStyle = 'success';
-            this.hayMensaje = true;
-            this.attrMensaje = {
-              titulo: 'Éxito',
-              parrafo:
-                'La conexión con el broker MQTT se ha establecido correctamente.',
-              link: '/aplicacion'
-            };
+          this.hayMensaje = true;
+          this.attrMensaje = {
+            titulo: 'Éxito',
+            parrafo:
+              'La conexión con el broker MQTT se ha establecido correctamente.',
+            link: '/aplicacion'
+          };
         }
       } else {
         // Incrementa el índice del mensaje actual

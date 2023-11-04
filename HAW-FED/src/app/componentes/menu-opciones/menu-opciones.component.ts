@@ -5,10 +5,10 @@ import { rutas } from 'src/app/constantes/rutas';
 @Component({
   selector: 'app-menu-opciones',
   templateUrl: './menu-opciones.component.html',
-  styleUrls: ['./menu-opciones.component.scss']
+  styleUrls: ['./menu-opciones.component.scss'],
 })
 export class MenuOpcionesComponent {
-  @Input() opciones : any;
+  @Input() opciones: any;
   opcionesMenu: any;
 
   constructor(private router: Router) {

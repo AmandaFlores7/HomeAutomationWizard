@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subscription, interval, switchMap } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Puerta } from 'src/app/models/puerta';
 import { DataDevService } from 'src/app/servicios/data-dev.service';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
@@ -12,7 +12,7 @@ import { PuertasService } from 'src/app/servicios/puertas.service';
 })
 export class ControlPuertaComponent {
   private puertasSuscripcion: Subscription = new Subscription;
-  
+
   switchState: boolean = false;
   puertas: Puerta[] = [];
 
@@ -42,10 +42,8 @@ export class ControlPuertaComponent {
   }
 
   crearPeticion() {
-    console.log(this.puertas[0]);
-    let peticion = "publicar en broker topico Door con mensaje {\"id\": " + this.puertaSeleccionada + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
     if (this.accionSeleccionada && this.puertaSeleccionada) {
-      this.textoPeticion = peticion;
+      this.textoPeticion = "publicar en broker topico Door con mensaje {\"id\": " + this.puertaSeleccionada + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
     }
     else {
       this.textoPeticion = "";
@@ -55,7 +53,7 @@ export class ControlPuertaComponent {
   enviarPeticion() {
     if (this.puertaSeleccionada && this.accionSeleccionada) {
       this._mqttService.controlarPuerta(this.puertaSeleccionada, this.accionSeleccionada).subscribe(async res => {
-        
+
       });
     }
   }
@@ -65,17 +63,8 @@ export class ControlPuertaComponent {
   }
 
   controlarPuerta(event: any, puerta: Puerta) {
-    if (!puerta.abierta) {
-      console.log("Cerrando puerta")
-      this._mqttService.controlarPuerta(puerta.id, "CLOSE").subscribe(async res => {
-        
-      });
-    } else {
-      console.log("Abriendo puerta")
-      this._mqttService.controlarPuerta(puerta.id, "OPEN").subscribe(async res => {
-      
-      });
-    }
+    const accion = puerta.abierta ? 'CLOSE' : 'OPEN';
 
+    this._mqttService.controlarPuerta(puerta.id, accion).subscribe(async res => { });
   }
 }
