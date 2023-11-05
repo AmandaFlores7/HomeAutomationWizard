@@ -1,5 +1,9 @@
 [
 	{
+		"ruta": "/login",
+		"titulo": "Home Automation Wizard"
+	},
+	{
 		"ruta": "/aplicacion",
 		"titulo": "Menu Principal"
 	},

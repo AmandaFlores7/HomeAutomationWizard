@@ -6,22 +6,13 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class JsonService {
-  navTituloJson = 'assets/titulo-botonones.json';
-  public data: any;
-
   constructor(private http: HttpClient) {}
 
-  obtenerJson(jsonPath: string = this.navTituloJson): Observable<any[]> {
-    return this.http.get<any[]>(jsonPath);
-  }
-
-  cargarJson(jsonPath: string = this.navTituloJson, currentPath?: string) {
-    if (currentPath == undefined) {
-      currentPath = window.location.pathname; // Obtiene la ruta actual desde el router
-    }
-    return this.http.get<any[]>(this.navTituloJson).pipe(
-      map((data) => {
-        return data.find((item) => item.ruta === currentPath);
+  obtenerDatosMenu(urlActual: string): Observable<any[]> {
+    return this.http.get<any[]>('assets/menus.json').pipe(
+      map((data: any[]) => {
+        const dataF = data.find((item: any) => item.ruta === urlActual);
+        return dataF ? dataF.items : [];
       })
     );
   }

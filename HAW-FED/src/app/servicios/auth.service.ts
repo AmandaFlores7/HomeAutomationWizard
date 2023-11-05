@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { PreguntasServiceService } from './preguntas-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  local_ip2 = '192.168.2.1';
+  local_ip = '127.0.0.1';
 
-  constructor(private router: Router, private preguntas_s: PreguntasServiceService) { }
+  apiUrl = 'http://127.0.0.1:8000';
 
-  signIn(usuario: { rut: string; }) {
-    const usuarioLocal: { rut: string; } | null = JSON.parse(localStorage.getItem('usuario') || 'null');
-    if (usuarioLocal && usuarioLocal.rut === usuario.rut) {
-      this.router.navigate(['/introduccion/4']);
-    } else {
-      localStorage.setItem('usuario', JSON.stringify(usuario));
-      this.preguntas_s.cargarPreguntas();
-      this.router.navigate(['/introduccion/1']);
-    }
+  constructor(private _http: HttpClient) {}
+
+  verificarUsuario(usuario: any) {
+    console.log('Verificando usuario:', usuario);
+    return this._http.post(
+      `${this.apiUrl}/usuarios/verificar-usuario`,
+      usuario
+    );
   }
 }

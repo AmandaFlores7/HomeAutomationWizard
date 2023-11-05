@@ -1,23 +1,72 @@
 import { Injectable } from '@angular/core';
 import { Pregunta } from '../models/pregunta';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PreguntasServiceService {
-  private _pregunta = 'assets/preguntas.json';
+  apiUrl = 'http://127.0.0.1:8000';
 
   constructor(private http: HttpClient) {}
 
-  cargarPreguntas(): void {
-    let preguntas = this.http.get<any>(this._pregunta).toPromise();
-    preguntas.then((data) => {
-      localStorage.setItem('preguntas', JSON.stringify(data));
-    });
+  getPreguntas() {
+    let preguntas: Pregunta[] = [];
+    let preguntasObs: Observable<any> = this.http.get(
+      `${this.apiUrl}/preguntas`
+    );
+    preguntasObs.subscribe(
+      (resultado) => {
+        console.log('Respuesta del servidor:', resultado.preguntas); // Verifica el formato de la respuesta
+        resultado.preguntas.forEach((pregunta: any) => {
+          let alternativas: string[] = pregunta.alternativas.split('&');
+          preguntas.push({
+            id: pregunta.id,
+            tipo: pregunta.tipo,
+            pregunta: pregunta.pregunta,
+            respuesta: pregunta.respuesta,
+            alternativas: alternativas,
+            respondida: false,
+          });
+        });
+      },
+      (error) => {
+        console.error('Error al realizar la solicitud:', error);
+        // Manejar errores aquí si es necesario
+      }
+    );
+    return preguntas;
   }
 
-  obtenerPreguntas(): any {
+  cargarPreguntas(preguntas: Pregunta[], tipo: string): void {
+    if (tipo === 'Creado') {
+      localStorage.setItem('preguntas', JSON.stringify(preguntas));
+    } else if (tipo === 'Encontrado') {
+      let preguntasLocal = JSON.parse(
+        localStorage.getItem('preguntas') || 'null'
+      );
+      // verificar si la pregunta ya existe en el local storage, si no esta, agregar la pregunta
+      if (preguntasLocal !== null) {
+        preguntas.forEach((pregunta: Pregunta) => {
+          let existe = false;
+          preguntasLocal.forEach((preguntaLocal: Pregunta) => {
+            if (pregunta.id === preguntaLocal.id) {
+              existe = true;
+            }
+          });
+          if (!existe) {
+            preguntasLocal.push(pregunta);
+          }
+        });
+      } else {
+        preguntasLocal = preguntas;
+      }
+      localStorage.setItem('preguntas', JSON.stringify(preguntasLocal));
+    }
+  }
+
+  obtenerPreguntasLS(): any {
     return JSON.parse(localStorage.getItem('preguntas') || 'null');
   }
 

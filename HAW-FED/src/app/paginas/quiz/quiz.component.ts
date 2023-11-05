@@ -69,7 +69,7 @@ export class QuizComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      let doc = await this.pregunta_s.obtenerPreguntas();
+      let doc = await this.pregunta_s.obtenerPreguntasLS();
       this.preguntas = doc;
       let tipoPregunta;
       this.route.data.subscribe((data) => {
