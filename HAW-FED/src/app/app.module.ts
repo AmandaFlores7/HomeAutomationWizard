@@ -14,6 +14,7 @@ import { QuizComponent } from './paginas/quiz/quiz.component';
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 
 import { RutValidadorDirective } from './directivas/rut-validador.directive';
+import { VistaMensajeriaComponent } from './paginas/mensajeria/vista-mensajeria/vista-mensajeria.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RutValidadorDirective } from './directivas/rut-validador.directive';
     AppComponent,
     QuizComponent,
     LoginComponent,
-    RutValidadorDirective
+    RutValidadorDirective,
+    VistaMensajeriaComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { MenuOpcionesComponent } from './componentes/menu-opciones/menu-opciones
 import { QuizComponent } from './paginas/quiz/quiz.component';
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { AuthGuard } from './servicios/auth.guard';
+import { VistaMensajeriaComponent } from './paginas/mensajeria/vista-mensajeria/vista-mensajeria.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,17 @@ const routes: Routes = [
   {
     path: 'aplicacion',
     canActivate: [AuthGuard],
-    component: MenuOpcionesComponent,
+    children: [
+      {
+        path: '',
+        component: MenuOpcionesComponent,
+      },
+      {
+        path: 'mensajeria',
+        component: VistaMensajeriaComponent,
+      }
+    ]
+    
   },
   {
     path: 'aplicacion',
@@ -43,12 +54,11 @@ const routes: Routes = [
   {
     path: 'quiz',
     canActivate: [AuthGuard],
-    component: MenuOpcionesComponent,
-  },
-  {
-    path: 'quiz',
-    canActivate: [AuthGuard],
     children: [
+      {
+        path: '',
+        component: MenuOpcionesComponent,
+      },
       {
         path: 'sensores',
         component: QuizComponent,

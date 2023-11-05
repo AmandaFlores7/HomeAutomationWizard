@@ -362,5 +362,15 @@
 				"titulo": "Retroceder"
 			}
 		]
+	},
+	{
+		"ruta": "/aplicacion/mensajeria",
+		"titulo": "Mensajería",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
 	}
 ]
