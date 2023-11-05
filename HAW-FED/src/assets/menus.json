@@ -18,6 +18,11 @@
         "icono": "fa fa-book"
       },
       {
+        "titulo": "Mensajeria",
+        "ruta": "/aplicacion/mensajeria",
+        "icono": "fa fa-envelope"
+      },
+      {
         "titulo": "Prueba tus Conocimientos",
         "ruta": "/quiz",
         "icono": "fa fa-question-circle"

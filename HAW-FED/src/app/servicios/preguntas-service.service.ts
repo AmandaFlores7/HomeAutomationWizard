@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PreguntasServiceService {
-  apiUrl = 'http://127.0.0.1:8000';
+  ip = '127.0.0.1';
+  apiUrl = 'http://192.168.2.1:8000';
 
   constructor(private http: HttpClient) {}
 
