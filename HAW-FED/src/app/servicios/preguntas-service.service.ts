@@ -38,9 +38,10 @@ export class PreguntasServiceService {
     return preguntas;
   }
 
-  cargarPreguntas(preguntas: Pregunta[], tipo: string): void {
+  cargarPreguntas(preguntas: Pregunta[], tipo: string, respuestas?: number[]): void {
     if (tipo === 'Creado') {
       localStorage.setItem('preguntas', JSON.stringify(preguntas));
+      return
     } else if (tipo === 'Encontrado') {
       let preguntasLocal = JSON.parse(
         localStorage.getItem('preguntas') || 'null'
@@ -53,12 +54,23 @@ export class PreguntasServiceService {
             if (pregunta.id === preguntaLocal.id) {
               existe = true;
             }
+            if ((respuestas as number[])?.includes(pregunta.id)) {
+              preguntaLocal.respondida = true;
+            }
           });
           if (!existe) {
+            if ((respuestas as number[])?.includes(pregunta.id)) {
+              pregunta.respondida = true;
+            }
             preguntasLocal.push(pregunta);
           }
         });
       } else {
+        preguntas.forEach((pregunta: Pregunta) => {
+          if ((respuestas as number[])?.includes(pregunta.id)) {
+            pregunta.respondida = true;
+          }
+        });
         preguntasLocal = preguntas;
       }
       localStorage.setItem('preguntas', JSON.stringify(preguntasLocal));
@@ -95,5 +107,9 @@ export class PreguntasServiceService {
       });
       localStorage.setItem('preguntas', JSON.stringify(preguntas));
     }
+  }
+
+  obtenerRespuestas(rutUsuario: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/respuestas/${rutUsuario}`);
   }
 }

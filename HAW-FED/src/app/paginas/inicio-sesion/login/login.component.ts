@@ -49,15 +49,24 @@ export class LoginComponent {
       this.preguntas = this.preguntas_s.getPreguntas();
       this.auth_s.verificarUsuario(this.usuario).subscribe(async (res) => {
         let respuestaTipo = JSON.parse(JSON.stringify(res)).tipo;
-        this.preguntas_s.cargarPreguntas(this.preguntas, respuestaTipo);
         if (respuestaTipo === 'Creado') {
+        this.preguntas_s.cargarPreguntas(this.preguntas, respuestaTipo);
           localStorage.setItem('usuario', JSON.stringify(this.usuario));
           this.router.navigate(['/introduccion/1']);
         } else if (respuestaTipo === 'Encontrado') {
           if (localStorage.getItem('usuario') === null) {
             localStorage.setItem('usuario', JSON.stringify(this.usuario));
           }
-          this.router.navigate(['/introduccion/4']);
+          this.preguntas_s.obtenerRespuestas(this.usuario.rut).subscribe(
+            (respuestas) => {
+              console.log('Respuestas obtenidas:', respuestas);
+              this.preguntas_s.cargarPreguntas(this.preguntas, respuestaTipo, respuestas.respuestas);
+            },
+            (error) => {
+              console.error('Error al obtener las respuestas:', error);
+              // Manejar errores aquí si es necesario
+            }
+          );
         }
       });
     }
