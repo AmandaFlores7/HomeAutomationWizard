@@ -52,9 +52,11 @@ export class LoginComponent {
         this.preguntas_s.cargarPreguntas(this.preguntas, respuestaTipo);
         if (respuestaTipo === 'Creado') {
           localStorage.setItem('usuario', JSON.stringify(this.usuario));
-          localStorage.setItem('preguntas', JSON.stringify(this.preguntas));
           this.router.navigate(['/introduccion/1']);
         } else if (respuestaTipo === 'Encontrado') {
+          if (localStorage.getItem('usuario') === null) {
+            localStorage.setItem('usuario', JSON.stringify(this.usuario));
+          }
           this.router.navigate(['/introduccion/4']);
         }
       });

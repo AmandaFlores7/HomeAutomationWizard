@@ -29,7 +29,6 @@ export class AppComponent {
     let info = this.buscarRuta(linkActual);
     if (info) {
       this.titulo = info.titulo;
-      console.log(info);
       this.botonDerecho = null;
       this.botonIzquierdo = null;
       if (info.botones) {

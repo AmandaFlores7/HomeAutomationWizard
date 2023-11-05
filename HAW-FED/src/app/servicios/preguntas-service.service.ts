@@ -18,7 +18,6 @@ export class PreguntasServiceService {
     );
     preguntasObs.subscribe(
       (resultado) => {
-        console.log('Respuesta del servidor:', resultado.preguntas); // Verifica el formato de la respuesta
         resultado.preguntas.forEach((pregunta: any) => {
           let alternativas: string[] = pregunta.alternativas.split('&');
           preguntas.push({
@@ -73,9 +72,25 @@ export class PreguntasServiceService {
   actualizarPregunta(tipo: string, id: number): void {
     if (tipo === 'respondida') {
       let preguntas = JSON.parse(localStorage.getItem('preguntas') || 'null');
+      let estudiante = JSON.parse(localStorage.getItem('usuario') || 'null');
       preguntas.forEach((pregunta: Pregunta) => {
         if (pregunta.id === id) {
-          pregunta.respondida = true;
+          if (pregunta.respondida === false) {
+            pregunta.respondida = true;
+            const datos = {
+              preguntaId: pregunta.id,
+              rutUsuario: estudiante.rut
+            };
+            this.http.post(`${this.apiUrl}/preguntas/actualizar`, datos).subscribe(
+              (resultado) => {
+                console.log('Pregunta actualizada:', resultado);
+              },
+              (error) => {
+                console.error('Error al realizar la solicitud:', error);
+                // Manejar errores aquí si es necesario
+              }
+            );
+          }
         }
       });
       localStorage.setItem('preguntas', JSON.stringify(preguntas));
