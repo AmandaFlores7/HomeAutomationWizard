@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { rutas } from 'src/app/constantes/rutas';
+
+import data from 'src/assets/vistaComponente.json';
 
 @Component({
   selector: 'app-vista-componente',
@@ -9,21 +9,23 @@ import { rutas } from 'src/app/constantes/rutas';
 })
 export class VistaComponenteComponent {
   imagenes: any;
-  texto: string = '';
+  texto: any;
 
-  ruta: any;
+  constructor() {
+    let ruta = window.location.pathname;
+    this.obtenerInformacionPagina(ruta);
+  }
 
-  constructor(private router: Router) {
-    this.ruta = window.location.pathname;
-    if (this.router?.url && this.buscarRuta(this.ruta)?.titulo != null) {
-      let infoPagina = this.buscarRuta(this.ruta);
-      this.imagenes = infoPagina['imagenes'];
-      this.texto = infoPagina['texto'];
+  obtenerInformacionPagina(linkActual: string) {
+    let info = this.buscarRuta(linkActual);
+    if (info) {
+      this.imagenes = info['imagenes'];
+      this.texto = info['texto'];
     }
   }
 
   buscarRuta(linkActual: string) {
-    let info = JSON.parse(JSON.stringify(rutas))[linkActual];
+    let info = data.find(element => element.ruta === linkActual);
     if (info) {
       return info;
     }

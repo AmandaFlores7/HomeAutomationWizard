@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./texto-scroll.component.scss']
 })
 export class TextoScrollComponent {
-  @Input() 
+  @Input()
   texto: any;
 }

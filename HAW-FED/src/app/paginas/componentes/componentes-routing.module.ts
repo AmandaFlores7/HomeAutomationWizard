@@ -11,22 +11,23 @@ const routes: Routes = [
   { path: 'sensores', component: MenuOpcionesComponent },
   { path: 'actuadores', component: MenuOpcionesComponent },
   { path: 'sensores/temperatura', component: VistaComponenteComponent },
-  { path: 'sensores/temperatura/ver', component: LineChartComponent },
+  { path: 'sensores/temperatura/ver', component: LineChartComponent, data: { tipoSensor: 'temperature', tituloGrafico: 'Gráfico de Temperatura' } },
   { path: 'sensores/humedad', component: VistaComponenteComponent },
-  { path: 'sensores/humedad/ver', component: LineChartComponent },
+  { path: 'sensores/humedad/ver', component: LineChartComponent, data: { tipoSensor: 'humidity', tituloGrafico: 'Gráfico de Humedad' } },
   { path: 'sensores/luz', component: VistaComponenteComponent },
-  { path: 'sensores/luz/ver', component: LineChartComponent },
+  { path: 'sensores/luz/ver', component: LineChartComponent, data: { tipoSensor: 'light', tituloGrafico: 'Gráfico de Nivel Luz' } },
   { path: 'sensores/aire', component: VistaComponenteComponent },
-  { path: 'sensores/aire/ver', component: LineChartComponent },
+  { path: 'sensores/aire/ver', component: LineChartComponent, data: { tipoSensor: 'air_quality', tituloGrafico: 'Gráfico de Calidad Aire' } },
   { path: 'actuadores/camara_r', component: VistaComponenteComponent },
   { path: 'actuadores/luces', component: VistaComponenteComponent },
   { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
   { path: 'actuadores/puerta', component: VistaComponenteComponent },
   { path: 'actuadores/puerta/probar', component: ControlPuertaComponent },
-  { path: 'actuadores/camara_r/probar', component:ProbarCamaraComponent}];
+  { path: 'actuadores/camara_r/probar', component: ProbarCamaraComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class ComponentesRoutingModule { }

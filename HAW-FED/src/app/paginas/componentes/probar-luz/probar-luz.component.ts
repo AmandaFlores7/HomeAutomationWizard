@@ -5,6 +5,7 @@ import { LucesServiceService } from 'src/app/servicios/luces-service.service';
 
 import { Subscription, interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { DataDevService } from 'src/app/servicios/data-dev.service';
 
 @Component({
   selector: 'app-probar-luz',
@@ -14,12 +15,20 @@ import { switchMap } from 'rxjs/operators';
 export class ProbarLuzComponent {
   private lucesSubscription: Subscription = new Subscription;
   private estadoLedsSubscription: Subscription = new Subscription;
-  
+
+  luzSeleccionada: string = ''; // Variable para la primera selección
+  accionSeleccionada: string = ''; // Variable para la segunda selección
+  textoPeticion: string = ''; // Variable para mostrar el texto de la petición
+
   switchState: boolean = false;
   luces: Luz[] = [];
 
-  constructor(private _mqttService: MqttserviceService, private _lucesService: LucesServiceService) {
+  dataDevBol = false;
 
+  constructor(private _mqttService: MqttserviceService, private _lucesService: LucesServiceService, private dataDev: DataDevService) {
+    this.dataDev.devModeBool$.subscribe(value => {
+      this.dataDevBol = value;
+    })
   }
 
   ngOnInit(): void {
@@ -43,6 +52,16 @@ export class ProbarLuzComponent {
       });
   }
 
+  crearPeticion() {
+    let peticion = "publicar en 'broker' topico 'Leds' con mensaje {\"id\": " + this.luzSeleccionada + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
+    if (this.luzSeleccionada && this.accionSeleccionada) {
+      this.textoPeticion = peticion;
+    }
+    else {
+      this.textoPeticion = "";
+    }
+  }
+
   ngOnDestroy() {
     // Desuscribirse de todas las suscripciones para evitar pérdidas de memoria
     if (this.lucesSubscription) {
@@ -57,21 +76,23 @@ export class ProbarLuzComponent {
     return this._mqttService.estdosLeds(); // Realiza la solicitud al servicio MQTT
   }
 
-  alternarLuz(event: any, luz: Luz) {
-    console.log("Alternando luz")
-    console.log(luz)
+  enviarPeticion() {
+    this._mqttService.controlarLeds(this.luzSeleccionada, this.accionSeleccionada).subscribe(async res => {
+      console.log(res)
+    });
+  }
 
+  alternarLuz(event: any, luz: Luz) {
     if (!luz.activada) {
       console.log("Apagando luz")
       this._mqttService.controlarLeds(luz.id, "OFF").subscribe(async res => {
-        
+
       });
     } else {
       console.log("Encendiendo luz")
       this._mqttService.controlarLeds(luz.id, "ON").subscribe(async res => {
-      
+
       });
     }
-
   }
 }
