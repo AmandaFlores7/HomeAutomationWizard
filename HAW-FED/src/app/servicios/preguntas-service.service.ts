@@ -42,39 +42,26 @@ export class PreguntasServiceService {
     if (tipo === 'Creado') {
       localStorage.setItem('preguntas', JSON.stringify(preguntas));
       return
-    } else if (tipo === 'Encontrado') {
-      let preguntasLocal = JSON.parse(
-        localStorage.getItem('preguntas') || 'null'
-      );
-      // verificar si la pregunta ya existe en el local storage, si no esta, agregar la pregunta
-      if (preguntasLocal !== null) {
-        preguntas.forEach((pregunta: Pregunta) => {
-          let existe = false;
-          preguntasLocal.forEach((preguntaLocal: Pregunta) => {
-            if (pregunta.id === preguntaLocal.id) {
-              existe = true;
-            }
-            if ((respuestas as number[])?.includes(pregunta.id)) {
-              preguntaLocal.respondida = true;
-            }
-          });
-          if (!existe) {
-            if ((respuestas as number[])?.includes(pregunta.id)) {
-              pregunta.respondida = true;
-            }
-            preguntasLocal.push(pregunta);
-          }
-        });
-      } else {
-        preguntas.forEach((pregunta: Pregunta) => {
-          if ((respuestas as number[])?.includes(pregunta.id)) {
-            pregunta.respondida = true;
-          }
-        });
-        preguntasLocal = preguntas;
-      }
-      localStorage.setItem('preguntas', JSON.stringify(preguntasLocal));
     }
+    let preguntasLocal: Pregunta[] = JSON.parse(localStorage.getItem('preguntas') || '[]');
+
+    preguntas.forEach((pregunta: Pregunta) => {
+      const preguntaExistente = preguntasLocal.find(p => p.id === pregunta.id);
+
+      if (preguntaExistente) {
+        if (respuestas && respuestas.includes(pregunta.id)) {
+          preguntaExistente.respondida = true;
+        }
+      }
+      else {
+        if (respuestas && respuestas.includes(pregunta.id)) {
+          pregunta.respondida = true;
+        }
+        preguntasLocal.push(pregunta);
+      }
+    });
+
+    localStorage.setItem('preguntas', JSON.stringify(preguntasLocal));
   }
 
   obtenerPreguntasLS(): any {
