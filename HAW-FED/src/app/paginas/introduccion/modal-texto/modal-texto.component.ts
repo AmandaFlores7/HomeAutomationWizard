@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-texto',
   templateUrl: './modal-texto.component.html',
-  styleUrls: ['./modal-texto.component.scss']
+  styleUrls: ['./modal-texto.component.scss'],
 })
 export class ModalTextoComponent implements OnInit {
   @Input() data: any;
@@ -41,11 +40,8 @@ export class ModalTextoComponent implements OnInit {
         this.mostrarFooter = true;
         this.hayLink = false;
       }
-      
     } else {
       this.mostrarFooter = true; // TODO: cambiar a false
     }
   }
-
-
 }

@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 import { ComponentesModule } from './componentes/componentes.module';
@@ -14,6 +14,7 @@ import { QuizComponent } from './paginas/quiz/quiz.component';
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 
 import { RutValidadorDirective } from './directivas/rut-validador.directive';
+import { VistaMensajeriaComponent } from './paginas/mensajeria/vista-mensajeria/vista-mensajeria.component';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { RutValidadorDirective } from './directivas/rut-validador.directive';
     QuizComponent,
     LoginComponent,
     RutValidadorDirective,
-    
+    VistaMensajeriaComponent
   ],
   imports: [
     BrowserModule,

@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { Puerta } from '../models/puerta';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PuertasService {
   constructor(private http: HttpClient) {}
-  
-  cargarPuertas(){
+
+  cargarPuertas() {
     return this.http.get<Puerta[]>('/assets/puertas.json');
   }
 }

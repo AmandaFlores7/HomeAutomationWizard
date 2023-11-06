@@ -1,11 +1,16 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+} from '@angular/core';
 
 @Directive({
-  selector: '[appRutValidador]'
+  selector: '[appRutValidador]',
 })
 export class RutValidadorDirective {
-
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef) {}
 
   @HostListener('input', ['$event']) onInputChange(event: Event) {
     const inputElement = this.el.nativeElement;
@@ -28,7 +33,7 @@ export class RutValidadorDirective {
   }
 
   validarRut(rut: string): boolean {
-    rut = rut.replace(/\./g, "").replace(/-/g, "");
+    rut = rut.replace(/\./g, '').replace(/-/g, '');
 
     // Extraer el dígito verificador y el cuerpo del RUT
     const cuerpoRut = rut.slice(0, -1);
@@ -39,23 +44,23 @@ export class RutValidadorDirective {
     let multiplicador = 2;
 
     for (let i = cuerpoRut.length - 1; i >= 0; i--) {
-        suma += parseInt(cuerpoRut[i]) * multiplicador;
-        multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
+      suma += parseInt(cuerpoRut[i]) * multiplicador;
+      multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
     }
 
     const digitoEsperado = (11 - (suma % 11)).toString();
 
     // Comparar el dígito verificador calculado con el ingresado
-    if (digitoEsperado === "10") {
-        if (digitoVerificador === "K") {
-            return true;
-        }
-    } else if (digitoEsperado === "11") {
-        if (digitoVerificador === "0") {
-            return true;
-        }
-    } else if (digitoEsperado === digitoVerificador) {
+    if (digitoEsperado === '10') {
+      if (digitoVerificador === 'K') {
         return true;
+      }
+    } else if (digitoEsperado === '11') {
+      if (digitoVerificador === '0') {
+        return true;
+      }
+    } else if (digitoEsperado === digitoVerificador) {
+      return true;
     }
 
     return false;

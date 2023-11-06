@@ -1,26 +1,20 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { rutas } from 'src/app/constantes/rutas';
+import { JsonService } from 'src/app/servicios/json.service';
 
 @Component({
   selector: 'app-menu-opciones',
   templateUrl: './menu-opciones.component.html',
-  styleUrls: ['./menu-opciones.component.scss']
+  styleUrls: ['./menu-opciones.component.scss'],
 })
 export class MenuOpcionesComponent {
-  @Input() opciones : any;
   opcionesMenu: any;
 
-  constructor(private router: Router) {
-    let infoPagina = this.buscarTitulo(this.router.url);
-    this.opcionesMenu = infoPagina['items'];
-  }
+  constructor(private router: Router, private jsonService: JsonService) {}
 
-  buscarTitulo(linkActual: string) {
-    let info = JSON.parse(JSON.stringify(rutas))[linkActual];
-    if (info) {
-      return info;
-    }
-    return null;
+  ngOnInit() {
+    this.jsonService.obtenerDatosMenu(this.router.url).subscribe((data) => {
+      this.opcionesMenu = data;
+    });
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Subscription, interval, switchMap } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Puerta } from 'src/app/models/puerta';
+import { DataDevService } from 'src/app/servicios/data-dev.service';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
 import { PuertasService } from 'src/app/servicios/puertas.service';
 
@@ -11,11 +12,20 @@ import { PuertasService } from 'src/app/servicios/puertas.service';
 })
 export class ControlPuertaComponent {
   private puertasSuscripcion: Subscription = new Subscription;
-  
+
   switchState: boolean = false;
   puertas: Puerta[] = [];
 
-  constructor(private _mqttService: MqttserviceService, private _puertasService: PuertasService) {
+  puertaSeleccionada: string = ''; // Variable para la primera selección
+  accionSeleccionada: string = ''; // Variable para la segunda selección
+  textoPeticion: string = ''; // Variable para mostrar el texto de la petición
+
+  dataDevBol = false;
+
+  constructor(private _mqttService: MqttserviceService, private _puertasService: PuertasService, private dataDev: DataDevService) {
+    this.dataDev.devModeBool$.subscribe(value => {
+      this.dataDevBol = value;
+    })
 
   }
 
@@ -31,25 +41,30 @@ export class ControlPuertaComponent {
     }
   }
 
+  crearPeticion() {
+    if (this.accionSeleccionada && this.puertaSeleccionada) {
+      this.textoPeticion = "publicar en broker topico Door con mensaje {\"id\": " + this.puertaSeleccionada + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
+    }
+    else {
+      this.textoPeticion = "";
+    }
+  }
+
+  enviarPeticion() {
+    if (this.puertaSeleccionada && this.accionSeleccionada) {
+      this._mqttService.controlarPuerta(this.puertaSeleccionada, this.accionSeleccionada).subscribe(async res => {
+
+      });
+    }
+  }
+
   obtenerEstadoLeds() {
     return this._mqttService.estdosLeds(); // Realiza la solicitud al servicio MQTT
   }
 
   controlarPuerta(event: any, puerta: Puerta) {
-    console.log("Manejo Puerta")
-    console.log(puerta)
+    const accion = puerta.abierta ? 'CLOSE' : 'OPEN';
 
-    if (!puerta.abierta) {
-      console.log("Cerrando puerta")
-      this._mqttService.controlarPuerta(puerta.id, "CLOSE").subscribe(async res => {
-        
-      });
-    } else {
-      console.log("Abriendo puerta")
-      this._mqttService.controlarPuerta(puerta.id, "OPEN").subscribe(async res => {
-      
-      });
-    }
-
+    this._mqttService.controlarPuerta(puerta.id, accion).subscribe(async res => { });
   }
 }
