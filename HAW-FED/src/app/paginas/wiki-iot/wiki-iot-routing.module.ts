@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ObjetivosAprendizajeComponent } from './objetivos-aprendizaje/objetivos-aprendizaje.component';
+import { ContenidoWikiComponent } from './contenido-wiki/contenido-wiki.component';
 
 const routes: Routes = [
-  { path: 'leccion1', component: ObjetivosAprendizajeComponent },
+  { path: 'leccion1/contenido/1', component:ContenidoWikiComponent},
+  { path: 'leccion1/contenido/2', component:ContenidoWikiComponent},
   { path: 'leccion2', component: ObjetivosAprendizajeComponent },
   { path: 'leccion3', component: ObjetivosAprendizajeComponent },
   { path: 'leccion4', component: ObjetivosAprendizajeComponent },

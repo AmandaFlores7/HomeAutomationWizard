@@ -21,7 +21,8 @@ import { RutValidadorDirective } from './directivas/rut-validador.directive';
     AppComponent,
     QuizComponent,
     LoginComponent,
-    RutValidadorDirective
+    RutValidadorDirective,
+    
   ],
   imports: [
     BrowserModule,

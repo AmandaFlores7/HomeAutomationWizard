@@ -36,7 +36,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./paginas/componentes/componentes.module').then(
-        (m) => m.ComponentesModule
+        (m) => m.ComponentesPaginasModule
       ),
   },
   { 

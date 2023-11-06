@@ -129,7 +129,7 @@ export const rutas ={
         "items": [
             {
                 "titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
-                "link": "/wikiiot/leccion1"
+                "link": "/wikiiot/leccion1/contenido/1"
             },
             {
                 "titulo": "Lección 2: Sensores y Actuadores",
@@ -163,25 +163,34 @@ export const rutas ={
             }
         }
     },
-    "/wikiiot/leccion1":{
+    "/wikiiot/leccion1/contenido/1":{
         "titulo": "Lección 1",
-        "titulo2": "Introducción al IoT y a Home Automation Wizard",
-        "objetivos":[
-            {
-                "texto":"Comprender qué es el Internet de las Cosas (IoT) y cómo está revolucionando la automatización del hogar y otros campos."
-            },
-            {
-                "texto":"Conocer cómo Home Automation Wizard permite a los usuarios controlar y monitorear una maqueta de casa inteligente a través de la aplicación."
-            },
-            {
-                "texto":"Aprender los conceptos básicos para convertirse en un 'mago' de la automatización del hogar."
-            }
+        "titulo2": "¿Qué es el IoT?",
+        "imagenes":[
+            "../../../../assets/img/iot.webp"
         ],
+        "texto": "El Internet de las Cosas, o IoT, se refiere a la red de dispositivos físicos conectados a Internet que recopilan y comparten datos para automatizar tareas y tomar decisiones informadas. IoT es una tecnología que ha revolucionado la forma en que interactuamos con el mundo digital y físico. Su importancia en la vida cotidiana es cada vez más evidente, ya que permite la interconexión de dispositivos y sistemas para mejorar la eficiencia, la comodidad y la toma de decisiones.",
         "botones": {
             "ruta1": {
                 "titulo": "Retroceder",
                 "link": "/wikiiot/"
+            },
+            "ruta2":{
+                "titulo": "Siguiente",
+                "link": "/wikiiot/leccion1/contenido/2"
             }
+        }
+    },
+    "/wikiiot/leccion1/contenido/2":{
+        "titulo": "Lección 1",
+        "titulo2": "¿Qué es Home Automation Wizard?",
+        "imagenes":["../../../../assets/img/casa.jpeg"],
+        "texto": "Home Automation Wizard es una aplicación móvil educativa y práctica diseñada para enseñar a los usuarios sobre el Internet de las Cosas (IoT) y la automatización del hogar de una manera interactiva y divertida. Esta aplicación proporciona a los usuarios una experiencia de aprendizaje única, permitiéndoles explorar y controlar una maqueta de casa inteligente a través de su dispositivo móvil.",
+        "botones": {
+            "ruta1": {
+                "titulo": "Retroceder",
+                "link": "/wikiiot/"
+            },
         }
     },
     "/wikiiot/leccion2":{

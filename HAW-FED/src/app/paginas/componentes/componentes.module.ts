@@ -9,10 +9,8 @@ import { ControlPuertaComponent } from './control-puerta/control-puerta.componen
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
-import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
 import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
-
-
+import { ComponentesModule } from 'src/app/componentes/componentes.module';
 @NgModule({
   declarations: [
     VistaComponenteComponent,
@@ -20,13 +18,13 @@ import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
     LineChartComponent,
     ProbarCamaraComponent,
     ProbarLuzComponent,
-    CarruselImagenesComponent,
     TextoScrollComponent
   ],
   imports: [
     CommonModule,
     ComponentesRoutingModule,
-    FormsModule
+    FormsModule,
+    ComponentesModule
   ]
 })
-export class ComponentesModule { }
+export class ComponentesPaginasModule { }
