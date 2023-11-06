@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
-import { CarruselImagenesComponent } from '../../../componentes/carrusel-imagenes/carrusel-imagenes.component';
 
 @Component({
   selector: 'app-contenido-wiki',
