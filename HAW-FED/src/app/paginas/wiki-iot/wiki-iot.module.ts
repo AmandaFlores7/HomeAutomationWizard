@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { WikiIotRoutingModule } from './wiki-iot-routing.module';
 import { ObjetivosAprendizajeComponent } from './objetivos-aprendizaje/objetivos-aprendizaje.component';
 import { ContenidoWikiComponent } from './contenido-wiki/contenido-wiki.component';
-import { ComponentesModule } from '../../componentes/componentes.module';
+import { ComponentesModule } from 'src/app/componentes/componentes.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { ComponentesModule } from '../../componentes/componentes.module';
   imports: [
     CommonModule,
     WikiIotRoutingModule,
-    ComponentesModule,
+    ComponentesModule
   ]
 })
 export class WikiIotModule { }
