@@ -34,4 +34,16 @@ export class MqttserviceService {
   obtenerDatosSensor(tipoSensor: string) {
     return this._http.get('http://' + this.local_ip + ':8000/datos/tipo-sensor=' + tipoSensor);
   }
+
+
+
+  enviarMensaje(mensaje: string, topico: string, nombre: string) {
+    let data = {
+      mensaje: mensaje,
+      topico: topico,
+      nombre: nombre
+    }
+    console.log(data);
+    return this._http.post('http://' + this.local_ip + ':8000/mensajeria/agregar', data);
+  }
 }
