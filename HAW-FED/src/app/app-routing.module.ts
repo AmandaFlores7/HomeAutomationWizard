@@ -47,8 +47,8 @@ const routes: Routes = [
     path: 'aplicacion',
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./paginas/componentes/componentes.module').then(
-        (m) => m.ComponentesModule
+      import('./paginas/componentes/componentes-paginas.module').then(
+        (m) => m.ComponentesPaginasModule
       ),
   },
   {

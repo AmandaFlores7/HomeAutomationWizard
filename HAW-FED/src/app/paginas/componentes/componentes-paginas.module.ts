@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ComponentesRoutingModule } from './componentes-routing.module';
+import { ComponentesPaginasRoutingModule } from './componentes-paginas-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { VistaComponenteComponent } from './vista-componente/vista-componente.component';
@@ -9,7 +9,7 @@ import { ControlPuertaComponent } from './control-puerta/control-puerta.componen
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
-import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
+import { CarruselImagenesComponent } from '../../componentes/carrusel-imagenes/carrusel-imagenes.component';
 import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
 
 
@@ -25,8 +25,8 @@ import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
   ],
   imports: [
     CommonModule,
-    ComponentesRoutingModule,
+    ComponentesPaginasRoutingModule,
     FormsModule
   ]
 })
-export class ComponentesModule { }
+export class ComponentesPaginasModule { }
