@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class JsonService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   obtenerDatosMenu(urlActual: string): Observable<any[]> {
     return this.http.get<any[]>('assets/menus.json').pipe(
@@ -15,5 +15,14 @@ export class JsonService {
         return dataF ? dataF.items : [];
       })
     );
+  }
+  
+  obtenerContenidoWiki(urlActual: string): Observable<any[]> {
+    return this.http.get<any[]>('assets/wiki-iot.json').pipe(
+      map((data: any[]) => {       
+        const dataF = data.find((item: any) => item.ruta === urlActual)
+        return dataF ? dataF : [];
+      })
+    )
   }
 }

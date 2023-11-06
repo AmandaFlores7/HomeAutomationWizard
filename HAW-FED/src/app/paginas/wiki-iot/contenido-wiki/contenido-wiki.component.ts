@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
+import { JsonService } from 'src/app/servicios/json.service';
 
 @Component({
   selector: 'app-contenido-wiki',
@@ -12,12 +13,19 @@ export class ContenidoWikiComponent {
   infoPagina: any;
   texto: any;
   imagenes: any;
+  caracteristicas:any;
 
-  constructor(private router: Router) {
-    this.infoPagina = this.buscarTitulo(this.router.url);
-    this.titulo2 = this.infoPagina['titulo2'];
-    this.texto = this.infoPagina['texto'];
-    this.imagenes = this.infoPagina['imagenes'];    
+  constructor(private router: Router, private jsonService:JsonService) {
+    
+  }
+  
+  ngOnInit() {
+    this.jsonService.obtenerContenidoWiki(this.router.url).subscribe((data) => {
+      this.infoPagina = data;
+      this.titulo2 = this.infoPagina['titulo2'];
+      this.texto = this.infoPagina['texto'];
+      this.imagenes = this.infoPagina['imagenes'];
+    });
   }
 
   buscarTitulo(linkActual: string) {

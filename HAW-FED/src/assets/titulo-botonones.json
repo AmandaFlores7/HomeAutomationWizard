@@ -207,31 +207,91 @@
 	},
 	{
 		"ruta": "/wikiiot/leccion1",
-		"titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
+		"titulo": "Lección 1",
 		"botones": [
 			{
 				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/wikiiot/leccion1/contenido/1",
+				"titulo": "Siguiente"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1/contenido/1",
+		"titulo": "Lección 1",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion1",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/wikiiot/leccion1/contenido/2",
+				"titulo": "Siguiente"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1/contenido/2",
+		"titulo": "Lección 1",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion1/contenido/1",
 				"titulo": "Retroceder"
 			}
 		]
 	},
 	{
-		"ruta": "/wikiiot/leccion2",
+		"ruta": "/wikiiot/leccion2/contenido/1",
 		"titulo": "Lección 2: Sensores y Actuadores",
 		"botones": [
 			{
 				"ruta1": "/wikiiot",
 				"titulo": "Retroceder"
+			},
+			{
+				"ruta2":"/wikiiot/leccion2/contenido/2",
+				"titulo":"Siguiente"
 			}
 		]
 	},
 	{
-		"ruta": "/wikiiot/leccion3",
+		"ruta":"/wikiiot/leccion2/contenido/2",
+		"titulo":"Lección 2: Sensores y Actuadores",
+		"botones":[
+			{
+				"ruta1":"/wikiiot/leccion2/contenido/1",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion3/contenido/1",
 		"titulo": "Lección 3: Protocolos de Comunicación en IoT",
 		"botones": [
 			{
 				"ruta1": "/wikiiot",
 				"titulo": "Retroceder"
+			},
+			{
+				"ruta2":"/wikiiot/leccion3/contenido/1",
+				"titulo":"Siguiente"
+			}
+		]
+	},
+	{
+		"ruta":"/wikiiot/leccion3/contenido/2",
+		"titulo":"Lección 3: Protocolos de Comunicación en IoT",
+		"botones":[
+			{
+				"ruta1": "/wikiiot/leccion3/contenido/1",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2":"/wikiiot/leccion3/contenido/2",
+				"titulo":"Siguiente"
 			}
 		]
 	},

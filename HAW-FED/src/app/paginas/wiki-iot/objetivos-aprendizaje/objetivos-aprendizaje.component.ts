@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { rutas } from 'src/app/constantes/rutas';
+import { JsonService } from 'src/app/servicios/json.service';
 
 @Component({
   selector: 'app-objetivos-aprendizaje',
@@ -10,19 +11,17 @@ import { rutas } from 'src/app/constantes/rutas';
 export class ObjetivosAprendizajeComponent {
   objetivos: any;
   titulo2: any;
-  infoPagina:any;
+  infoPagina: any;
 
-  constructor(private router: Router) {
-    this.infoPagina = this.buscarTitulo(this.router.url);
-    this.titulo2 = this.infoPagina['titulo2'];
-    this.objetivos = this.infoPagina['objetivos'];       
+  constructor(private router: Router, private jsonService:JsonService) {
+    
   }
 
-  buscarTitulo(linkActual: string) {
-    let info = JSON.parse(JSON.stringify(rutas))[linkActual];
-    if (info) {
-      return info;
-    }
-    return null;
+  ngOnInit() {
+    this.jsonService.obtenerContenidoWiki(this.router.url).subscribe((data) => {
+      this.infoPagina = data;
+      this.titulo2 = this.infoPagina['titulo2'];
+      this.objetivos = this.infoPagina['objetivos']
+    });
   }
 }

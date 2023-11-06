@@ -10,6 +10,12 @@
                 </div>
             </div>
         </div>
+        <div *ngIf="this.infoPagina['caracteristicas'] && this.infoPagina['caracteristicas'].length > 0">
+            <h3>Características:</h3>
+            <ul>
+                <li *ngFor="let caracteristica of this.infoPagina['caracteristicas']">{{caracteristica}}</li>
+            </ul>
+        </div>
     </div>
     <app-carrusel-imagenes style="z-index: 0;" [imagenes]="imagenes"></app-carrusel-imagenes>
 </div>

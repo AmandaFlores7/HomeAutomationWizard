@@ -104,37 +104,37 @@
     "items": [
       {
         "titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
-        "link": "/wikiiot/leccion1",
+        "ruta": "/wikiiot/leccion1",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 2: Sensores y Actuadores",
-        "link": "/wikiiot/leccion2",
+        "ruta": "/wikiiot/leccion2/contenido/1",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 3: Protocolos de Comunicación en IoT",
-        "link": "/wikiiot/leccion3",
+        "ruta": "/wikiiot/leccion3/contenido/1",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 4: Maqueta de Casa Inteligente en Detalle",
-        "link": "/wikiiot/leccion4",
+        "ruta": "/wikiiot/leccion4/contenido/1",
         "icono": "fa fa-book"
       },
       {
         "titulo": " Lección 5: Control de Dispositivos en la Maqueta",
-        "link": "/wikiiot/leccion5",
+        "ruta": "/wikiiot/leccion5/contenido/1",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 6: Seguridad y Privacidad en IoT",
-        "link": "/wikiiot/leccion6",
+        "ruta": "/wikiiot/leccion6/contenido/1",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 7: Proyectos Prácticos y Magia de la Automatización",
-        "link": "/wikiiot/leccion7",
+        "ruta": "/wikiiot/leccion7/contenido/1",
         "icono": "fa fa-book"
       }
     ]
