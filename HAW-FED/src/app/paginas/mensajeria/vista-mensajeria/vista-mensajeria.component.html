@@ -14,19 +14,19 @@
             <div class="input-group">
                 <span class="input-group-text" id="inputGroupSelect02">Mensaje: </span>
                 <input type="text" maxlength="25" class="form-control" id="mensaje"
-                    aria-describedby="inputGroupSelect02 basic-addon2" [(ngModel)]="mensaje" (input)="verificarMensaje()">
+                    aria-describedby="inputGroupSelect02 basic-addon2" [(ngModel)]="mensaje"
+                    (input)="verificarMensaje()">
             </div>
             <div class="form-text" id="basic-addon2">Máximo 25 carácteres</div>
         </div>
-        <button class="btn" type="button" (click)="enviarMensaje()" 
-            [disabled]="!hayPeticion? true : false"
+        <button class="btn" type="button" (click)="enviarMensaje()" [disabled]="!hayPeticion? true : false"
             [ngClass]="!hayPeticion? 'btn-outline-secondary' : 'bg-info'">Enviar
         </button>
     </div>
     <div class="card bg-info-subtle" style="text-align: start;">
         Vista Chat
         <div class="form-text" id="basic-addon3">Selecciona un tópico para ver mensajes</div>
-        <div class="input-group mb-3" (change)="cambiarTopico()">
+        <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect03" style="width: 90px;">Tópico: </label>
             <select class="form-select" id="inputGroupSelect03" [(ngModel)]="topicoSeleccionadoChat">
                 <option selected value="">Seleccionar...</option>
@@ -37,7 +37,7 @@
         </div>
         <div class="scrollBox p-2 border">
             <ul>
-                <li *ngFor="let mensaje of messages">{{mensaje.mensaje}}</li>
+                <li *ngFor="let mensaje of _mensajeria.webSocketMessage">{{mensaje.message}}</li>
             </ul>
         </div>
     </div>

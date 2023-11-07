@@ -1,56 +1,30 @@
 import { Component } from '@angular/core';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
 import { webSocket } from 'rxjs/webSocket';
-
+import { MensajeriaService } from 'src/app/servicios/mensajeria.service';
+import { WebSocketChat } from 'src/app/models/web-socket-chat';
 @Component({
   selector: 'app-vista-mensajeria',
   templateUrl: './vista-mensajeria.component.html',
   styleUrls: ['./vista-mensajeria.component.scss']
 })
+
 export class VistaMensajeriaComponent {
-  public webSocketIP = 'ws://192.168.0.105:8000/mensajeria/';
   
+
   public topicoSeleccionado: string = '';
   public mensaje: string = '';
-
-  topicoSeleccionadoChat: string = '';
-  
-  public messages:any = [];
   hayPeticion: boolean = false;
+  public topicoSeleccionadoChat: string = '';
 
-  constructor(private mqttService: MqttserviceService) {
-    
+  constructor(public _mensajeria:MensajeriaService) {
+
   }
 
   enviarMensaje() {
-    
     let nombre = String(JSON.parse(localStorage.getItem('usuario') || '').nombre);
-    let WSIP = this.webSocketIP + this.topicoSeleccionado
-    const myWebSocket = new WebSocket(WSIP)
-    
-    myWebSocket.onmessage = (event) => {
-      this.messages.push(JSON.parse(event.data))
-    }
-
-    let data= {
-      "mensaje": this.mensaje,
-      "topico": this.topicoSeleccionado,
-      "nombre": nombre
-    }
-
-    myWebSocket.onopen = event => {
-      myWebSocket.send(JSON.stringify(data))
-      data = {
-        "mensaje": "",
-        "topico": "",
-        "nombre": ""
-      }
-    }
-   
-  }
-
-  listenToMessages(){
-    
+    let chatMsg = new WebSocketChat(nombre,this.mensaje,this.topicoSeleccionado);
+    this._mensajeria.openWebSocketConnection(this.topicoSeleccionado, chatMsg);
   }
 
   verificarMensaje() {
@@ -62,22 +36,7 @@ export class VistaMensajeriaComponent {
     }
   }
 
-  ngOnInit() {
-    this.listenToMessages()
-  }
-
-  cambiarTopico() {
-    console.log(this.topicoSeleccionadoChat);
-    let WSIP = this.webSocketIP + this.topicoSeleccionadoChat;
-    const myWebSocket = new WebSocket(WSIP)
-
-    // this.myWebSocket.subscribe(
-    //   (msg: any) => {
-    //     console.log("data: ", msg);
-    //     this.messages.push(msg);
-    //   },
-    //   (err: any) => console.log(err),
-    //   () => console.log('complete')
-    // );
-  }
+  // cambiarTopico(){
+  //   this._mensajeria.openWebSocketConnection(this.topicoSeleccionado);
+  // }
 }
