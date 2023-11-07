@@ -25,6 +25,7 @@ export class ContenidoWikiComponent {
       this.titulo2 = this.infoPagina['titulo2'];
       this.texto = this.infoPagina['texto'];
       this.imagenes = this.infoPagina['imagenes'];
+      this.caracteristicas = this.infoPagina['caracteristicas']? this.infoPagina['caracteristicas'] : null;
     });
   }
 

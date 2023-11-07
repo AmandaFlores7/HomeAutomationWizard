@@ -14,10 +14,10 @@ const routes: Routes = [
   { path: 'leccion3/contenido/3', component: ContenidoWikiComponent },
   { path: 'leccion3/contenido/4', component: ContenidoWikiComponent },
   { path: 'leccion3/contenido/5', component: ContenidoWikiComponent },
-  { path: 'leccion4', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion5', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion6', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion7', component: ObjetivosAprendizajeComponent }
+  { path: 'leccion4/contenido/1', component: ObjetivosAprendizajeComponent },
+  { path: 'leccion5/contenido/1', component: ObjetivosAprendizajeComponent },
+  { path: 'leccion6/contenido/1', component: ObjetivosAprendizajeComponent },
+  { path: 'leccion7/contenido/1', component: ObjetivosAprendizajeComponent }
 ];
 
 @NgModule({

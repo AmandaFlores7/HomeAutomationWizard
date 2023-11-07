@@ -10,10 +10,10 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="this.infoPagina['caracteristicas'] && this.infoPagina['caracteristicas'].length > 0">
+        <div *ngIf="caracteristicas && caracteristicas.length > 0">
             <h3>Características:</h3>
             <ul>
-                <li *ngFor="let caracteristica of this.infoPagina['caracteristicas']">{{caracteristica}}</li>
+                <li *ngFor="let caracteristica of caracteristicas">{{caracteristica}}</li>
             </ul>
         </div>
     </div>
