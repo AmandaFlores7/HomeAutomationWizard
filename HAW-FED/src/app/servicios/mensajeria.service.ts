@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { WebSocketChat } from '../models/web-socket-chat';
+import { CONSTANTES } from '../app.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MensajeriaService {
+  wsUrl = CONSTANTES.ws_url;
 
   webSocketMessage: WebSocketChat[] = [];
   webSocket: WebSocket | undefined;
@@ -19,7 +21,7 @@ export class MensajeriaService {
     }
 
     if (!this.webSocket || this.webSocket.readyState !== WebSocket.OPEN) {
-      this.webSocket = new WebSocket(`ws://192.168.0.105:8000/mensajeria/${channel}`);
+      this.webSocket = new WebSocket(`${this.wsUrl}/mensajeria/${channel}`);
 
       this.webSocket.onopen = (e) => {
         console.log(e);

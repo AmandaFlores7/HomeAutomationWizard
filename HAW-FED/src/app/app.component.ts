@@ -57,3 +57,13 @@ export class AppComponent {
     return null;
   }
 }
+export const CONSTANTES = {
+  ip_local: '127.0.0.1',
+  ip_local2: '192.168.2.1',
+  api_url: 'http://127.0.0.1:8000',
+  api_url2: 'http://192.168.2.1:8000',
+  ws_url: 'ws://127.0.0.1:8000',
+  ws_url2: 'ws://192.168.2.1:8000',
+  url_camera: 'http://127.0.0.1:8081',
+  url_camera2: 'http://192.168.2.1:8081'
+};
