@@ -8,7 +8,7 @@ export class AuthService {
   local_ip2 = '192.168.2.1';
   local_ip = '127.0.0.1';
 
-  apiUrl = 'http://192.168.2.1:8000';
+  apiUrl = 'http://192.168.0.105:8000';
 
   constructor(private _http: HttpClient) {}
 

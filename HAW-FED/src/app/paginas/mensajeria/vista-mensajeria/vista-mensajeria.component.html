@@ -18,7 +18,7 @@
             </div>
             <div class="form-text" id="basic-addon2">Máximo 25 carácteres</div>
         </div>
-        <button class="btn" type="button" (click)="enviarPeticion()" 
+        <button class="btn" type="button" (click)="enviarMensaje()" 
             [disabled]="!hayPeticion? true : false"
             [ngClass]="!hayPeticion? 'btn-outline-secondary' : 'bg-info'">Enviar
         </button>
@@ -36,7 +36,9 @@
             </select>
         </div>
         <div class="scrollBox p-2 border">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minus voluptatum officia sed consequatur est doloribus nam modi nostrum ea, obcaecati, excepturi porro tempore cumque voluptatibus ex blanditiis natus facere.
+            <ul>
+                <li *ngFor="let mensaje of messages">{{mensaje.mensaje}}</li>
+            </ul>
         </div>
     </div>
 </div>
