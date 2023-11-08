@@ -31,16 +31,19 @@ export class AppComponent {
       this.titulo = info.titulo;
       this.botonDerecho = null;
       this.botonIzquierdo = null;
-      if (info.botones) {
-        if (info.botones.length > 0) {
-          this.botonIzquierdo = info.botones[0].ruta1
-            ? { ruta: info.botones[0].ruta1, titulo: info.botones[0].titulo }
-            : null;
-          this.botonDerecho = info.botones[0].ruta2
-            ? { ruta: info.botones[0].ruta2, titulo: info.botones[0].titulo }
-            : null;
+      if (info.botones != null) {
+        if (info.botones[0]) {
+          if ('ruta1' in info.botones[0]) {
+            this.botonIzquierdo = info.botones[0].ruta1
+              ? { ruta: info.botones[0].ruta1, titulo: info.botones[0].titulo }
+              : null;
+          } else if ('ruta2' in info.botones[0]) {
+            this.botonDerecho = info.botones[0].ruta2
+              ? { ruta: info.botones[0].ruta2, titulo: info.botones[0].titulo }
+              : null;
+          }
         }
-        if (info.botones.length > 1) {
+        if (info.botones[1] && 'ruta2' in info.botones[1]) {
           this.botonDerecho = info.botones[1].ruta2
             ? { ruta: info.botones[1].ruta2, titulo: info.botones[1].titulo }
             : null;
