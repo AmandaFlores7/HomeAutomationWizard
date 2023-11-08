@@ -1,0 +1,35 @@
+.card-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Mostrar las tarjetas en una columna */
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    margin: 10px 0;
+    /* Margen entre las tarjetas */
+    padding: 10px;
+    /* Espacio interno en cada tarjeta */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.scrollBox {
+    height: 100px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Luz } from 'src/app/models/luces.interfaces';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
-import { LucesServiceService } from 'src/app/servicios/luces-service.service';
 
 import { Subscription, interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { DataDevService } from 'src/app/servicios/data-dev.service';
+import { JsonService } from 'src/app/servicios/json.service';
 
 @Component({
   selector: 'app-probar-luz',
@@ -25,14 +25,14 @@ export class ProbarLuzComponent {
 
   dataDevBol = false;
 
-  constructor(private _mqttService: MqttserviceService, private _lucesService: LucesServiceService, private dataDev: DataDevService) {
+  constructor(private _mqttService: MqttserviceService, private jsonService: JsonService, private dataDev: DataDevService) {
     this.dataDev.devModeBool$.subscribe(value => {
       this.dataDevBol = value;
     })
   }
 
   ngOnInit(): void {
-    this.lucesSubscription = this._lucesService.cargarLuces().subscribe((data: Luz[]) => {
+    this.lucesSubscription = this.jsonService.cargarLuces().subscribe((data: Luz[]) => {
       this.luces = data
     })
 

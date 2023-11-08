@@ -1,1 +1,44 @@
-<p>vista-mensajeria works!</p>
+<div class="card-container">
+    <div class="card" style="text-align: start;" (change)="verificarMensaje()">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01" style="width: 90px;">Tópico: </label>
+            <select class="form-select" id="inputGroupSelect01" [(ngModel)]="topicoSeleccionado">
+                <option selected value="">Seleccionar...</option>
+                <option value="canal1">Canal 1</option>
+                <option value="canal2">Canal 2</option>
+                <option value="canal3">Canal 3</option>
+            </select>
+            <div class="form-text" id="basic-addon1">Tópico por donde se verá el mensaje</div>
+        </div>
+        <div class="mb-3">
+            <div class="input-group">
+                <span class="input-group-text" id="inputGroupSelect02">Mensaje: </span>
+                <input type="text" maxlength="25" class="form-control" id="mensaje"
+                    aria-describedby="inputGroupSelect02 basic-addon2" [(ngModel)]="mensaje"
+                    (input)="verificarMensaje()">
+            </div>
+            <div class="form-text" id="basic-addon2">Máximo 25 carácteres</div>
+        </div>
+        <button class="btn" type="button" (click)="enviarMensaje()" [disabled]="!hayPeticion? true : false"
+            [ngClass]="!hayPeticion? 'btn-outline-secondary' : 'bg-info'">Enviar
+        </button>
+    </div>
+    <div class="card bg-info-subtle" style="text-align: start;">
+        Vista Chat
+        <div class="form-text" id="basic-addon3">Selecciona un tópico para ver mensajes</div>
+        <div class="input-group mb-3" (change)="cambiarTopico()">
+            <label class="input-group-text" for="inputGroupSelect03" style="width: 90px;">Tópico: </label>
+            <select class="form-select" id="inputGroupSelect03" [(ngModel)]="topicoSeleccionadoChat">
+                <option selected value="">Seleccionar...</option>
+                <option value="canal1">Canal 1</option>
+                <option value="canal2">Canal 2</option>
+                <option value="canal3">Canal 3</option>
+            </select>
+        </div>
+        <div class="scrollBox p-2 border">
+            <ul>
+                <li *ngFor="let mensaje of _mensajeria.webSocketMessage">{{mensaje.mensaje}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

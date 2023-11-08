@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Puerta } from 'src/app/models/puerta';
 import { DataDevService } from 'src/app/servicios/data-dev.service';
+import { JsonService } from 'src/app/servicios/json.service';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
-import { PuertasService } from 'src/app/servicios/puertas.service';
 
 @Component({
   selector: 'app-control-puerta',
@@ -22,7 +22,7 @@ export class ControlPuertaComponent {
 
   dataDevBol = false;
 
-  constructor(private _mqttService: MqttserviceService, private _puertasService: PuertasService, private dataDev: DataDevService) {
+  constructor(private _mqttService: MqttserviceService, private jsonService: JsonService, private dataDev: DataDevService) {
     this.dataDev.devModeBool$.subscribe(value => {
       this.dataDevBol = value;
     })
@@ -30,7 +30,7 @@ export class ControlPuertaComponent {
   }
 
   ngOnInit(): void {
-    this.puertasSuscripcion = this._puertasService.cargarPuertas().subscribe((data: Puerta[]) => {
+    this.puertasSuscripcion = this.jsonService.cargarPuertas().subscribe((data: Puerta[]) => {
       this.puertas = data
     })
   }

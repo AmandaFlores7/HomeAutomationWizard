@@ -57,3 +57,23 @@ export class AppComponent {
     return null;
   }
 }
+const ipModificables = {
+  ip_local: '192.168.2.1',
+  ip_local2: '127.0.0.1',
+  ip_local3: '192.168.1.88',
+  api_url: 'http://192.168.2.1:8000',
+  api_url2: 'http://127.0.0.1:8000',
+  api_url3: 'http://192.168.1.88:8000',
+  ws_url: 'ws://192.168.2.1:8000',
+  ws_url2: 'ws://127.0.0.1:8000',
+  ws_url3: 'ws://192.168.1.88:8000',
+  url_camera: 'http://192.168.2.1:8081',
+  url_camera2: 'http://127.0.0.1:8081',
+  url_camera3: 'http://192.168.1.88:8081'
+};
+export const CONSTANTES = {
+  ip_local: ipModificables.ip_local,
+  api_url: ipModificables.api_url,
+  ws_url: ipModificables.ws_url,
+  url_camera: ipModificables.url_camera,
+}

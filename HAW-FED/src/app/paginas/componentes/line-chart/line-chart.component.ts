@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import Chart from 'chart.js/auto';
 import { delay, retryWhen } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
+import { CONSTANTES } from 'src/app/app.component';
 import { DataDevService } from 'src/app/servicios/data-dev.service';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
 
@@ -22,7 +23,7 @@ export class LineChartComponent {
   public values: string[] = [];
   public chart: any;
 
-  public webSocketIP = 'ws://192.168.2.1:8000/';
+  public webSocketIP = CONSTANTES.ws_url+'/';
 
   public valorActual: string = '';
 
