@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CONSTANTES } from 'src/app/app.component';
 
 @Component({
   selector: 'app-probar-camara',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./probar-camara.component.scss']
 })
 export class ProbarCamaraComponent {
-  urlCamera = "http://192.168.2.1:8081";
+  urlCamera = CONSTANTES.url_camera;
 }

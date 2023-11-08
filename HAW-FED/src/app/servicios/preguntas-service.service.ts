@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Pregunta } from '../models/pregunta';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CONSTANTES } from '../app.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PreguntasServiceService {
-  ip = '127.0.0.1';
-  apiUrl = 'http://192.168.2.1:8000';
+  apiUrl = CONSTANTES.api_url;
 
   constructor(private http: HttpClient) {}
 

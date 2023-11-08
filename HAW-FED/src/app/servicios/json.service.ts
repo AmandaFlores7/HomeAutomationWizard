@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { Luz } from '../models/luces.interfaces';
+import { Puerta } from '../models/puerta';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +26,13 @@ export class JsonService {
         return dataF ? dataF : [];
       })
     )
+  }
+
+  cargarLuces() {
+    return this.http.get<Luz[]>('/assets/luces.json');
+  }
+
+  cargarPuertas() {
+    return this.http.get<Puerta[]>('/assets/puertas.json');
   }
 }
