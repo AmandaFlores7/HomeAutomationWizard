@@ -15,13 +15,15 @@ export class MensajeriaService {
   constructor() { }
 
   openWebSocketConnection(channel: string, chatMsg?: WebSocketChat) {
-    if (this.currentChannel !== channel) {
+    if (this.currentChannel && this.currentChannel !== channel) {
       this.closeWebSocketConnection();
+      this.currentChannel = channel;
+    } else if (!this.currentChannel) {
       this.currentChannel = channel;
     }
 
     if (!this.webSocket || this.webSocket.readyState !== WebSocket.OPEN) {
-      this.webSocket = new WebSocket(`${this.wsUrl}/mensajeria/${channel}`);
+      this.webSocket = new WebSocket(`${this.wsUrl}/mensajeria/${this.currentChannel}`);
 
       this.webSocket.onopen = (e) => {
         console.log(e);
@@ -54,8 +56,10 @@ export class MensajeriaService {
 
   closeWebSocketConnection() {
     if (this.webSocket) {
+      this.webSocket.onmessage = null; // Unset the onmessage handler to prevent handling incoming messages after closing
       this.webSocket.close();
       this.webSocket = undefined;
+      this.webSocketMessage = []; // Clear the incoming messages array
     } else {
       console.error('WebSocket is not open. Call openWebSocketConnection first');
     }

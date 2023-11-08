@@ -10,7 +10,7 @@ import { WebSocketChat } from 'src/app/models/web-socket-chat';
 })
 
 export class VistaMensajeriaComponent {
-  
+
 
   public topicoSeleccionado: string = '';
   public mensaje: string = '';
@@ -36,7 +36,11 @@ export class VistaMensajeriaComponent {
     }
   }
 
-  // cambiarTopico(){
-  //   this._mensajeria.openWebSocketConnection(this.topicoSeleccionado);
-  // }
+  ngOnDestroy() {
+    this._mensajeria.closeWebSocketConnection();
+  }
+
+  cambiarTopico(){
+    this._mensajeria.openWebSocketConnection(this.topicoSeleccionadoChat);
+  }
 }
