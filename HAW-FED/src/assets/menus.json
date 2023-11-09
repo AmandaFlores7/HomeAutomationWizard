@@ -167,6 +167,7 @@
   },
   {
     "ruta": "/wikiiot/leccion3",
+    "texto": "Para entender como los componentes se comunican y como podemos interactuar con estos, tenemos que conocer la tecnología que esta detrás de esto y como estos nos ayudan a nuestro objetivo.",
     "items": [
       {
         "titulo": "MQTT",
@@ -180,6 +181,7 @@
   },
   {
     "ruta": "/wikiiot/leccion4",
+    "texto": "La casa, como podemos ver, cuenta con una serie de sensores y actuadores como también una cámara. También nos encontramos con dos componentes importantes: la ESP32 y la Raspberry Pi. Aquí describiremos con detalle cada uno.",
     "items": [
       {
         "titulo": "ESP32",
