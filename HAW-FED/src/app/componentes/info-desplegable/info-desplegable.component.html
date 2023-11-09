@@ -1,0 +1,33 @@
+<div *ngFor="let item of informacion; let index = index" class="col mb-3">
+    <div class="card shadow">
+        <div class="card-body pt-0 m-0">
+            <div class="row align-items-center no-gutters">
+                <div class="col me-2">
+                    <div *ngIf="item.subtitulo? true : false">
+                        <div class="text-uppercase text-info fw-bold text-xm mt-1 h6">
+                            {{item.subtitulo}}
+                        </div>
+                        <div class="text-dark mb-1">
+                            {{item.titulo}}
+                        </div>
+                    </div>
+                    <div *ngIf="!item.subtitulo? true : false">
+                        <div class="text-uppercase text-info fw-bold text-xm mt-1 h6">
+                            {{item.titulo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto" data-bs-toggle="collapse" [attr.href]="'#tab_' + index" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <div class="icon icon-shape bg-gradient-info rounded p-1">
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapse" [id]="'tab_' + index">
+                    {{item.texto}}
+                    <!-- <img width="250px" height="180px" class="" src="/assets/img/dht11.jpg"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

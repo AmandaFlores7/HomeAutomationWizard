@@ -1,0 +1,11 @@
+<div class="m-2 p-3 rounded">
+    <p *ngFor="let p of introduccion">
+        {{p}}
+    </p>
+    <div *ngIf="infoDesplegable">
+        <app-info-desplegable [informacion]="infoDesplegable"></app-info-desplegable>
+    </div>
+    <div *ngIf="!infoDesplegable">
+        <app-menu-opciones></app-menu-opciones>
+    </div>
+</div>

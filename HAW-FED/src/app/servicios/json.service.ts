@@ -8,7 +8,7 @@ import { Puerta } from '../models/puerta';
   providedIn: 'root',
 })
 export class JsonService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   obtenerDatosMenu(urlActual: string): Observable<any[]> {
     return this.http.get<any[]>('assets/menus.json').pipe(
@@ -17,6 +17,24 @@ export class JsonService {
         return dataF ? dataF : [];
       })
     );
+  }
+  
+  obtenerContenidoWiki(urlActual: string): Observable<any[]> {
+    return this.http.get<any[]>('assets/wiki-iot.json').pipe(
+      map((data: any[]) => {       
+        const dataF = data.find((item: any) => item.ruta === urlActual)
+        return dataF ? dataF : [];
+      })
+    )
+  }
+
+  obtenerContenidoWiki2(urlActual: string): Observable<any[]> {
+    return this.http.get<any[]>('assets/wiki.json').pipe(
+      map((data: any[]) => {       
+        const dataF = data.find((item: any) => item.ruta === urlActual)
+        return dataF ? dataF : [];
+      })
+    )
   }
 
   cargarLuces() {

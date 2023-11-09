@@ -5,12 +5,16 @@ import { FooterPrincipalComponent } from './footer-principal/footer-principal.co
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MenuOpcionesComponent } from './menu-opciones/menu-opciones.component';
+import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
+import { InfoDesplegableComponent } from './info-desplegable/info-desplegable.component';
 
 @NgModule({
   declarations: [
     NavbarPrincipalComponent,
     FooterPrincipalComponent,
-    MenuOpcionesComponent
+    MenuOpcionesComponent,
+    CarruselImagenesComponent,
+    InfoDesplegableComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { MenuOpcionesComponent } from './menu-opciones/menu-opciones.component';
   exports: [
     NavbarPrincipalComponent,
     MenuOpcionesComponent,
-    FooterPrincipalComponent
+    FooterPrincipalComponent,
+    CarruselImagenesComponent,
+    InfoDesplegableComponent
   ],
 })
 export class ComponentesModule { }

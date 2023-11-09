@@ -2,9 +2,9 @@
     <div class="row gy-3 row-cols-1 m-2">
         <div *ngIf="textoExplicativo" class="text-start fw-medium textoExplicativo">{{textoExplicativo}}</div>
         <ng-container *ngFor="let item of opcionesMenu" class="col">
-            <div class="card shadow" routerLink={{item.ruta}}>
+            <div class="card shadow">
                 <div class="card-body">
-                    <div class="row text-start no-gutters">
+                    <div class="row text-start no-gutters" routerLink={{item.ruta}}>
                         <div class="col me-2 text-dark mb-1">
                             {{item.titulo}}
                         </div>

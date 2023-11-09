@@ -1,0 +1,28 @@
+<div class="card shadow m-2">
+    <div class="card-body pt-0">
+        <div class="row align-items-center no-gutters">
+            <div class="col me-2">
+                <div class="text-uppercase text-info fw-bold text-xm mt-1 h6">
+                    {{titulo}}
+                </div>
+            </div>
+            <div class="col-auto" data-bs-toggle="collapse" [attr.href]="'#tab_' + 1" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="icon icon-shape bg-gradient-info rounded p-1">
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="collapse" [id]="'tab_' + 1">
+                <div *ngIf="tipo === 'lista'">
+                    <ul>
+                        <li class="" *ngFor="let c of textos">{{c}}</li>
+                    </ul>
+                    
+                </div>
+                <div *ngIf="tipo === 'texto'">
+                    <p *ngFor="let t of textos">{{textos}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

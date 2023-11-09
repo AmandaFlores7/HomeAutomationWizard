@@ -142,7 +142,7 @@
 		"titulo": "Ver Cámara Raspberry Pi 3",
 		"botones": [
 			{
-				"ruta1": "/aplicacion/actuadores/camara_r",
+				"ruta1": "/aplicacion/actuadores",
 				"titulo": "Retroceder"
 			}
 		]
@@ -166,7 +166,7 @@
 		"titulo": "Prueba los sensores",
 		"botones": [
 			{
-				"ruta1": "/aplicacion/actuadores/luces",
+				"ruta1": "/aplicacion/actuadores",
 				"titulo": "Retroceder"
 			}
 		]
@@ -190,87 +190,7 @@
 		"titulo": "Control de Puerta",
 		"botones": [
 			{
-				"ruta1": "/aplicacion/actuadores/puerta",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot",
-		"titulo": "Wiki IoT",
-		"botones": [
-			{
-				"ruta1": "/aplicacion",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion1",
-		"titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion2",
-		"titulo": "Lección 2: Sensores y Actuadores",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion3",
-		"titulo": "Lección 3: Protocolos de Comunicación en IoT",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion4",
-		"titulo": "Lección 4: Maqueta de Casa Inteligente en Detalle",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion5",
-		"titulo": "Lección 5: Control de Dispositivos en la Maqueta",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion6",
-		"titulo": "Lección 6: Seguridad y Privacidad en IoT",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
-				"titulo": "Retroceder"
-			}
-		]
-	},
-	{
-		"ruta": "/wikiiot/leccion7",
-		"titulo": "Lección 7: Proyectos Prácticos y Magia de la Automatización",
-		"botones": [
-			{
-				"ruta1": "/wikiiot",
+				"ruta1": "/aplicacion/actuadores",
 				"titulo": "Retroceder"
 			}
 		]
@@ -369,6 +289,202 @@
 		"botones": [
 			{
 				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot",
+		"titulo": "Wiki IoT",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1",
+		"titulo": "Lección 1",
+		"subtitulo": "Introducción",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1/1",
+		"titulo": "Lección 1",
+		"subtitulo": "IoT",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion1",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1/2",
+		"titulo": "Lección 1",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion1",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion2",
+		"titulo": "Lección 2",
+		"subtitulo": "Sensores y Actuadores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion2/1",
+		"titulo": "Lección 2",
+		"subtitulo": "Sensores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion2",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion2/2",
+		"titulo": "Lección 2",
+		"subtitulo": "Actuadores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion2",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion3",
+		"titulo": "Lección 3",
+		"subtitulo": "Protocolos de Comunicación en IoT",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta":"/wikiiot/leccion3/1",
+		"titulo":"Lección 3",
+		"subtitulo": "MQTT",
+		"botones":[
+			{
+				"ruta1": "/wikiiot/leccion3",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta":"/wikiiot/leccion3/2",
+		"titulo":"Lección 3",
+		"subtitulo": "Broker",
+		"botones":[
+			{
+				"ruta1": "/wikiiot/leccion3",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4",
+		"titulo": "Lección 4",
+		"subtitulo": "Maqueta de Casa Inteligente en Detalle",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/1",
+		"titulo": "Lección 4",
+		"subtitulo": "ESP32",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/2",
+		"titulo": "Lección 4",
+		"subtitulo": "Raspberry Pi 3",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/3",
+		"titulo": "Lección 4",
+		"subtitulo": "RaspiCam",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/4",
+		"titulo": "Lección 4",
+		"subtitulo": "Actuadores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/5",
+		"titulo": "Lección 4",
+		"subtitulo": "Sensores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion5",
+		"titulo": "Lección 5",
+		"subtitulo": "Control de Dispositivos en la Maqueta",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion6",
+		"titulo": "Lección 6",
+		"subtitulo": "Algunos ejemplos",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
 				"titulo": "Retroceder"
 			}
 		]

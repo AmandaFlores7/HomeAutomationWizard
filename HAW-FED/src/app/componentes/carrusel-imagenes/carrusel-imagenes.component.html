@@ -2,7 +2,7 @@
     <div id="carrusel" class="carousel slide carousel-fade">
         <div class="carousel-inner p-4">
             <div class="carousel-item" *ngFor="let imagen of imagenes; let i = index" [class.active]="i === 0">
-                <img width="250px" height="180px" class="object-fit-cover" [src]="imagen.ruta" alt="Slide {{ i + 1 }}">
+                <img width="250px" height="180px" class="object-fit-cover" [src]="imagen" alt="Slide {{ i + 1 }}">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">

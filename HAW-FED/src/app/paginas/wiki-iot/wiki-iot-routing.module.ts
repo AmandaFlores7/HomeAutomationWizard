@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ObjetivosAprendizajeComponent } from './objetivos-aprendizaje/objetivos-aprendizaje.component';
-import { VistaComponenteComponent } from '../componentes/vista-componente/vista-componente.component';
+import { ContenidoWikiComponent } from './contenido-wiki/contenido-wiki.component';
+import { LeccionComponent } from './leccion/leccion.component';
 
 const routes: Routes = [
   { path: 'leccion1', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion1/contenido/1', component: VistaComponenteComponent},
-  { path: 'leccion1/contenido/2', component: VistaComponenteComponent},
-  { path: 'leccion2', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion3', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion4', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion5', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion6', component: ObjetivosAprendizajeComponent },
-  { path: 'leccion7', component: ObjetivosAprendizajeComponent }
+  { path: 'leccion2', component: LeccionComponent},
+  { path: 'leccion2/1', component: ContenidoWikiComponent},
+  { path: 'leccion2/2', component: ContenidoWikiComponent},
+  { path: 'leccion3', component: LeccionComponent},
+  { path: 'leccion3/1', component: ContenidoWikiComponent},
+  { path: 'leccion3/2', component: ContenidoWikiComponent},
+  { path: 'leccion4', component: LeccionComponent},
+  { path: 'leccion4/1', component: ContenidoWikiComponent},
+  { path: 'leccion4/2', component: ContenidoWikiComponent},
+  { path: 'leccion4/3', component: ContenidoWikiComponent},
+  { path: 'leccion4/4', component: ContenidoWikiComponent},
+  { path: 'leccion4/5', component: ContenidoWikiComponent},
+  { path: 'leccion5', component: LeccionComponent},
+  { path: 'leccion6', component: LeccionComponent},
 ];
 
 @NgModule({
