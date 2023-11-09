@@ -14,7 +14,7 @@ export class JsonService {
     return this.http.get<any[]>('assets/menus.json').pipe(
       map((data: any[]) => {
         const dataF = data.find((item: any) => item.ruta === urlActual);
-        return dataF ? dataF.items : [];
+        return dataF ? dataF : [];
       })
     );
   }

@@ -1,6 +1,7 @@
 [
   {
     "ruta": "/aplicacion",
+    "texto":"Bienvenido al menú principal de Home automation Wizard, para conocer todo el contenido te invitamos a navegar por todas las opciones.",
     "items": [
       {
         "titulo": "Sensores",
@@ -36,6 +37,7 @@
   },
   {
     "ruta": "/quiz",
+    "texto": "En esta sección encontrarás cuestionarios relacionados a nuestro proyecto y los conceptos relacionados al IoT y domótica🏠. Como pista 👀, te recomendamos que leas la sección 'Wiki IoT' para que puedas responder correctamente👌🏽 las preguntas. ¡Que tengas suerte!",
     "items": [
       {
         "titulo": "Sensores",
@@ -56,6 +58,7 @@
   },
   {
     "ruta": "/aplicacion/sensores",
+    "texto": "En esta sección se encuentran listados todos los sensores que están actualmente conectados a la maqueta de Home Automation Wizard. Te invitamos a visualizar la información de cada uno a través de su gráfico en tiempo real y su medición actual.",
     "items": [
       {
         "titulo": "Temperatura",
@@ -81,6 +84,7 @@
   },
   {
     "ruta": "/aplicacion/actuadores",
+    "texto": "En esta sección se encuentran listados todos los actuadores que están actualmente conectados a la maqueta de Home Automation Wizard. ¡Te invitamos a controlar cada uno!",
     "items": [
       {
         "titulo": "Camara Raspberry",
@@ -101,6 +105,7 @@
   },
   {
     "ruta": "/wikiiot",
+    "texto": "Aquí encontrarás lecciones de aprendizaje relacionadas a conceptos de IoT, domótica, protocolos y dispositivos utilizados en el proyecto. No dudes en leer todo, ya que te servirá para contestar las trivias en la otra sección.😜",
     "items": [
       {
         "titulo": "Lección 1: Introducción al IoT y a Home Automation Wizard",
