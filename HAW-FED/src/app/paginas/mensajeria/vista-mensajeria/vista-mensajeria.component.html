@@ -37,7 +37,9 @@
         </div>
         <div class="scrollBox p-2 border">
             <ul>
-                <li *ngFor="let mensaje of _mensajeria.webSocketMessage">{{mensaje.mensaje}}</li>
+                <div *ngFor="let mensaje of _mensajeria.webSocketMessage">
+                    <li *ngIf="mensaje.topico == topicoSeleccionadoChat"> <span class="fw-medium">{{mensaje.nombre}}:</span> {{mensaje.mensaje}}</li>
+                </div>
             </ul>
         </div>
     </div>
