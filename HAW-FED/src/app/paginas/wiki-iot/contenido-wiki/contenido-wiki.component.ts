@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { rutas } from 'src/app/constantes/rutas';
 import { JsonService } from 'src/app/servicios/json.service';
 
 @Component({
@@ -29,17 +28,10 @@ export class ContenidoWikiComponent {
       this.titulo = info.titulo;
       this.texto = info.texto;
       this.caracteristicas = info.caracteristicas;
+      this.definiciones = info.definiciones;
       this.infoExtra = datita.infoExtra;
       this.subInfo = datita.subInfo;
       console.log(this.subInfo);
     });
-  }
-
-  buscarTitulo(linkActual: string) {
-    let info = JSON.parse(JSON.stringify(rutas))[linkActual];
-    if (info) {
-      return info;
-    }
-    return null;
   }
 }

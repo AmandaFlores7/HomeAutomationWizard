@@ -15,6 +15,12 @@
     <div *ngIf="infoExtra">
         <app-mini-info-desplegable [titulo]="infoExtra.titulo" [textos]="infoExtra.texto" [tipo]="'texto'"></app-mini-info-desplegable>
     </div>
+    <div *ngIf="definiciones" class="m-2">
+        <div class="text-uppercase fw-bold text-xm mt-1 h6">
+            Definiciones
+        </div>
+        <app-info-desplegable [informacion]="definiciones"></app-info-desplegable>
+    </div>
     <div *ngIf="subInfo" class="m-2">
         <app-info-desplegable [informacion]="subInfo"></app-info-desplegable>
     </div>

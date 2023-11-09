@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { rutas } from 'src/app/constantes/rutas';
 import { JsonService } from 'src/app/servicios/json.service';
 
 @Component({
