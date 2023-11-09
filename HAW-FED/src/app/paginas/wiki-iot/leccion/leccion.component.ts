@@ -22,7 +22,7 @@ export class LeccionComponent {
       this.datita = data;
       this.introduccion = this.datita['info']['introduccion'];
       this.leccion = this.router.url;
-      console.log(this.leccion);
+      console.log(this.datita);
 
       if (this.datita['tabs']) {
         this.infoDesplegable = this.datita['tabs'];

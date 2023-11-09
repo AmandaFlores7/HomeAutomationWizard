@@ -15,7 +15,7 @@ import { MiniInfoDesplegableComponent } from './mini-info-desplegable/mini-info-
     ContenidoWikiComponent,
     LeccionComponent,
     TabsComponent,
-    MiniInfoDesplegableComponent,
+    MiniInfoDesplegableComponent
   ],
   imports: [
     CommonModule,

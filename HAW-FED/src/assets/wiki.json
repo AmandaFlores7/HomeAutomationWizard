@@ -6,7 +6,21 @@
                 "Los actuadores y sensores son los protagonistas invisibles pero esenciales en nuestra vida cotidiana, permitiéndonos explorar nuevas fronteras tecnológicas y transformar nuestras ideas en realidades palpables. En la maqueta encontraremos varios de estos.",
                 "A continuación hablaremos un poquito mas sobre cada uno."
             ]
-        }
+        },
+        "tabs": [
+            {
+                "titulo": "Sensores",
+                "texto": [
+                    "Un sensor es un dispositivo tecnológico esencial que recopila datos sobre diversas condiciones del entorno, como clima, temperatura, movimiento y presencia de personas. Estos datos son vitales para los sistemas de automatización del hogar y el Internet de las cosas (IoT), ya que permiten que los dispositivos tomen decisiones y realicen acciones en respuesta a las condiciones detectadas."
+                ]
+            },
+            {
+                "titulo": "Actuadores",
+                "texto": [
+                    "Un actuador es un dispositivo que responde a señales o comandos realizando acciones físicas, como abrir puertas o encender dispositivos. Son vitales en sistemas de automatización, permitiendo que los sistemas tomen decisiones y realicen tareas físicas específicas en el mundo real."
+                ]
+            }
+        ]
     },
     {
         "ruta": "/wikiiot/leccion2/1",

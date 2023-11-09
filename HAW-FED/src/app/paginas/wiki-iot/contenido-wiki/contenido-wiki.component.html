@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div *ngIf="url != '/wikiiot/leccion3/1'" class="container mt-4">
     <div class="card shadow m-2 mb-4">
         <div class="card-body">
             <h2 class="card-title">{{this.titulo}}</h2>
@@ -17,11 +17,28 @@
     </div>
     <div *ngIf="definiciones" class="m-2">
         <div class="text-uppercase fw-bold text-xm mt-1 h6">
-            Definiciones
+
         </div>
         <app-info-desplegable [informacion]="definiciones"></app-info-desplegable>
     </div>
     <div *ngIf="subInfo" class="m-2">
         <app-info-desplegable [informacion]="subInfo"></app-info-desplegable>
+    </div>
+</div>
+<div *ngIf="url == '/wikiiot/leccion3/1'">
+    <div class="m-4">
+        <h2>{{titulo}}</h2>
+        <div class="mb-2">
+            <a *ngFor="let t of texto">
+                {{t}}
+            </a>
+        </div>
+        
+        <h4>Caracteristicas</h4>
+        <div class="border-0" *ngFor="let c of caracteristicas">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{c}}</li>
+            </ul>
+        </div>
     </div>
 </div>

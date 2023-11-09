@@ -16,6 +16,8 @@ export class ContenidoWikiComponent {
   infoExtra: any;
   subInfo: any;
 
+  url: string = '';
+
   constructor(private router: Router, private jsonService:JsonService) {
     
   }
@@ -25,6 +27,8 @@ export class ContenidoWikiComponent {
       let datita = JSON.parse(JSON.stringify(data));
       console.log(datita);
       let info = datita.info;
+      this.url = datita.ruta;
+      console.log(this.url);
       this.titulo = info.titulo;
       this.texto = info.texto;
       this.caracteristicas = info.caracteristicas;
