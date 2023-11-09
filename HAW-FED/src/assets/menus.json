@@ -59,22 +59,22 @@
     "items": [
       {
         "titulo": "Temperatura",
-        "ruta": "/aplicacion/sensores/temperatura",
+        "ruta": "/aplicacion/sensores/temperatura/ver",
         "icono": "fa fa-thermometer-half"
       },
       {
         "titulo": "Humedad",
-        "ruta": "/aplicacion/sensores/humedad",
+        "ruta": "/aplicacion/sensores/humedad/ver",
         "icono": "fa fa-tint"
       },
       {
         "titulo": "Luz",
-        "ruta": "/aplicacion/sensores/luz",
+        "ruta": "/aplicacion/sensores/luz/ver",
         "icono": "fa-regular fa-sun"
       },
       {
         "titulo": "Aire",
-        "ruta": "/aplicacion/sensores/aire",
+        "ruta": "/aplicacion/sensores/aire/ver",
         "icono": "fa-solid fa-wind"
       }
     ]
@@ -84,17 +84,17 @@
     "items": [
       {
         "titulo": "Camara Raspberry",
-        "ruta": "/aplicacion/actuadores/camara_r",
+        "ruta": "/aplicacion/actuadores/camara_r/probar",
         "icono": "fa fa-camera"
       },
       {
         "titulo": "Luces del Hogar",
-        "ruta": "/aplicacion/actuadores/luces",
+        "ruta": "/aplicacion/actuadores/luces/probar",
         "icono": "fa-regular fa-lightbulb"
       },
       {
         "titulo": "Control de Puerta",
-        "ruta": "/aplicacion/actuadores/puerta",
+        "ruta": "/aplicacion/actuadores/puerta/probar",
         "icono": "fa-solid fa-door-open"
       }
     ]
@@ -109,33 +109,92 @@
       },
       {
         "titulo": "Lección 2: Sensores y Actuadores",
-        "ruta": "/wikiiot/leccion2/contenido/1",
+        "ruta": "/wikiiot/leccion2",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 3: Protocolos de Comunicación en IoT",
-        "ruta": "/wikiiot/leccion3/contenido/1",
+        "ruta": "/wikiiot/leccion3",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 4: Maqueta de Casa Inteligente en Detalle",
-        "ruta": "/wikiiot/leccion4/contenido/1",
+        "ruta": "/wikiiot/leccion4",
         "icono": "fa fa-book"
       },
       {
         "titulo": "Lección 5: Control de Dispositivos en la Maqueta",
-        "ruta": "/wikiiot/leccion5/contenido/1",
+        "ruta": "/wikiiot/leccion5",
         "icono": "fa fa-book"
       },
       {
-        "titulo": "Lección 6: Seguridad y Privacidad en IoT",
-        "ruta": "/wikiiot/leccion6/contenido/1",
+        "titulo": "Lección 6: Proyectos Prácticos y Magia de la Automatización",
+        "ruta": "/wikiiot/leccion6",
         "icono": "fa fa-book"
+      }
+    ]
+  },
+  {
+    "ruta": "/wikiiot/leccion1",
+    "items": [
+      {
+        "titulo": "¿Qué es IoT?",
+        "ruta": "/wikiiot/leccion1/1"
       },
       {
-        "titulo": "Lección 7: Proyectos Prácticos y Magia de la Automatización",
-        "ruta": "/wikiiot/leccion7/contenido/1",
-        "icono": "fa fa-book"
+        "titulo": "¿Qué es Home Automation Wizard?",
+        "ruta": "/wikiiot/leccion1/2"
+      }
+    ]
+  },
+  {
+    "ruta": "/wikiiot/leccion2",
+    "items": [
+      {
+        "titulo": "Sensores",
+        "ruta": "/wikiiot/leccion2/1"
+      },
+      {
+        "titulo": "Actuadores",
+        "ruta": "/wikiiot/leccion2/2"
+      }
+    ]
+  },
+  {
+    "ruta": "/wikiiot/leccion3",
+    "items": [
+      {
+        "titulo": "MQTT",
+        "ruta": "/wikiiot/leccion3/1"
+      },
+      {
+        "titulo": "Broker",
+        "ruta": "/wikiiot/leccion3/2"
+      }
+    ]
+  },
+  {
+    "ruta": "/wikiiot/leccion4",
+    "items": [
+      {
+        "titulo": "ESP32",
+        "ruta": "/wikiiot/leccion4/1"
+      },
+      {
+        "titulo": "Raspberry Pi",
+        "ruta": "/wikiiot/leccion4/2"
+      },
+      {
+        "titulo": "RaspiCam",
+        "ruta": "/wikiiot/leccion4/3"
+      },
+      {
+        "titulo": "Actuadores",
+        "ruta": "/wikiiot/leccion4/4"
+      },
+      {
+        "titulo": "Sensores",
+        "ruta": "/wikiiot/leccion4/5"
       }
     ]
   }

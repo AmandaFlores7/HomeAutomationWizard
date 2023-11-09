@@ -7,6 +7,7 @@ import { MenuInfoComponent } from './menu-info/menu-info.component';
 import { TesteoComponent } from './testeo/testeo.component';
 import { ImagenExplicativaComponent } from './imagen-explicativa/imagen-explicativa.component';
 import { ModalTextoComponent } from './modal-texto/modal-texto.component';
+import { ComponentesModule } from 'src/app/componentes/componentes.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { ModalTextoComponent } from './modal-texto/modal-texto.component';
     TesteoComponent,
     ImagenExplicativaComponent,
   ],
-  imports: [CommonModule, IntroduccionRoutingModule],
+  imports: [CommonModule, IntroduccionRoutingModule, ComponentesModule],
 })
 export class IntroduccionModule { }

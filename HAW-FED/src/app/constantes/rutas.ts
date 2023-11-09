@@ -644,22 +644,27 @@ export const rutas ={
         "informacion": [
             {
                 "titulo": "Conexión Inicial",
+                "subtitulo": "Paso 1",
                 "parrafo": "Un dispositivo (llamado cliente) se conecta a un servidor MQTT."
             },
             {
                 "titulo": "Solicitud de Suscripción",
+                "subtitulo": "Paso 2",
                 "parrafo": "El cliente le dice al servidor a qué temas o canales quiere suscribirse para recibir información."
             },
             {
                 "titulo": "Publicación de Mensajes",
+                "subtitulo": "Paso 3",
                 "parrafo": "Otros dispositivos (llamados editores) envían mensajes al servidor, etiquetados con un tema específico."
             },
             {
                 "titulo": "Entrega de Mensajes",
+                "subtitulo": "Paso 4",
                 "parrafo": "El servidor reenvía los mensajes a los clientes suscritos a esos temas."
             },
             {
                 "titulo": "Desconexión",
+                "subtitulo": "Paso 5",
                 "parrafo": "Cuando un cliente ya no necesita comunicarse, se desconecta del servidor."
             }
         ],

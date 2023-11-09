@@ -28,6 +28,15 @@ export class JsonService {
     )
   }
 
+  obtenerContenidoWiki2(urlActual: string): Observable<any[]> {
+    return this.http.get<any[]>('assets/wiki.json').pipe(
+      map((data: any[]) => {       
+        const dataF = data.find((item: any) => item.ruta === urlActual)
+        return dataF ? dataF : [];
+      })
+    )
+  }
+
   cargarLuces() {
     return this.http.get<Luz[]>('/assets/luces.json');
   }

@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MenuOpcionesComponent } from './menu-opciones/menu-opciones.component';
 import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
+import { InfoDesplegableComponent } from './info-desplegable/info-desplegable.component';
 
 @NgModule({
   declarations: [
     NavbarPrincipalComponent,
     FooterPrincipalComponent,
     MenuOpcionesComponent,
-    CarruselImagenesComponent
+    CarruselImagenesComponent,
+    InfoDesplegableComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes
     NavbarPrincipalComponent,
     MenuOpcionesComponent,
     FooterPrincipalComponent,
-    CarruselImagenesComponent
+    CarruselImagenesComponent,
+    InfoDesplegableComponent
   ],
 })
 export class ComponentesModule { }

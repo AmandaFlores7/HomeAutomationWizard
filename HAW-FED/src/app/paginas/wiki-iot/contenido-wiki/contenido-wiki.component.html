@@ -1,21 +1,21 @@
 <div class="container mt-4">
-    <h3 class="text-center">{{this.titulo2}}</h3>
-    <div class="row gy-3 row-cols-1 m-2">
-        <div class="card shadow">
-            <div class="card-body">
-                <div class="row text-start no-gutters">
-                    <div class="col me-2 text-dark mb-1">
-                        {{this.texto}}
-                    </div>
-                </div>
+    <div class="card shadow m-2 mb-4">
+        <div class="card-body">
+            <h2 class="card-title">{{this.titulo}}</h2>
+            <div class="card-text">
+                <a *ngFor="let t of texto">
+                    {{t}}
+                </a>
             </div>
         </div>
-        <div *ngIf="caracteristicas && caracteristicas.length > 0">
-            <h3>Características:</h3>
-            <ul>
-                <li *ngFor="let caracteristica of caracteristicas">{{caracteristica}}</li>
-            </ul>
-        </div>
     </div>
-    <app-carrusel-imagenes style="z-index: 0;" [imagenes]="imagenes"></app-carrusel-imagenes>
+    <div *ngIf="caracteristicas && caracteristicas.length > 0" class="mb-4">
+        <app-mini-info-desplegable [titulo]="'Caracteristicas'" [textos]="caracteristicas" [tipo]="'lista'"></app-mini-info-desplegable>
+    </div>
+    <div *ngIf="infoExtra">
+        <app-mini-info-desplegable [titulo]="infoExtra.titulo" [textos]="infoExtra.texto" [tipo]="'texto'"></app-mini-info-desplegable>
+    </div>
+    <div *ngIf="subInfo" class="m-2">
+        <app-info-desplegable [informacion]="subInfo"></app-info-desplegable>
+    </div>
 </div>

@@ -5,32 +5,37 @@ const data = {
   informacion: [
     {
       titulo: 'Conexión Inicial',
-      parrafo:
+      subtitulo: 'Paso 1',
+      texto:
         'Un dispositivo (llamado cliente) se conecta a un servidor MQTT.',
     },
     {
       titulo: 'Solicitud de Suscripción',
-      parrafo:
+      subtitulo: 'Paso 2',
+      texto:
         'El cliente le dice al servidor a qué temas o canales quiere suscribirse para recibir información.',
     },
     {
       titulo: 'Publicación de Mensajes',
-      parrafo:
+      subtitulo: 'Paso 3',
+      texto:
         'Otros dispositivos (llamados editores) envían mensajes al servidor, etiquetados con un tema específico.',
     },
     {
       titulo: 'Entrega de Mensajes',
-      parrafo:
+      subtitulo: 'Paso 4',
+      texto:
         'El servidor reenvía los mensajes a los clientes suscritos a esos temas.',
     },
     {
       titulo: 'Desconexión',
-      parrafo:
+      subtitulo: 'Paso 5',
+      texto:
         'Cuando un cliente ya no necesita comunicarse, se desconecta del servidor.',
     },
   ],
   extra: {
-    parrafo:
+    texto:
       'Estos pasos permiten que los dispositivos se comuniquen y se mantengan actualizados sobre la información que les interesa.',
   },
 };
