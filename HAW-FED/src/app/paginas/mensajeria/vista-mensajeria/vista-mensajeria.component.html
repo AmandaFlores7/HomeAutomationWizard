@@ -35,7 +35,7 @@
                 <option value="canal3">Canal 3</option>
             </select>
         </div>
-        <div class="scrollBox p-2 border">
+        <div class="scrollBox p-2 border bg-white">
             <ul>
                 <div *ngFor="let mensaje of _mensajeria.webSocketMessage">
                     <li *ngIf="mensaje.topico == topicoSeleccionadoChat"> <span class="fw-medium">{{mensaje.nombre}}:</span> {{mensaje.mensaje}}</li>
