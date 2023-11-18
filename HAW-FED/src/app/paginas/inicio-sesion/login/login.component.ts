@@ -67,7 +67,7 @@ export class LoginComponent {
               // Manejar errores aquí si es necesario
             }
           );
-          this.router.navigate(['/introduccion/4']);
+          this.router.navigate(['/introduccion/1']);
         }
       });
     }

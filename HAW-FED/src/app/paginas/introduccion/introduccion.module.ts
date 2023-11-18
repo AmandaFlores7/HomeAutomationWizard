@@ -15,7 +15,7 @@ import { ComponentesModule } from 'src/app/componentes/componentes.module';
     MenuInfoComponent,
     ModalTextoComponent,
     TesteoComponent,
-    ImagenExplicativaComponent,
+    ImagenExplicativaComponent
   ],
   imports: [CommonModule, IntroduccionRoutingModule, ComponentesModule],
 })

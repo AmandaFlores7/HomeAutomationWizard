@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuOpcionesComponent } from './menu-opciones/menu-opciones.component';
 import { CarruselImagenesComponent } from './carrusel-imagenes/carrusel-imagenes.component';
 import { InfoDesplegableComponent } from './info-desplegable/info-desplegable.component';
+import { IntroSplashComponent } from './intro-splash/intro-splash.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InfoDesplegableComponent } from './info-desplegable/info-desplegable.co
     FooterPrincipalComponent,
     MenuOpcionesComponent,
     CarruselImagenesComponent,
-    InfoDesplegableComponent
+    InfoDesplegableComponent,
+    IntroSplashComponent
   ],
   imports: [
     CommonModule,

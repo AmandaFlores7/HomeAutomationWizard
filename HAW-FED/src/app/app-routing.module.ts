@@ -5,6 +5,7 @@ import { QuizComponent } from './paginas/quiz/quiz.component';
 import { LoginComponent } from './paginas/inicio-sesion/login/login.component';
 import { AuthGuard } from './servicios/auth.guard';
 import { VistaMensajeriaComponent } from './paginas/mensajeria/vista-mensajeria/vista-mensajeria.component';
+import { IntroSplashComponent } from './componentes/intro-splash/intro-splash.component';
 
 const routes: Routes = [
   {
@@ -25,8 +26,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'aplicacion',
+    redirectTo: 'splashIntro',
     pathMatch: 'full',
+  },
+  {
+    path:'splashIntro',
+    component: IntroSplashComponent
   },
   {
     path: 'aplicacion',

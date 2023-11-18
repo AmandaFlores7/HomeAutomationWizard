@@ -29,6 +29,7 @@ export class NavbarPrincipalComponent {
         } else {
           this.showDevOptions = false;
         }
+
       }
     });
   }

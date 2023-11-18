@@ -14,6 +14,7 @@ export class AppComponent {
   botonDerecho: any;
   botonIzquierdo: any;
   titulo: any;
+  showNavbar = true;
 
   constructor(private router: Router) {}
 
@@ -21,6 +22,9 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.obtenerDatosPagina(event.urlAfterRedirects);
+      }
+      if (event instanceof NavigationEnd) {
+        this.showNavbar = this.router.url !== '/splashIntro';
       }
     });
   }

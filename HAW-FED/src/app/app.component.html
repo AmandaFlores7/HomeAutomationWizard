@@ -1,5 +1,5 @@
 <div class="contenedor">
-    <app-navbar-principal [title]="titulo" class="navbarPrincipal"></app-navbar-principal>
+    <app-navbar-principal *ngIf="showNavbar" [title]="titulo" class="navbarPrincipal"></app-navbar-principal>
     <div class="cuerpito">
         <router-outlet></router-outlet>
     </div>
