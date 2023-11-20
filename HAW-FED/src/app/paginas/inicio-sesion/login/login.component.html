@@ -1,26 +1,31 @@
-<div class="m-5">
-    <h2>Iniciar Sesión</h2>
-    <form (submit)="iniciarSesion()">
-        <div class="mb-2">
-            <label for="inputNombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="inputNombre" [(ngModel)]="usuario.nombre" name="nombre" required>
-        </div>
-        <div class="mb-2">
-            <label for="inputApellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="inputApellido" [(ngModel)]="usuario.apellido" name="apellido" required>
-        </div>
-        <div class="mb-2">
-            <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" [(ngModel)]="usuario.correo" name="correo">
-            <div class="text-muted fw-light">
-                (Opcional)
+<div class="login-component">
+    <div class="form-box">
+        <form class="form" (submit)="iniciarSesion()">
+            <span class="title">Iniciar Sesión</span>
+            <span class="subtitle">Introduce tus datos, por favor.</span>
+            <div class="mb-1">
+                <div class="form-container">
+                    <input type="text" class="form-control" id="inputNombre" [(ngModel)]="usuario.nombre" name="nombre"
+                        required placeholder="Nombre">
+                </div>
             </div>
-        </div>
-        <div class="mb-2">
-            <label for="inputRut" class="form-label">Rut</label>
-            <input type="text" class="form-control" id="inputRut" 
-            [(ngModel)]="usuario.rut" required appRutValidador name="rut">
-        </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-    </form>
+            <div class="mb-1">
+                <input type="text" class="form-control" id="inputApellido" [(ngModel)]="usuario.apellido"
+                    name="apellido" required placeholder="Apellido">
+            </div>
+            <div class="mb-1">
+                <input type="email" class="form-control" id="inputEmail" [(ngModel)]="usuario.correo" name="correo"
+                    placeholder="Correo Electrónico">
+                <div class="text-muted fw-light">
+                    <span>(Opcional)</span>
+                </div>
+            </div>
+            <div class="mb-1">
+                <input type="text" class="form-control" id="inputRut" [(ngModel)]="usuario.rut" required appRutValidador
+                    name="rut" placeholder="Rut">
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+
+    </div>
 </div>
