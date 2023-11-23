@@ -11,7 +11,6 @@ export class AuthService {
   constructor(private _http: HttpClient) {}
 
   verificarUsuario(usuario: any) {
-    console.log('Verificando usuario:', usuario);
     return this._http.post(
       `${this.apiUrl}/usuarios/verificar-usuario`,
       usuario

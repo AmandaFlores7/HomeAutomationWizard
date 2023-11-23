@@ -59,7 +59,6 @@ export class LoginComponent {
           }
           this.preguntas_s.obtenerRespuestas(this.usuario.rut).subscribe(
             (respuestas) => {
-              console.log('Respuestas obtenidas:', respuestas);
               this.preguntas_s.cargarPreguntas(this.preguntas, respuestaTipo, respuestas.respuestas);
             },
             (error) => {

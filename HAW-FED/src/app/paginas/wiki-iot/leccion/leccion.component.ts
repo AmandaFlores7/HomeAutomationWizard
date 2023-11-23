@@ -13,6 +13,8 @@ export class LeccionComponent {
 
   infoDesplegable: any;
 
+  tarjetas: any;
+
   leccion: string = '';
 
   constructor(private router: Router, private jsonService: JsonService) {}
@@ -22,11 +24,12 @@ export class LeccionComponent {
       this.datita = data;
       this.introduccion = this.datita['info']['introduccion'];
       this.leccion = this.router.url;
-      console.log(this.datita);
 
       if (this.datita['tabs']) {
         this.infoDesplegable = this.datita['tabs'];
-        console.log(this.infoDesplegable);
+      }
+      if (this.datita['tarjetas']) {
+        this.tarjetas = this.datita['tarjetas'];
       }
     });
 }

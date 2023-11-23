@@ -25,17 +25,14 @@ export class ContenidoWikiComponent {
   ngOnInit() {
     this.jsonService.obtenerContenidoWiki2(this.router.url).subscribe((data:{}) => {
       let datita = JSON.parse(JSON.stringify(data));
-      console.log(datita);
       let info = datita.info;
       this.url = datita.ruta;
-      console.log(this.url);
       this.titulo = info.titulo;
       this.texto = info.texto;
       this.caracteristicas = info.caracteristicas;
       this.definiciones = info.definiciones;
       this.infoExtra = datita.infoExtra;
       this.subInfo = datita.subInfo;
-      console.log(this.subInfo);
     });
   }
 }

@@ -1,0 +1,12 @@
+<div *ngFor="let item of tarjetas.tabs" class="card mb-3 shadow">
+    <div class="card-body">
+        {{item.texto}}
+        <ul *ngIf="item.subtab" class="list-group list-group-flush">
+            <li class="list-group-item"></li>
+            <li *ngFor="let subItem of item.subtab" class="list-group-item">{{subItem}}</li>
+        </ul>
+    </div>
+</div>
+<div *ngIf="tarjetas.texto_final">
+    {{tarjetas.texto_final}}
+</div>

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./intro-splash.component.scss']
 })
 export class IntroSplashComponent {
+  nombre_boton = 'Iniciar Sesión';
+  ruta = '/login'
+
+  ngOnInit() {
+    if (localStorage.getItem('usuario')) {
+      this.nombre_boton = 'Ir a la Aplicación';
+      this.ruta = '/aplicacion'
+    }
+  }
 
 }
