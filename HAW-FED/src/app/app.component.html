@@ -1,8 +1,7 @@
 <div class="contenedor">
     <app-navbar-principal *ngIf="showNavbar" [title]="titulo" class="navbarPrincipal"></app-navbar-principal>
-    <div class="cuerpito">
+    <div [ngClass]="{'cuerpito': showNavbar}">
         <router-outlet></router-outlet>
     </div>
-    <app-footer-principal [botonDerecho]="botonDerecho ? botonDerecho : null" [botonIzquierdo]="botonIzquierdo ? botonIzquierdo : null" class="pie"></app-footer-principal>
+    <app-footer-principal *ngIf="showNavbar" [botonDerecho]="botonDerecho ? botonDerecho : null" [botonIzquierdo]="botonIzquierdo ? botonIzquierdo : null" class="pie"></app-footer-principal>
 </div>
-    
