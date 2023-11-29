@@ -1,4 +1,5 @@
 <div class="card-container">
+    <button type="button" class="btn-modal btn btn-warning btn-sm shadow"  data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
     <div class="card" style="text-align: start;" (change)="verificarMensaje()">
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01" style="width: 90px;">Tópico: </label>
@@ -44,3 +45,27 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Acá podemos interaccionar con otro método de comunicación, a traves de <i>WebSocket</i>.
+            <br>
+            <br>
+            <b class="text-success text-decoration-underline">Primer recuadro:</b> Podras seleccionar un canal por el cual transmitirás algun mensaje.
+            <br>
+            <br>
+            <b class="text-success text-decoration-underline">Segundo recuadro:</b> Para ver los mensajes enviados desde el primer recuadro, puede seleccionar el mismo canal, como también los mensajes que las demas personas estén enviando a este mismo.            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
