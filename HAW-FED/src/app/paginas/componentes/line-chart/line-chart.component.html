@@ -1,9 +1,11 @@
 <div class="m-3">
-    <div class="fs-4 fw-semibold text-body-secondary">{{chartTitle}} 
-        <button type="button" class="btn btn-warning btn-sm shadow p-1"  data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
+    <div class="fs-4 fw-semibold text-body-secondary">{{chartTitle}}
+        <button type="button" class="btn btn-warning btn-sm shadow p-1" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Info</button>
     </div>
     <div *ngIf="dataDevBol" class="card bg-info-subtle p-2 m-2" style="text-align: start;">
-        <textarea class="bg-light-subtle" rows="2" [placeholder]="textoPeticion" aria-label="Mensaje" disabled></textarea>
+        <textarea class="bg-light-subtle" rows="2" [placeholder]="textoPeticion" aria-label="Mensaje"
+            disabled></textarea>
     </div>
     <div class="chart-container">
         <canvas id="MyChart">{{ chart }}</canvas>
@@ -13,20 +15,21 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Acá podemos ver los valores que van llegando desde el sensor correspondiente.
+                <br>
+                <br>
+                <b>Nota:</b> Al seleccionar <i>"Dev Mode"</i> podrá visualizar como es el mensaje que se envia a traves
+                del broker, para suscribirse a los datos del tópico correspondiente.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-body">
-          Acá podemos ver los valores que van llegando desde el sensor correspondiente.
-            <br>
-            <br>
-            <b>Nota:</b> Al seleccionar <i>"Dev Mode"</i> podrá visualizar como es el mensaje que se envia a traves del broker, para suscribirse a los datos del tópico correspondiente.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>

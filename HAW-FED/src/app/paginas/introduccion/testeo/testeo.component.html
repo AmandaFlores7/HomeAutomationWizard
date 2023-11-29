@@ -8,13 +8,15 @@
             aria-label="20px"> </div>
     </div>
     <div class="pt-4 position-absolute top-50 start-50 translate-middle" [hidden]="!mostrarBoton">
-        <button type="button" class="btn btn-warning" (click)="initLoading()" [disabled]="!mostrarBoton">Intentar nuevamente</button>
+        <button type="button" class="btn btn-warning" (click)="initLoading()" [disabled]="!mostrarBoton">
+            Intentar nuevamente</button>
     </div>
 </div>
 
-<app-modal-texto
-  *ngIf="hayMensaje"
-  [data]="attrMensaje"
-  (closeModal)="setSelectedMessage(false, displayStyle)"
-  [displayStyle]="displayStyle"
-></app-modal-texto>
+<app-modal-texto 
+    *ngIf="hayMensaje" 
+    [data]="attrMensaje" 
+    (closeModal)="setSelectedMessage(false, displayStyle)"
+    [displayStyle]="displayStyle"
+>
+</app-modal-texto>
