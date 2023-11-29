@@ -19,6 +19,7 @@ interface result {
   styleUrls: ['./line-chart.component.scss']
 })
 export class LineChartComponent {
+
   public measure_times: string[] = [];
   public values: string[] = [];
   public chart: any;
@@ -37,6 +38,7 @@ export class LineChartComponent {
   textoPeticion = '';
 
   constructor(private s_mqtt: MqttserviceService, private dataDev: DataDevService, private route: ActivatedRoute) {
+    
     this.route.data.subscribe(data => {
       this.sensorType = data['tipoSensor'];
       this.chartTitle = data['tituloGrafico'];
@@ -90,6 +92,7 @@ export class LineChartComponent {
   }
 
   ngOnDestroy() {
+    this.dataDev.setDevModeBool(false);
     if (this.myWebSocket) {
       this.myWebSocket.unsubscribe();
     }
@@ -126,14 +129,6 @@ export class LineChartComponent {
               font: {
                 size: 16
               }
-            }
-          },
-          title: {
-            display: true,
-            text: this.chartTitle,
-            align: 'start',
-            font: {
-              size: 20
             }
           }
         }

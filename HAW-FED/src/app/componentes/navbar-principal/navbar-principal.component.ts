@@ -18,6 +18,9 @@ export class NavbarPrincipalComponent {
   constructor(private router: Router, private dataDev: DataDevService) {}
 
   ngOnInit() {
+    this.dataDev.devModeBool$.subscribe((value) => {
+      this.isDevMode = value;
+    });
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.dataDev.setDevModeBool(this.isDevMode);
