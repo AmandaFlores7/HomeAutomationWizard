@@ -83,7 +83,6 @@ export class PreguntasServiceService {
             };
             this.http.post(`${this.apiUrl}/preguntas/actualizar`, datos).subscribe(
               (resultado) => {
-                console.log('Pregunta actualizada:', resultado);
               },
               (error) => {
                 console.error('Error al realizar la solicitud:', error);

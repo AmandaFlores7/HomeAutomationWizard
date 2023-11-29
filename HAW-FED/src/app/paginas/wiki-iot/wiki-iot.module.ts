@@ -8,6 +8,7 @@ import { ComponentesModule } from 'src/app/componentes/componentes.module';
 import { LeccionComponent } from './leccion/leccion.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { MiniInfoDesplegableComponent } from './mini-info-desplegable/mini-info-desplegable.component';
+import { TarjetasComponent } from './tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MiniInfoDesplegableComponent } from './mini-info-desplegable/mini-info-
     ContenidoWikiComponent,
     LeccionComponent,
     TabsComponent,
-    MiniInfoDesplegableComponent
+    MiniInfoDesplegableComponent,
+    TarjetasComponent
   ],
   imports: [
     CommonModule,

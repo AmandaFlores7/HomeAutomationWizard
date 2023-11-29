@@ -56,6 +56,7 @@ export class MensajeriaService {
 
   closeWebSocketConnection() {
     if (this.webSocket) {
+      this.currentChannel = undefined;
       this.webSocket.onmessage = null; // Unset the onmessage handler to prevent handling incoming messages after closing
       this.webSocket.close();
       this.webSocket = undefined;

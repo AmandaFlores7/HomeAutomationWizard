@@ -1,5 +1,27 @@
 [
     {
+        "ruta": "/wikiiot/leccion1",
+        "info": {
+            "introduccion": [
+                "Introducción al IoT y a Home Automation Wizard",
+                "Objetivos de Aprendizaje:"
+            ]
+        },
+        "tarjetas": {
+            "tabs":[
+                {
+                    "texto": "Comprender qué es el Internet de las Cosas (IoT) y cómo está revolucionando la automatización del hogar y otros campos."
+                },
+                {
+                    "texto": "Conocer cómo Home Automation Wizard permite a los usuarios controlar y monitorear una maqueta de casa inteligente a través de la aplicación"
+                },
+                {
+                    "texto": "Aprender los conceptos básicos para convertirse en un 'mago' de la automatización del hogar."
+                }
+            ]
+        }
+    },
+    {
         "ruta": "/wikiiot/leccion2",
         "info": {
             "introduccion": [
@@ -203,6 +225,30 @@
             "introduccion": [
                 "Cada sensor y actuador conectado en la ESP32, en donde:"
             ]
+        },
+        "tarjetas": {
+            "tabs": [
+                {
+                    "texto": [
+                        "Los sensores están transmitiendo a través de distintos tópicos del broker, en donde se publica en cada momento los valores que obtienen del ambiente."
+                    ],
+                    "subtab": [
+                        "Sensor de luz transmite a través del tópico “light”.",
+                        "Los valores correspondientes a la temperatura se transmiten a través del tópico “temperature”.",
+                        "Los valores correspondientes a la presión atmosférica se transmiten a través del tópico “preasure_atm”."
+                    ]
+                },
+                {
+                    "texto": [
+                        "Los actuadores están suscrito (escuchando) a distintos tópicos del broker, en donde recibe el estado el cual nosotros enviemos a través de nuestros teléfonos."
+                    ],
+                    "subtab": [
+                        "Cada led está suscrito a distintos tópicos denominados “led#numero”.",
+                        "El servo motor está suscrito al tópico “servo”."
+                    ]
+                }
+            ],
+        "texto_final": "Asi, nuestro dispositivo móvil, esta suscrito a todos estos tópicos, como también, estamos publicando los distintos estados de los actuadores para su control. Podemos ver lo simple que es automatizar un hogar a través del uso de estas tecnologías."
         }
     },
     {
@@ -211,6 +257,6 @@
             "introduccion": [
                 "Aqui puedes revisar algunos ejemplos de proyectos..."
             ]
-        }
+        }    
     }
 ]

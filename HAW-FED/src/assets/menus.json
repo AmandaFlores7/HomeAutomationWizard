@@ -27,7 +27,9 @@
         "titulo": "Prueba tus Conocimientos",
         "ruta": "/quiz",
         "icono": "fa fa-question-circle"
-      },
+      }
+    ],
+    "items_no_implementados": [
       {
         "titulo": "Conoce Nuestro Proyecto",
         "ruta": "/proyecto",

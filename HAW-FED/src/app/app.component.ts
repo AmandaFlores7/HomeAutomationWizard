@@ -84,8 +84,8 @@ const ipModificables = {
   url_camera3: 'http://192.168.1.83:8081'
 };
 export const CONSTANTES = {
-  ip_local: ipModificables.ip_local3,
-  api_url: ipModificables.api_url3,
-  ws_url: ipModificables.ws_url3,
+  ip_local: ipModificables.ip_publica,
+  api_url: ipModificables.api_url_publica,
+  ws_url: ipModificables.ws_url_publica,
   url_camera: ipModificables.url_camera3,
 }
