@@ -94,7 +94,7 @@ export class LineChartComponent {
   ngOnDestroy() {
     this.dataDev.setDevModeBool(false);
     if (this.myWebSocket) {
-      this.myWebSocket.unsubscribe();
+      this.myWebSocket.complete(1000, 'Cierre normal');
     }
     if (this.chart) {
       this.chart.destroy();
