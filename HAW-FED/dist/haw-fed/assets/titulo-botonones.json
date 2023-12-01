@@ -1,0 +1,492 @@
+[
+	{
+		"ruta": "/login",
+		"titulo": "Home Automation Wizard"
+	},
+	{
+		"ruta": "/aplicacion",
+		"titulo": "Menu Principal"
+	},
+	{
+		"ruta": "/aplicacion/sensores",
+		"titulo": "Sensores",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/temperatura",
+		"titulo": "Sensor de Temperatura",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/sensores/temperatura/ver",
+				"titulo": "Ver"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/temperatura/ver",
+		"titulo": "Gráfico de temperatura",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/humedad",
+		"titulo": "Sensor de Humedad",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/sensores/humedad/ver",
+				"titulo": "Ver"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/humedad/ver",
+		"titulo": "Gráfico de humedad",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/luz",
+		"titulo": "Sensor de Luminocidad",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/sensores/luz/ver",
+				"titulo": "Ver"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/luz/ver",
+		"titulo": "Gráfico de nivel de luz",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/aire",
+		"titulo": "Sensor de Calidad del Aire",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/sensores/aire/ver",
+				"titulo": "Ver"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/sensores/aire/ver",
+		"titulo": "Gráfico de aire",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/sensores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores",
+		"titulo": "Actuadores",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores/camara_r",
+		"titulo": "Camara Raspberry",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/actuadores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/actuadores/camara_r/probar",
+				"titulo": "Probar"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores/camara_r/probar",
+		"titulo": "Ver Cámara Raspberry Pi 3",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/actuadores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores/luces",
+		"titulo": "Luces del Hogar",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/actuadores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/actuadores/luces/probar",
+				"titulo": "Probar"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores/luces/probar",
+		"titulo": "Prueba las Luces",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/actuadores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores/puerta",
+		"titulo": "Control de Puerta",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/actuadores",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/aplicacion/actuadores/puerta/probar",
+				"titulo": "Probar"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/actuadores/puerta/probar",
+		"titulo": "Control de Puerta",
+		"botones": [
+			{
+				"ruta1": "/aplicacion/actuadores",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/quiz",
+		"titulo": "Quiz",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/quiz/sensores",
+		"titulo": "Quiz Sensores",
+		"botones": [
+			{
+				"ruta1": "/quiz",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/quiz/actuadores",
+		"titulo": "Quiz Actuadores",
+		"botones": [
+			{
+				"ruta1": "/quiz",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/quiz/iot",
+		"titulo": "Quiz IoT",
+		"botones": [
+			{
+				"ruta1": "/quiz",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/introduccion/1",
+		"titulo": "Home Automation Wizard",
+		"botones": [
+			{
+				"ruta2": "/introduccion/2",
+				"titulo": "Siguiente"
+			}
+		]
+	},
+	{
+		"ruta": "/introduccion/2",
+		"titulo": "Home Automation Wizard",
+		"botones": [
+			{
+				"ruta1": "/introduccion/1",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/introduccion/3",
+				"titulo": "Siguiente"
+			}
+		]
+	},
+	{
+		"ruta": "/introduccion/3",
+		"titulo": "Home Automation Wizard",
+		"botones": [
+			{
+				"ruta1": "/introduccion/2",
+				"titulo": "Retroceder"
+			},
+			{
+				"ruta2": "/introduccion/4",
+				"titulo": "Siguiente"
+			}
+		]
+	},
+	{
+		"ruta": "/introduccion/4",
+		"titulo": "Home Automation Wizard",
+		"botones": [
+			{
+				"ruta1": "/introduccion/3",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/aplicacion/mensajeria",
+		"titulo": "Mensajería",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot",
+		"titulo": "Wiki IoT",
+		"botones": [
+			{
+				"ruta1": "/aplicacion",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1",
+		"titulo": "Lección 1",
+		"subtitulo": "Introducción",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1/1",
+		"titulo": "Lección 1",
+		"subtitulo": "IoT",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion1",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion1/2",
+		"titulo": "Lección 1",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion1",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion2",
+		"titulo": "Lección 2",
+		"subtitulo": "Sensores y Actuadores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion2/1",
+		"titulo": "Lección 2",
+		"subtitulo": "Sensores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion2",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion2/2",
+		"titulo": "Lección 2",
+		"subtitulo": "Actuadores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion2",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion3",
+		"titulo": "Lección 3",
+		"subtitulo": "Protocolos de Comunicación en IoT",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta":"/wikiiot/leccion3/1",
+		"titulo":"Lección 3",
+		"subtitulo": "MQTT",
+		"botones":[
+			{
+				"ruta1": "/wikiiot/leccion3",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta":"/wikiiot/leccion3/2",
+		"titulo":"Lección 3",
+		"subtitulo": "Broker",
+		"botones":[
+			{
+				"ruta1": "/wikiiot/leccion3",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4",
+		"titulo": "Lección 4",
+		"subtitulo": "Maqueta de Casa Inteligente en Detalle",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/1",
+		"titulo": "Lección 4",
+		"subtitulo": "ESP32",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/2",
+		"titulo": "Lección 4",
+		"subtitulo": "Raspberry Pi 3",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/3",
+		"titulo": "Lección 4",
+		"subtitulo": "RaspiCam",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/4",
+		"titulo": "Lección 4",
+		"subtitulo": "Actuadores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion4/5",
+		"titulo": "Lección 4",
+		"subtitulo": "Sensores",
+		"botones": [
+			{
+				"ruta1": "/wikiiot/leccion4",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion5",
+		"titulo": "Lección 5",
+		"subtitulo": "Control de Dispositivos en la Maqueta",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	},
+	{
+		"ruta": "/wikiiot/leccion6",
+		"titulo": "Lección 6",
+		"subtitulo": "Algunos ejemplos",
+		"botones": [
+			{
+				"ruta1": "/wikiiot",
+				"titulo": "Retroceder"
+			}
+		]
+	}
+]
