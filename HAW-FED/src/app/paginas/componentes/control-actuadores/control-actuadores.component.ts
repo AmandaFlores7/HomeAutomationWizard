@@ -17,7 +17,6 @@ export class ControlActuadoresComponent {
   actuadores: any[] = [];
 
   entradas: any[] = [];
-  stream: boolean = false;
 
   accionSeleccionada: string = ''; 
   textoPeticion: string = ''; 
@@ -39,7 +38,6 @@ export class ControlActuadoresComponent {
           this.actuadores.push(actuador);
         }
         this.entradas = Object.entries(this.actuadores[0].opciones);
-        this.stream = this.actuadores[0].stream? true : false;
         this.entradas.forEach(element => {
           this.opciones.push({ key: Object.keys(element[1]), value: Object.values(element[1]) });
         });
@@ -50,7 +48,7 @@ export class ControlActuadoresComponent {
   ngOnInit(): void {
     this.estadoActSubscription = interval(1000)
       .pipe(
-        switchMap(() => this.obtenerEstadoLeds())
+        switchMap(() => this.obtenerEstadoActuadores())
       )
       .subscribe((data: any) => {
         for (let i = 0; i < this.actuadores.length; i++) {
@@ -71,27 +69,16 @@ export class ControlActuadoresComponent {
     }
   }
 
-  obtenerEstadoLeds() {
-    if (this.stream) {
-      return this.mqtt_s.estadoActuadores(this.tipoActuador.tipoActuador.name); // Realiza la solicitud al servicio MQTT
-    } else {
-      this.estadoActSubscription.unsubscribe();
-      // retornar vacio
-      return interval(1000).pipe(retry());
-    }
+  obtenerEstadoActuadores() {
+    return this.mqtt_s.estadoActuadores(this.tipoActuador.tipoActuador.name); // Realiza la solicitud al servicio MQTT
   }
 
-  alternarActuador(event: any, actuador: any) {
-    let inputAct = window.document.getElementById(actuador.id) as HTMLInputElement;
-    
+  alternarActuador(event: any, actuador: any) {    
     const estadoActual = actuador.opciones[actuador.estado];
     const opcion = Object.keys(estadoActual)[0];
     this.mqtt_s.controlarActuador(actuador.id, opcion, this.tipoActuador.tipoActuador.name).subscribe(async res => {
     });
-    inputAct.disabled = true;
-    setTimeout(() => {
-      inputAct.disabled = false;
-    }, 2000);
+    this.bloquear(actuador.id);
   }
 
   crearPeticion() {
@@ -108,5 +95,13 @@ export class ControlActuadoresComponent {
     this.mqtt_s.controlarActuador(this.actuadorSeleccionado, this.accionSeleccionada, this.tipoActuador.tipoActuador.name).subscribe(async res => {
       console.log(res)
     });
+  }
+
+  bloquear(id:string) {
+    let inputAct = window.document.getElementById(id) as HTMLInputElement;
+    inputAct.disabled = true;
+    setTimeout(() => {
+      inputAct.disabled = false;
+    }, 2000);
   }
 }

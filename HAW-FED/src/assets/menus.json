@@ -89,11 +89,6 @@
     "texto": "En esta sección se encuentran listados todos los actuadores que están actualmente conectados a la maqueta de Home Automation Wizard. ¡Te invitamos a controlar cada uno!",
     "items": [
       {
-        "titulo": "Camara Raspberry",
-        "ruta": "/aplicacion/actuadores/camara_r/probar",
-        "icono": "fa fa-camera"
-      },
-      {
         "titulo": "Luces del Hogar",
         "ruta": "/aplicacion/actuadores/luces/probar",
         "icono": "fa-regular fa-lightbulb"
@@ -102,6 +97,13 @@
         "titulo": "Control de Puerta",
         "ruta": "/aplicacion/actuadores/puerta/probar",
         "icono": "fa-solid fa-door-open"
+      }
+    ],
+    "noitems": [
+      {
+        "titulo": "Camara Raspberry",
+        "ruta": "/aplicacion/actuadores/camara_r/probar",
+        "icono": "fa fa-camera"
       }
     ]
   },

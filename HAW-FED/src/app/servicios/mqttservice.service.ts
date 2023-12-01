@@ -21,16 +21,11 @@ export class MqttserviceService {
   }
 
   controlarActuador(act_id: string, estado: any, tipo_act: string) {
-    if (tipo_act === 'Puerta') {
-      return this._http.get(this.apiUrl + '/controlar_puerta/set_status=' + estado + '&actuador_id=' + act_id)
-    }
-    else {
-      return this._http.get(this.apiUrl + '/controlar_actuador/set_status=' + estado + '&actuador_id=' + act_id + '&topico=' + tipo_act)
-    }
+    return this._http.get(this.apiUrl + '/controlar_actuador/set_status=' + estado + '&actuador_id=' + act_id + '&topico=' + tipo_act)
   }
 
   estadoActuadores(topico:string) {
-    return this._http.get(this.apiUrl + '/estado-leds')
+    return this._http.get(this.apiUrl + '/estado-actuadores/topico=' + topico)
   }
 
   obtenerDatosSensor(tipoSensor: string) {

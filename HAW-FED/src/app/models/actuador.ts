@@ -35,7 +35,6 @@ export class Led extends Actuador {
       OFF: 'Apagar',
     }
   };
-  stream: boolean = true;
 
   constructor(nombre: string, id: string) {
     super(nombre, id);
