@@ -39,6 +39,8 @@ export class JsonService {
 
   cargarActuadores(tipoActuador: any) {
     let url = '/assets/' + tipoActuador + '.json';
+    console.log("url: ", url);
+    console.log("ass: ", tipoActuador);
     return this.http.get<any[]>(url);
   }
 
