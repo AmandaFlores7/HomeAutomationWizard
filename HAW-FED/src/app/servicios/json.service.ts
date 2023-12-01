@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Luz } from '../models/luces.interfaces';
-import { Puerta } from '../models/puerta';
+import { Puertas } from '../models/puerta';
 
 @Injectable({
   providedIn: 'root',
@@ -37,11 +37,16 @@ export class JsonService {
     )
   }
 
+  cargarActuadores(tipoActuador: any) {
+    let url = '/assets/' + tipoActuador + '.json';
+    return this.http.get<any[]>(url);
+  }
+
   cargarLuces() {
-    return this.http.get<Luz[]>('/assets/luces.json');
+    return this.http.get<Luz[]>('/assets/Luces.json');
   }
 
   cargarPuertas() {
-    return this.http.get<Puerta[]>('/assets/puertas.json');
+    return this.http.get<Puertas[]>('/assets/Puerta.json');
   }
 }

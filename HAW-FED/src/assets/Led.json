@@ -1,0 +1,22 @@
+[
+  {
+    "id": "led1",
+    "nombre": "Luz Roja"
+  },
+  {
+    "id": "led2",
+    "nombre": "Luz Azul"
+  },
+  {
+    "id": "led3",
+    "nombre": "Luz Blanca"
+  },
+  {
+    "id": "led4",
+    "nombre": "Luz Amarilla"
+  },
+  {
+    "id": "led5",
+    "nombre": "Luz Verde"
+  }
+]
