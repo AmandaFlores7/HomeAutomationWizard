@@ -22,6 +22,7 @@ export class ControlActuadoresComponent {
   textoPeticion: string = ''; 
   actuadorSeleccionado: string = '';
 
+  tipo = '';
   opciones: any[] = [];
 
   private estadoActSubscription: Subscription = new Subscription;
@@ -32,8 +33,8 @@ export class ControlActuadoresComponent {
     })
     this.route.data.subscribe(data => {
       this.tipoActuador = data;
-      let tipo = data['nombre'];
-      json_s.cargarActuadores(tipo).subscribe((data2: any[]) => {
+      this.tipo = data['nombre'];
+      json_s.cargarActuadores(this.tipo).subscribe((data2: any[]) => {
         for (let i = 0; i < data2.length; i++) {
           let actuador = new this.tipoActuador.tipoActuador(data2[i].nombre, data2[i].id);
           this.actuadores.push(actuador);
@@ -71,19 +72,19 @@ export class ControlActuadoresComponent {
   }
 
   obtenerEstadoActuadores() {
-    return this.mqtt_s.estadoActuadores(this.tipoActuador.tipoActuador.name); // Realiza la solicitud al servicio MQTT
+    return this.mqtt_s.estadoActuadores(this.tipo); // Realiza la solicitud al servicio MQTT
   }
 
   alternarActuador(event: any, actuador: any) {    
     const estadoActual = actuador.opciones[actuador.estado];
     const opcion = Object.keys(estadoActual)[0];
-    this.mqtt_s.controlarActuador(actuador.id, opcion, this.tipoActuador.tipoActuador.name).subscribe(async res => {
+    this.mqtt_s.controlarActuador(actuador.id, opcion, this.tipo).subscribe(async res => {
     });
     this.bloquear(actuador.id);
   }
 
   crearPeticion() {
-    let peticion = "publicar en 'broker' topico '"+this.tipoActuador.tipoActuador.name+"' con mensaje {\"id\": " + this.actuadorSeleccionado + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
+    let peticion = "publicar en 'broker' topico '"+this.tipo+"' con mensaje {\"id\": " + this.actuadorSeleccionado + ", \"estado\": \"" + this.accionSeleccionada + "\"}";
     if (this.actuadorSeleccionado && this.accionSeleccionada) {
       this.textoPeticion = peticion;
     }
@@ -93,7 +94,7 @@ export class ControlActuadoresComponent {
   }
 
   enviarPeticion() {
-    this.mqtt_s.controlarActuador(this.actuadorSeleccionado, this.accionSeleccionada, this.tipoActuador.tipoActuador.name).subscribe(async res => {
+    this.mqtt_s.controlarActuador(this.actuadorSeleccionado, this.accionSeleccionada, this.tipo).subscribe(async res => {
       console.log(res)
     });
   }
