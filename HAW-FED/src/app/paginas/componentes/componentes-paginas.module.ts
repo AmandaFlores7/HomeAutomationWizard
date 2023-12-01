@@ -11,6 +11,7 @@ import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
 import { TextoScrollComponent } from './texto-scroll/texto-scroll.component';
 import { ComponentesModule } from 'src/app/componentes/componentes.module';
+import { ControlActuadoresComponent } from './control-actuadores/control-actuadores.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ComponentesModule } from 'src/app/componentes/componentes.module';
     LineChartComponent,
     ProbarCamaraComponent,
     ProbarLuzComponent,
-    TextoScrollComponent
+    TextoScrollComponent,
+    ControlActuadoresComponent
   ],
   imports: [
     CommonModule,

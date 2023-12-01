@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Puerta } from 'src/app/models/puerta';
+import { Puertas } from 'src/app/models/puerta';
 import { DataDevService } from 'src/app/servicios/data-dev.service';
 import { JsonService } from 'src/app/servicios/json.service';
 import { MqttserviceService } from 'src/app/servicios/mqttservice.service';
@@ -14,7 +14,7 @@ export class ControlPuertaComponent {
   private puertasSuscripcion: Subscription = new Subscription;
 
   switchState: boolean = false;
-  puertas: Puerta[] = [];
+  puertas: Puertas[] = [];
 
   puertaSeleccionada: string = ''; // Variable para la primera selección
   accionSeleccionada: string = ''; // Variable para la segunda selección
@@ -30,7 +30,7 @@ export class ControlPuertaComponent {
   }
 
   ngOnInit(): void {
-    this.puertasSuscripcion = this.jsonService.cargarPuertas().subscribe((data: Puerta[]) => {
+    this.puertasSuscripcion = this.jsonService.cargarPuertas().subscribe((data: Puertas[]) => {
       this.puertas = data
     })
   }
@@ -62,7 +62,7 @@ export class ControlPuertaComponent {
     return this._mqttService.estdosLeds(); // Realiza la solicitud al servicio MQTT
   }
 
-  controlarPuerta(event: any, puerta: Puerta) {
+  controlarPuerta(event: any, puerta: Puertas) {
     const accion = puerta.abierta ? 'CLOSE' : 'OPEN';
 
     this._mqttService.controlarPuerta(puerta.id, accion).subscribe(async res => { });

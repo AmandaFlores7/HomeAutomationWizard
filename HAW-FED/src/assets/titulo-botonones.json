@@ -163,7 +163,7 @@
 	},
 	{
 		"ruta": "/aplicacion/actuadores/luces/probar",
-		"titulo": "Prueba los sensores",
+		"titulo": "Prueba las Luces",
 		"botones": [
 			{
 				"ruta1": "/aplicacion/actuadores",

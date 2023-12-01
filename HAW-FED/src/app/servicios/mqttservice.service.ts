@@ -28,6 +28,18 @@ export class MqttserviceService {
     return this._http.get(this.apiUrl + '/controlar_puerta/set_status=' + estado + '&puerta_id=' + puerta_id)
   }
 
+  controlarActuador(act_id: string, estado: any, tipo_act: string) {
+    if (tipo_act === 'Led') {
+      return this._http.get(this.apiUrl + '/controlar_leds/set_status=' + estado + '&led_id=' + act_id)
+    }
+    else if (tipo_act === 'Puerta') {
+      return this._http.get(this.apiUrl + '/controlar_puerta/set_status=' + estado + '&puerta_id=' + act_id)
+    }
+    else {
+      return this._http.get(this.apiUrl + '/controlar_actuador/set_status=' + estado + '&actuador_id=' + act_id)
+    }
+  }
+
   estdosLeds() {
     return this._http.get(this.apiUrl + '/estado-leds')
   }
