@@ -79,6 +79,7 @@ export class ControlActuadoresComponent {
     const estadoActual = actuador.opciones[actuador.estado];
     const opcion = Object.keys(estadoActual)[0];
     this.mqtt_s.controlarActuador(actuador.id, opcion, this.tipo).subscribe(async res => {
+      console.log(res)
     });
     this.bloquear(actuador.id);
   }
