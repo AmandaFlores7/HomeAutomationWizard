@@ -1,6 +1,6 @@
 <div class="card-container">
     <button type="button" class="btn btn-warning btn-sm shadow" data-bs-toggle="modal"
-        data-bs-target="#exampleModal">Info</button>
+        data-bs-target="#exampleModal">Información</button>
     <div *ngIf="dataDevBol" class="card bg-info-subtle" style="text-align: start;">
         <div class="input-group mb-2">
             <label class="input-group-text" for="inputGroupSelect01" style="width: 90px;">{{tipoActuador.tipoActuador.name}}: </label>
@@ -34,7 +34,7 @@
     </div>
     <div *ngFor="let act of actuadores" class="card">
         <div class="form-check form-switch form-switch-md">
-            <input [id]="act.id" class="form-check-input" type="checkbox" [(ngModel)]="act.estado"
+            <input [id]="act.id" class="form-check-input" type="checkbox" [(ngModel)]="act.estado" [disabled]="false"
             (change)="alternarActuador($event, act)">
             <label class="form-check-label">{{ act.nombre }}</label>
         </div>
@@ -50,7 +50,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Acá podemos podemos controlar las luces de la casa.
+                Acá podemos podemos controlar los componentes de la casa.
                 <br>
                 <br>
                 <b>Nota:</b> Al seleccionar <i>"Dev Mode"</i> podrá crear y ver el mensaje de la petición que se envia a

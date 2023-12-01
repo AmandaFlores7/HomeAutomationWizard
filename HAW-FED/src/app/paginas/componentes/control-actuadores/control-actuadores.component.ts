@@ -82,10 +82,16 @@ export class ControlActuadoresComponent {
   }
 
   alternarActuador(event: any, actuador: any) {
+    let inputAct = window.document.getElementById(actuador.id) as HTMLInputElement;
+    
     const estadoActual = actuador.opciones[actuador.estado];
     const opcion = Object.keys(estadoActual)[0];
     this.mqtt_s.controlarActuador(actuador.id, opcion, this.tipoActuador.tipoActuador.name).subscribe(async res => {
     });
+    inputAct.disabled = true;
+    setTimeout(() => {
+      inputAct.disabled = false;
+    }, 2000);
   }
 
   crearPeticion() {
