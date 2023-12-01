@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VistaComponenteComponent } from './vista-componente/vista-componente.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
-import { ControlPuertaComponent } from './control-puerta/control-puerta.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { MenuOpcionesComponent } from 'src/app/componentes/menu-opciones/menu-opciones.component';
 import { ControlActuadoresComponent } from './control-actuadores/control-actuadores.component';
