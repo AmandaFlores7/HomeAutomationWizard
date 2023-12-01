@@ -31,8 +31,9 @@ export class ControlActuadoresComponent {
       this.dataDevBol = value;
     })
     this.route.data.subscribe(data => {
-      this.tipoActuador = data;
-      json_s.cargarActuadores(this.tipoActuador.tipoActuador.name).subscribe((data2: any[]) => {
+      this.tipoActuador = data['tipoActuador'];
+      let tipo = data['nombre'];
+      json_s.cargarActuadores(tipo).subscribe((data2: any[]) => {
         for (let i = 0; i < data2.length; i++) {
           let actuador = new this.tipoActuador.tipoActuador(data2[i].nombre, data2[i].id);
           this.actuadores.push(actuador);
