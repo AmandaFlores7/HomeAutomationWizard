@@ -73,7 +73,7 @@ export class ProbarLuzComponent {
   }
 
   obtenerEstadoLeds() {
-    return this._mqttService.estdosLeds(); // Realiza la solicitud al servicio MQTT
+    return this._mqttService.estdosLeds('Led'); // Realiza la solicitud al servicio MQTT
   }
 
   enviarPeticion() {

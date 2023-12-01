@@ -54,7 +54,7 @@ export class ControlActuadoresComponent {
       )
       .subscribe((data: any) => {
         for (let i = 0; i < this.actuadores.length; i++) {
-          const estadoActual = data.leds_status[this.actuadores[i].id];
+          const estadoActual = data.estado_actuador[this.actuadores[i].id];
           for (const entrada of this.entradas) {
             let [booleano, opciones] = entrada;
             if (Object.keys(opciones as any).includes(estadoActual)) {
@@ -73,7 +73,7 @@ export class ControlActuadoresComponent {
 
   obtenerEstadoLeds() {
     if (this.stream) {
-      return this.mqtt_s.estdosLeds(); // Realiza la solicitud al servicio MQTT
+      return this.mqtt_s.estadoActuadores(this.tipoActuador.tipoActuador.name); // Realiza la solicitud al servicio MQTT
     } else {
       this.estadoActSubscription.unsubscribe();
       // retornar vacio

@@ -58,9 +58,9 @@ export class ControlPuertaComponent {
     }
   }
 
-  obtenerEstadoLeds() {
-    return this._mqttService.estdosLeds(); // Realiza la solicitud al servicio MQTT
-  }
+  // obtenerEstadoLeds() {
+  //   return this._mqttService.estdosLeds(); // Realiza la solicitud al servicio MQTT
+  // }
 
   controlarPuerta(event: any, puerta: Puertas) {
     const accion = puerta.abierta ? 'CLOSE' : 'OPEN';
