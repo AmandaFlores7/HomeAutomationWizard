@@ -3,7 +3,7 @@
         data-bs-target="#exampleModal">Información</button>
     <div *ngIf="dataDevBol" class="card bg-info-subtle" style="text-align: start;">
         <div class="input-group mb-2">
-            <label class="input-group-text" for="inputGroupSelect01" style="width: 90px;">{{tipoActuador.tipoActuador.name}}: </label>
+            <label class="input-group-text" for="inputGroupSelect01" style="width: 90px;">{{this.tipo}}: </label>
             <select class="form-select" id="inputGroupSelect01" [(ngModel)]="actuadorSeleccionado"
                 (change)="crearPeticion()">
                 <option selected value="">Seleccionar...</option>
@@ -21,7 +21,7 @@
         <div class="input-group mb-2">
             <label class="input-group-text" for="inputGroupSelect03" style="width: 90px;">Topico: </label>
             <select class="form-select bg-light-subtle" id="inputGroupSelect03" disabled>
-                <option selected>{{tipoActuador.tipoActuador.name}}</option>
+                <option selected>{{this.tipo}}</option>
             </select>
         </div>
         <div class="input-group mb-2">
@@ -35,7 +35,7 @@
     <div *ngFor="let act of actuadores" class="card">
         <div class="form-check form-switch form-switch-md">
             <input [id]="act.id" class="form-check-input" type="checkbox" [(ngModel)]="act.estado" [disabled]="false"
-            (change)="alternarActuador($event, act); bloquear(act.id)">
+            (change)="alternarActuador($event, act)">
             <label class="form-check-label">{{ act.nombre }}</label>
         </div>
     </div>

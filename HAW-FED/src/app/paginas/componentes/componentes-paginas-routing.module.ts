@@ -20,9 +20,9 @@ const routes: Routes = [
   { path: 'sensores/aire/ver', component: LineChartComponent, data: { tipoSensor: 'air_quality', tituloGrafico: 'Gráfico de Calidad Aire' } },
   { path: 'actuadores/camara_r', component: VistaComponenteComponent },
   { path: 'actuadores/luces', component: VistaComponenteComponent },
-  { path: 'actuadores/luces/probar', component: ControlActuadoresComponent, data: { tipoActuador: Led } },
+  { path: 'actuadores/luces/probar', component: ControlActuadoresComponent, data: { tipoActuador: Led, nombre: 'Led' } },
   { path: 'actuadores/puerta', component: VistaComponenteComponent },
-  { path: 'actuadores/puerta/probar', component: ControlActuadoresComponent, data: { tipoActuador: Puerta } },
+  { path: 'actuadores/puerta/probar', component: ControlActuadoresComponent, data: { tipoActuador: Puerta, nombre: 'Puerta' } },
   { path: 'actuadores/camara_r/probar', component: ProbarCamaraComponent },
 ];
 
