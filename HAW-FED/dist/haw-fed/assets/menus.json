@@ -97,14 +97,15 @@
         "titulo": "Control de Puerta",
         "ruta": "/aplicacion/actuadores/puerta/probar",
         "icono": "fa-solid fa-door-open"
-      }
-    ],
-    "noitems": [
+      },
       {
         "titulo": "Camara Raspberry",
         "ruta": "/aplicacion/actuadores/camara_r/probar",
         "icono": "fa fa-camera"
       }
+    ],
+    "noitems": [
+      
     ]
   },
   {
