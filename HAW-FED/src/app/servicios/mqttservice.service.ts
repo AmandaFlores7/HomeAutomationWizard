@@ -20,16 +20,12 @@ export class MqttserviceService {
     return this._http.get(this.apiUrl + '/test-mqtt-protocol')
   }
 
-  controlarLeds(luz_id: any, estado: any) {
-    return this._http.get(this.apiUrl + '/controlar_leds/set_status=' + estado + '&led_id=' + luz_id)
+  controlarActuador(act_id: string, estado: any, tipo_act: string) {
+    return this._http.get(this.apiUrl + '/controlar_actuador/set_status=' + estado + '&actuador_id=' + act_id + '&topico=' + tipo_act)
   }
 
-  controlarPuerta(puerta_id: string, estado: any) {
-    return this._http.get(this.apiUrl + '/controlar_puerta/set_status=' + estado + '&puerta_id=' + puerta_id)
-  }
-
-  estdosLeds() {
-    return this._http.get(this.apiUrl + '/estado-leds')
+  estadoActuadores(topico:string) {
+    return this._http.get(this.apiUrl + '/estado-actuadores/topico=' + topico)
   }
 
   obtenerDatosSensor(tipoSensor: string) {

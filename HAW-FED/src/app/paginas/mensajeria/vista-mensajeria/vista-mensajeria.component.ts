@@ -10,16 +10,12 @@ import { WebSocketChat } from 'src/app/models/web-socket-chat';
 })
 
 export class VistaMensajeriaComponent {
-
-
   public topicoSeleccionado: string = '';
   public mensaje: string = '';
   hayPeticion: boolean = false;
   public topicoSeleccionadoChat: string = '';
 
-  constructor(public _mensajeria:MensajeriaService) {
-
-  }
+  constructor(public _mensajeria:MensajeriaService) {}
 
   enviarMensaje() {
     let nombre = String(JSON.parse(localStorage.getItem('usuario') || '').nombre);
@@ -40,7 +36,9 @@ export class VistaMensajeriaComponent {
     this._mensajeria.closeWebSocketConnection();
   }
 
-  cambiarTopico(){
-    this._mensajeria.openWebSocketConnection(this.topicoSeleccionadoChat);
+  cambiarTopico() {
+    if (this.topicoSeleccionadoChat != '') {
+      this._mensajeria.openWebSocketConnection(this.topicoSeleccionadoChat);
+    }
   }
 }

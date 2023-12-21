@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VistaComponenteComponent } from './vista-componente/vista-componente.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { ProbarLuzComponent } from './probar-luz/probar-luz.component';
-import { ControlPuertaComponent } from './control-puerta/control-puerta.component';
 import { ProbarCamaraComponent } from './probar-camara/probar-camara.component';
 import { MenuOpcionesComponent } from 'src/app/componentes/menu-opciones/menu-opciones.component';
+import { ControlActuadoresComponent } from './control-actuadores/control-actuadores.component';
+import { Led, Puerta } from 'src/app/models/actuador';
 
 const routes: Routes = [
   { path: 'sensores', component: MenuOpcionesComponent },
@@ -20,9 +20,9 @@ const routes: Routes = [
   { path: 'sensores/aire/ver', component: LineChartComponent, data: { tipoSensor: 'air_quality', tituloGrafico: 'Gráfico de Calidad Aire' } },
   { path: 'actuadores/camara_r', component: VistaComponenteComponent },
   { path: 'actuadores/luces', component: VistaComponenteComponent },
-  { path: 'actuadores/luces/probar', component: ProbarLuzComponent },
+  { path: 'actuadores/luces/probar', component: ControlActuadoresComponent, data: { tipoActuador: Led, nombre: 'Led' } },
   { path: 'actuadores/puerta', component: VistaComponenteComponent },
-  { path: 'actuadores/puerta/probar', component: ControlPuertaComponent },
+  { path: 'actuadores/puerta/probar', component: ControlActuadoresComponent, data: { tipoActuador: Puerta, nombre: 'Puerta' } },
   { path: 'actuadores/camara_r/probar', component: ProbarCamaraComponent },
 ];
 

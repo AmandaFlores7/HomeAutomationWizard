@@ -61,7 +61,7 @@ export class TesteoComponent {
             this.hayMensaje = true;
             this.attrMensaje = {
               titulo: 'Éxito',
-              parrafo:
+              texto:
                 'La conexión con el broker MQTT se ha establecido correctamente.',
               link: '/aplicacion'
             };
@@ -70,7 +70,7 @@ export class TesteoComponent {
             this.hayMensaje = true;
             this.attrMensaje = {
               titulo: 'Éxito',
-              parrafo:
+              texto:
                 'La conexión con el broker MQTT se ha establecido correctamente.',
               link: '/aplicacion'
             };
@@ -80,7 +80,7 @@ export class TesteoComponent {
           this.hayMensaje = true;
           this.attrMensaje = {
             titulo: 'Éxito',
-            parrafo:
+            texto:
               'La conexión con el broker MQTT se ha establecido correctamente.',
             link: '/aplicacion'
           };

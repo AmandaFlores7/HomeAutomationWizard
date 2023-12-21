@@ -1,0 +1,64 @@
+<div class="card-container">
+    <button type="button" class="btn btn-warning btn-sm shadow" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Información</button>
+    <div *ngIf="dataDevBol" class="card bg-info-subtle" style="text-align: start;">
+        <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupSelect01" style="width: 90px;">{{this.tipo}}: </label>
+            <select class="form-select" id="inputGroupSelect01" [(ngModel)]="actuadorSeleccionado"
+                (change)="crearPeticion()">
+                <option selected value="">Seleccionar...</option>
+                <option *ngFor="let act of actuadores" [value]="act.id">{{ act.nombre }}</option>
+            </select>
+        </div>
+        <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupSelect02" style="width: 90px;">Accion: </label>
+            <select class="form-select" id="inputGroupSelect02" [(ngModel)]="accionSeleccionada"
+                (change)="crearPeticion()">
+                <option selected value="">Seleccionar...</option>
+                <option *ngFor="let op of opciones" [value]="op.key">{{op.value}}</option>
+            </select>
+        </div>
+        <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupSelect03" style="width: 90px;">Topico: </label>
+            <select class="form-select bg-light-subtle" id="inputGroupSelect03" disabled>
+                <option selected>{{this.tipo}}</option>
+            </select>
+        </div>
+        <div class="input-group mb-2">
+            <textarea class="form-control bg-light-subtle" rows="3" [placeholder]="textoPeticion" aria-label="Mensaje"
+                disabled></textarea>
+            <button class="btn" type="button" (click)="enviarPeticion()" [disabled]="textoPeticion == '' ? true : false"
+                [ngClass]="textoPeticion == '' ? 'btn-outline-secondary' : 'bg-info'">Enviar
+            </button>
+        </div>
+    </div>
+    <div *ngFor="let act of actuadores" class="card">
+        <div class="form-check form-switch form-switch-md">
+            <input [id]="act.id" class="form-check-input" type="checkbox" [(ngModel)]="act.estado" [disabled]="false"
+            (change)="alternarActuador($event, act)">
+            <label class="form-check-label">{{ act.nombre }}</label>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Acá podemos podemos controlar los componentes de la casa.
+                <br>
+                <br>
+                <b>Nota:</b> Al seleccionar <i>"Dev Mode"</i> podrá crear y ver el mensaje de la petición que se envia a
+                traves del broker, para publicar en el tópico correspondiente y asi realizar la acción requerida.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
